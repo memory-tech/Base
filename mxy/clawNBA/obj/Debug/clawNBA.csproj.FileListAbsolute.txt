@@ -1,0 +1,4 @@
+C:\Users\memory\Desktop\Base\clawNBA\obj\Debug\clawNBA.csprojAssemblyReference.cache
+C:\Users\memory\Desktop\Base\clawNBA\obj\Debug\clawNBA.Properties.Resources.resources
+C:\Users\memory\Desktop\Base\clawNBA\obj\Debug\clawNBA.csproj.GenerateResource.cache
+C:\Users\memory\Desktop\Base\clawNBA\obj\Debug\clawNBA.csproj.CoreCompileInputs.cache

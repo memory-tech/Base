@@ -1,0 +1,11 @@
+C:\Users\memory\source\repos\Tomato\Tomato\bin\Debug\Tomato.exe.config
+C:\Users\memory\source\repos\Tomato\Tomato\bin\Debug\Tomato.exe
+C:\Users\memory\source\repos\Tomato\Tomato\bin\Debug\Tomato.pdb
+C:\Users\memory\source\repos\Tomato\Tomato\obj\Debug\Tomato.Tomato.resources
+C:\Users\memory\source\repos\Tomato\Tomato\obj\Debug\Tomato.Properties.Resources.resources
+C:\Users\memory\source\repos\Tomato\Tomato\obj\Debug\Tomato.csproj.GenerateResource.cache
+C:\Users\memory\source\repos\Tomato\Tomato\obj\Debug\Tomato.csproj.CoreCompileInputs.cache
+C:\Users\memory\source\repos\Tomato\Tomato\obj\Debug\Tomato.exe
+C:\Users\memory\source\repos\Tomato\Tomato\obj\Debug\Tomato.pdb
+C:\Users\memory\source\repos\Tomato\Tomato\obj\Debug\Tomato.TimeEdit.resources
+C:\Users\memory\source\repos\Tomato\Tomato\obj\Debug\Tomato.csprojAssemblyReference.cache
