@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "个性化日程管理系统", "个性化日程管理系统\个性化日程管理系统.csproj", "{C38CE235-5FE1-4420-B2D3-381B56CF41F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C38CE235-5FE1-4420-B2D3-381B56CF41F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C38CE235-5FE1-4420-B2D3-381B56CF41F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C38CE235-5FE1-4420-B2D3-381B56CF41F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C38CE235-5FE1-4420-B2D3-381B56CF41F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B30F267-05E3-4FA0-BC15-E4436A1EE65E}
+	EndGlobalSection
+EndGlobal
