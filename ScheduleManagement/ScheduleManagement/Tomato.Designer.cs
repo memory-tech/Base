@@ -37,6 +37,7 @@ namespace ScheduleManagement
             this.label5 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -69,21 +70,26 @@ namespace ScheduleManagement
             // 
             // TimeSet
             // 
+            this.TimeSet.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TimeSet.AutoSize = true;
             this.TimeSet.Font = new System.Drawing.Font("隶书", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.TimeSet.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.TimeSet.Location = new System.Drawing.Point(179, 52);
+            this.TimeSet.Location = new System.Drawing.Point(179, 92);
             this.TimeSet.Name = "TimeSet";
             this.TimeSet.Size = new System.Drawing.Size(122, 40);
             this.TimeSet.TabIndex = 10;
             this.TimeSet.Text = "15:00";
+            this.TimeSet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.Controls.Add(this.TimeSet);
+            this.panel1.Controls.Add(this.label);
             this.panel1.Controls.Add(this.cmbRemindStyle);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.TimeSet);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 30);
             this.panel1.Name = "panel1";
@@ -92,6 +98,9 @@ namespace ScheduleManagement
             // 
             // cmbRemindStyle
             // 
+            this.cmbRemindStyle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbRemindStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRemindStyle.FormattingEnabled = true;
             this.cmbRemindStyle.Items.AddRange(new object[] {
@@ -105,8 +114,11 @@ namespace ScheduleManagement
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(99, 151);
+            this.label5.Location = new System.Drawing.Point(124, 151);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 15);
             this.label5.TabIndex = 15;
@@ -129,6 +141,22 @@ namespace ScheduleManagement
             this.设置ToolStripMenuItem.Size = new System.Drawing.Size(53, 26);
             this.设置ToolStripMenuItem.Text = "设置";
             this.设置ToolStripMenuItem.Click += new System.EventHandler(this.设置ToolStripMenuItem_Click);
+            // 
+            // label
+            // 
+            this.label.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("隶书", 24F, System.Drawing.FontStyle.Bold);
+            this.label.ForeColor = System.Drawing.Color.MediumAquamarine;
+            this.label.Location = new System.Drawing.Point(179, 20);
+            this.label.Name = "label";
+            this.label.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label.Size = new System.Drawing.Size(122, 40);
+            this.label.TabIndex = 16;
+            this.label.Text = "label";
+            this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Tomato
             // 
@@ -160,5 +188,6 @@ namespace ScheduleManagement
         private System.Windows.Forms.ToolStripMenuItem 设置ToolStripMenuItem;
         private System.Windows.Forms.ComboBox cmbRemindStyle;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label;
     }
 }
