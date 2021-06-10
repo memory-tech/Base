@@ -13,7 +13,7 @@ namespace ScheduleManagement.Service
         {
             using (var ctx = new ScheduleContext())
             {
-                ctx.To_Do_Affairs.Add(new To_Do_AffairEntity("0", "NULL", DateTime.Parse("2021-01-01 12:00:00"), "NULL", "NULL", "NULL"));
+                ctx.To_Do_Affairs.Add(new To_Do_AffairEntity("0", "NULL", DateTime.Parse("2021-01-01 12:00:00"), "NULL", "NULL", "NULL", false, 0, 0));
                 ctx.SaveChanges();
             }
         }

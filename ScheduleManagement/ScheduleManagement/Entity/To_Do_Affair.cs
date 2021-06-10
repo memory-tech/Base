@@ -15,13 +15,17 @@ namespace ScheduleManagement.Entity
         public string Place { get; set; }
         public string Content { get; set; }
         public string Urgency { get; set; }
+        public bool IsFinished { get; set; }
+        public int Tomato_Number { get; set; }
+        public int Tomato_Time { get; set; }
 
         public To_Do_AffairEntity()
         {
             To_Do_AffairId = Guid.NewGuid().ToString();
         }
 
-        public To_Do_AffairEntity(string to_do_affairid, string title,  DateTime endtime, string place, string content, string urgency) : this()
+        public To_Do_AffairEntity(string to_do_affairid, string title,  DateTime endtime, string place, string content,
+                                  string urgency, bool isfinished, int tomato_number, int tomato_time) : this()
         {
             this.To_Do_AffairId = to_do_affairid;
             this.Title = title;
@@ -29,6 +33,9 @@ namespace ScheduleManagement.Entity
             this.Place = place;
             this.Content = content;
             this.Urgency = urgency;
+            this.IsFinished = isfinished;
+            this.Tomato_Number = tomato_number;
+            this.Tomato_Time = tomato_time;
         }
         public override bool Equals(object obj)
         {
