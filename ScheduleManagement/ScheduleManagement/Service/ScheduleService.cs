@@ -15,14 +15,18 @@ namespace ScheduleManagement.Service
 
         public ScheduleService()
         {
+            /*
             using (var ctx = new ScheduleContext())
             {
-                ctx.Schedules.Add(new ScheduleEntity("0", "NULL", DateTime.Parse("2021-01-01 12:00:00"), "NULL", "NULL", "NULL"));
-                ctx.SaveChanges();
-            }
+                if (ctx.Schedules.Count() == 0)
+                {
+                    ctx.Schedules.Add(new ScheduleEntity("0", "0", DateTime.Parse("2021-01-01 12:00:00"), "0", " 0", "0"));
+                    ctx.SaveChanges();
+                }
+            }*/
         }
 
-        public List<ScheduleEntity> Schedules
+        public static List<ScheduleEntity> Schedules
         {
             get
             {

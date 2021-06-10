@@ -21,6 +21,7 @@ namespace ScheduleManagement
         public UserControl4 f4; //创建用户控件四变量
         public UserControl5 f5; //创建用户控件五变量
 
+        //public List<ScheduleEntity> schedules;
         ScheduleService scheduleservice;
         public String Keyword1 { get; set; }
 
@@ -30,16 +31,18 @@ namespace ScheduleManagement
         public Main()
         { 
         InitializeComponent();
-            scheduleservice = new ScheduleService();
-            bdsScheduleEntity.DataSource = scheduleservice.Schedules;
-            txt_Category.DataBindings.Add("Text", this, "Keyword1");
+        //schedules = ScheduleService.GetAllScheduleEntity();
+        scheduleservice = new ScheduleService();
+        bdsScheduleEntity.DataSource = ScheduleService.Schedules;
+        txt_Category.DataBindings.Add("Text", this, "Keyword1");
             //cbx_Category.SelectedIndex = 0;
             //txtKeyword1.DataBindings.Add("Text", this, "Keyword1");
-            to_do_affairservice = new To_Do_AffairsService();
-            bdsTo_Do_AffairEntity.DataSource = to_do_affairservice.To_Do_Affairs;
+            
+        to_do_affairservice = new To_Do_AffairsService();
+        bdsTo_Do_AffairEntity.DataSource = To_Do_AffairsService.To_Do_Affairs;
             //cbxUrgency.SelectedIndex = 0;
             //txtKeyword2.DataBindings.Add("Text", this, "Keyword2");
-            txtUrgency.DataBindings.Add("Text", this, "Keyword2");
+        txtUrgency.DataBindings.Add("Text", this, "Keyword2");
         }
 
         private void Form3_Load(object sender, EventArgs e)

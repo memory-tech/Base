@@ -19,7 +19,7 @@ namespace ScheduleManagement.Service
             }
         }
 
-        public List<To_Do_AffairEntity> To_Do_Affairs
+        public static List<To_Do_AffairEntity> To_Do_Affairs
         {
             get
             {
