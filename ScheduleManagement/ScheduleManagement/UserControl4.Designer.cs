@@ -84,7 +84,7 @@ namespace ScheduleManagement
             this.comboBox1.Items.AddRange(new object[] {
             "欧洲杯",
             "中超",
-            "美洲杯",
+            "世界杯亚洲预选赛",
             "近期电影"});
             this.comboBox1.Location = new System.Drawing.Point(218, 3);
             this.comboBox1.Name = "comboBox1";

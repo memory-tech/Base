@@ -66,7 +66,7 @@ namespace ScheduleManagement.clawer
                 //取页面section中的内容
                 //用temp而不是htmlNode再进行相关的赋值即可
                 var temp = HtmlNode.CreateNode(htmlNode.OuterHtml);
-                var news = new News();
+                var news = new Zc();
                 //取日期，几号
                 var DayHtmlNode = temp.SelectSingleNode("//div[@class='time-label']/span");
                 string t = DayHtmlNode == null ? "" : DayHtmlNode.InnerText;
@@ -143,7 +143,7 @@ namespace ScheduleManagement.clawer
                 //取页面section中的内容
                 //用temp而不是htmlNode再进行相关的赋值即可
                 var temp = HtmlNode.CreateNode(htmlNode.OuterHtml);
-                var news = new News();
+                var news = new Zc();
                 //取日期，几号
                 var DayHtmlNode = temp.SelectSingleNode("//div[@class='time-label']/span");
                 string t = DayHtmlNode == null ? "" : DayHtmlNode.InnerText;

@@ -71,8 +71,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clawer\EC.cs" />
+    <Compile Include="clawer\EuropeanCup.cs" />
+    <Compile Include="clawer\Movie.cs" />
+    <Compile Include="clawer\Ms.cs" />
+    <Compile Include="clawer\wc.cs" />
+    <Compile Include="clawer\WorldCup.cs" />
     <Compile Include="clawer\zhongchao.cs" />
-    <Compile Include="clawer\News.cs" />
+    <Compile Include="clawer\Zc.cs" />
     <Compile Include="clawer\RISDBContext.cs" />
     <Compile Include="main.cs">
       <SubType>Form</SubType>
