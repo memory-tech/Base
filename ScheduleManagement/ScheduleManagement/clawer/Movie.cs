@@ -59,7 +59,7 @@ namespace ScheduleManagement.clawer
             var doc = this.CreateHtmlDocument(html);
 
            
-            HtmlNodeCollection htmlNodesmovie = doc.DocumentNode.SelectNodes("//div[@class='movies-list']/dl[@class='movies-list']/dd");
+            HtmlNodeCollection htmlNodesmovie = doc.DocumentNode.SelectNodes("//dl[@class='movies-list']/dd");
 
 
             if (htmlNodesmovie.Count == 0)

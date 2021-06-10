@@ -18,7 +18,6 @@ E:\C#Bigwork\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.
 E:\C#Bigwork\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.Properties.Resources.resources
 E:\C#Bigwork\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.UserControl1.resources
 E:\C#Bigwork\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.UserControl2.resources
-E:\C#Bigwork\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.UserControl3.resources
 E:\C#Bigwork\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.UserControl4.resources
 E:\C#Bigwork\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.UserControl5.resources
 E:\C#Bigwork\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.csproj.GenerateResource.cache
@@ -55,3 +54,5 @@ C:\Users\memory\Desktop\Base\ScheduleManagement\ScheduleManagement\obj\Debug\Sch
 C:\Users\memory\Desktop\Base\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.pdb
 C:\Users\memory\Desktop\Base\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.Tomato.resources
 C:\Users\memory\Desktop\Base\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.TomatoSet.resources
+E:\C#Bigwork\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.TomatoSet.resources
+E:\C#Bigwork\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.Tomato.resources
