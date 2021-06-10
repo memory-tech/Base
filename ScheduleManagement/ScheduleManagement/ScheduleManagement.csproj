@@ -71,6 +71,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clawer\AFC.cs" />
+    <Compile Include="clawer\afcs.cs" />
     <Compile Include="clawer\EC.cs" />
     <Compile Include="clawer\EuropeanCup.cs" />
     <Compile Include="clawer\Movie.cs" />
