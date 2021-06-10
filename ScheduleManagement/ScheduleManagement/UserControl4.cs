@@ -20,6 +20,7 @@ namespace ScheduleManagement
         WorldCup claw2 = new WorldCup();
         Movie claw3 = new Movie();
         AFC claw4 = new AFC();
+        CSlecture claw5 = new CSlecture();
         public UserControl4()
         {
             InitializeComponent();
@@ -29,6 +30,7 @@ namespace ScheduleManagement
             claw2.WNewsDownloaded += Clawer_WNewsDownloaded;
             claw3.MoviesDownloaded += Clawer_MoviesDownloaded;
             claw4.ANewsDownloaded += Clawer_ANewsDownloaded;
+            claw5.LNewsDownloaded += Clawer_LNewsDownloaded;
             
         }
         private Graphics graphics;
@@ -103,6 +105,20 @@ namespace ScheduleManagement
             }
         }
 
+        private void Clawer_LNewsDownloaded(CSlecture crawler, string title, string Day, string Time, string address, string person, string danwei, string link)
+        {
+            var newpage = new { 序号 = resultBindingSource.Count + 1, 报告题目 = title, 报告日期 = Day, 开始时间 = Time, 报告地点 = address, 报告人 = person, 报告单位 = danwei,详情链接 = link };
+            Action action = () => { resultBindingSource.Add(newpage); };
+            if (this.InvokeRequired)
+            {
+                this.Invoke(action);
+            }
+            else
+            {
+                action();
+            }
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -136,6 +152,9 @@ namespace ScheduleManagement
                     break;
                 case 4:
                     claw4.Excute();
+                    break;
+                case 5:
+                    claw5.Excute();
                     break;
                 default:
                     break;

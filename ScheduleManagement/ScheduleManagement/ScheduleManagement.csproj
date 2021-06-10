@@ -73,8 +73,10 @@
   <ItemGroup>
     <Compile Include="clawer\AFC.cs" />
     <Compile Include="clawer\afcs.cs" />
+    <Compile Include="clawer\CSlecture.cs" />
     <Compile Include="clawer\EC.cs" />
     <Compile Include="clawer\EuropeanCup.cs" />
+    <Compile Include="clawer\lecture.cs" />
     <Compile Include="clawer\Movie.cs" />
     <Compile Include="clawer\Ms.cs" />
     <Compile Include="clawer\wc.cs" />

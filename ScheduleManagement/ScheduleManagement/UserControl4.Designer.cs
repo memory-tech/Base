@@ -86,7 +86,8 @@ namespace ScheduleManagement
             "中超",
             "世界杯亚洲预选赛",
             "近期电影",
-            "亚冠"});
+            "亚冠",
+            "计算机学院讲座"});
             this.comboBox1.Location = new System.Drawing.Point(218, 3);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 23);
