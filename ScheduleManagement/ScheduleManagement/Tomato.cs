@@ -40,6 +40,10 @@ namespace ScheduleManagement
         {
             TomatoSet tomatoSet = new TomatoSet(this, TotalTime, Interval, BreakInterval);
             tomatoSet.ShowDialog();
+            TotalTime *= 60;
+            Seconds = 60 * Interval;
+            Seconds2 = 60 * BreakInterval;
+            TimeSet.Text = Interval + ":00";
         }
         //设置定时器的时间间隔
         public void SetTimeInterval()
@@ -112,6 +116,7 @@ namespace ScheduleManagement
                 btnBegin.Enabled = true;
                 //cmbTaskType.Enabled = true;
                 cmbRemindStyle.Enabled = true;
+                label.Text = "番茄钟";
             }
             //到达一个番茄时段但是任务未结束
             if (Seconds == 0)
@@ -141,11 +146,12 @@ namespace ScheduleManagement
                     case 4:
                         sumRest += Interval; break;
                 }*/
-                sum += Interval;
+                //sum += Interval;
                 //label3.Text = sum + "分钟";
                 tomatoes++;
                 //tomatoAmount.Text = tomatoes + "";
                 BreakTimer.Start();
+                label.Text = "休息中";
                 if (BreakInterval == 5)
                 {
                     TimeSet.Text = "05:00";
@@ -185,6 +191,7 @@ namespace ScheduleManagement
             {
                 BreakTimer.Stop();
                 this.Seconds2 = BreakInterval * 60;
+                label.Text = "工作中";
             }
         }
         //窗体震动
@@ -230,6 +237,7 @@ namespace ScheduleManagement
             this.Seconds = 60 * Interval;
             this.btnEnd.Enabled = false;
             SetTimeInterval();
+            label.Text = "番茄钟";
         }
 
         private void btnBegin_Click(object sender, EventArgs e)
@@ -246,6 +254,7 @@ namespace ScheduleManagement
             //cmbTaskType.Enabled = false;
             cmbRemindStyle.Enabled = false;
             this.btnEnd.Enabled = true;
+            label.Text = "工作中";
         }
 
         private void btnEnd_Click(object sender, EventArgs e)
@@ -275,6 +284,7 @@ namespace ScheduleManagement
                 btnBegin.Enabled = true;
                 //cmbTaskType.Enabled = true;
                 cmbRemindStyle.Enabled = true;
+                label.Text = "番茄钟";
             }
         }
     }
