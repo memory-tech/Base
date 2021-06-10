@@ -15,7 +15,7 @@ namespace ScheduleManagement
     public partial class UserControl4 : UserControl
     {
         BindingSource resultBindingSource = new BindingSource();
-        clawerbasketball claw = new clawerbasketball();
+        zhongchao claw = new zhongchao();
         public UserControl4()
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace ScheduleManagement
         private Graphics graphics;
 
 
-        private void Clawer_NewsDownloaded(clawerbasketball crawler, string day, string weekday,string time ,string player1,string player2,string turn,string link)
+        private void Clawer_NewsDownloaded(zhongchao crawler, string day, string weekday,string time ,string player1,string player2,string turn,string link)
         {
             var newpage = new { Index = resultBindingSource.Count + 1, Day = day, weekday = weekday, Time = time,P1 = player1,P2=player2,T=turn,detail = link };
             Action action = () => { resultBindingSource.Add(newpage); };
@@ -53,6 +53,7 @@ namespace ScheduleManagement
         private void button1_Click(object sender, EventArgs e)
         {
             resultBindingSource.Clear();
+            claw.loveplayer = textBox2.Text;
             switch (comboBox1.SelectedIndex)
             {
                 case 0:

@@ -71,7 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clawer\clawerbasketball.cs" />
+    <Compile Include="clawer\zhongchao.cs" />
     <Compile Include="clawer\News.cs" />
     <Compile Include="clawer\RISDBContext.cs" />
     <Compile Include="main.cs">
