@@ -15,7 +15,7 @@ namespace ScheduleManagement
     {
         public UserControl1 f1; //创建用户控件一变量
         public UserControl2 f2; //创建用户控件二变量
-        public UserControl3 f3; //创建用户控件三变量
+        public Tomato f3; //创建用户控件三变量
         public UserControl4 f4; //创建用户控件四变量
         public UserControl5 f5; //创建用户控件五变量
 
@@ -28,7 +28,7 @@ namespace ScheduleManagement
         {
             f1 = new UserControl1();    //实例化f1
             f2 = new UserControl2();    //实例化f2
-            f3 = new UserControl3();    //实例化f3
+            f3 = new Tomato();    //实例化f3
             f4 = new UserControl4();    //实例化f4
             f5 = new UserControl5();    //实例化f5
 
