@@ -31,17 +31,18 @@ namespace ScheduleManagement
         {
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_id = new System.Windows.Forms.TextBox();
+            this.txt_title = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_starttime = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_place = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txt_content = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbBox_category = new System.Windows.Forms.ComboBox();
+            this.btnFinish = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label4
@@ -53,7 +54,7 @@ namespace ScheduleManagement
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(185, 44);
             this.label4.TabIndex = 4;
-            this.label4.Text = "添加待办:";
+            this.label4.Text = "添加日程:";
             // 
             // label1
             // 
@@ -65,21 +66,21 @@ namespace ScheduleManagement
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 27);
             this.label1.TabIndex = 5;
-            this.label1.Text = "标题:";
+            this.label1.Text = "编号:";
             // 
-            // textBox1
+            // txt_id
             // 
-            this.textBox1.Location = new System.Drawing.Point(167, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(128, 25);
-            this.textBox1.TabIndex = 6;
+            this.txt_id.Location = new System.Drawing.Point(167, 53);
+            this.txt_id.Name = "txt_id";
+            this.txt_id.Size = new System.Drawing.Size(128, 25);
+            this.txt_id.TabIndex = 6;
             // 
-            // textBox2
+            // txt_title
             // 
-            this.textBox2.Location = new System.Drawing.Point(167, 96);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(128, 25);
-            this.textBox2.TabIndex = 8;
+            this.txt_title.Location = new System.Drawing.Point(167, 96);
+            this.txt_title.Name = "txt_title";
+            this.txt_title.Size = new System.Drawing.Size(128, 25);
+            this.txt_title.TabIndex = 8;
             // 
             // label2
             // 
@@ -91,14 +92,14 @@ namespace ScheduleManagement
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 27);
             this.label2.TabIndex = 7;
-            this.label2.Text = "地点:";
+            this.label2.Text = "标题:";
             // 
-            // textBox3
+            // txt_starttime
             // 
-            this.textBox3.Location = new System.Drawing.Point(167, 140);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(128, 25);
-            this.textBox3.TabIndex = 10;
+            this.txt_starttime.Location = new System.Drawing.Point(167, 140);
+            this.txt_starttime.Name = "txt_starttime";
+            this.txt_starttime.Size = new System.Drawing.Size(128, 25);
+            this.txt_starttime.TabIndex = 10;
             // 
             // label3
             // 
@@ -112,24 +113,25 @@ namespace ScheduleManagement
             this.label3.TabIndex = 9;
             this.label3.Text = "开始时间:";
             // 
-            // textBox4
+            // txt_place
             // 
-            this.textBox4.Location = new System.Drawing.Point(167, 181);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(128, 25);
-            this.textBox4.TabIndex = 12;
+            this.txt_place.Location = new System.Drawing.Point(167, 181);
+            this.txt_place.Name = "txt_place";
+            this.txt_place.Size = new System.Drawing.Size(128, 25);
+            this.txt_place.TabIndex = 12;
             // 
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("宋体", 12F);
             this.label5.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label5.Location = new System.Drawing.Point(56, 181);
+            this.label5.Location = new System.Drawing.Point(43, 179);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 27);
             this.label5.TabIndex = 11;
-            this.label5.Text = "结束时间:";
+            this.label5.Text = "地点:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label6
             // 
@@ -141,15 +143,15 @@ namespace ScheduleManagement
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 27);
             this.label6.TabIndex = 13;
-            this.label6.Text = "重复:";
+            this.label6.Text = "类别:";
             // 
-            // textBox6
+            // txt_content
             // 
-            this.textBox6.Location = new System.Drawing.Point(167, 269);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(259, 86);
-            this.textBox6.TabIndex = 16;
+            this.txt_content.Location = new System.Drawing.Point(167, 269);
+            this.txt_content.Multiline = true;
+            this.txt_content.Name = "txt_content";
+            this.txt_content.Size = new System.Drawing.Size(259, 86);
+            this.txt_content.TabIndex = 16;
             // 
             // label7
             // 
@@ -163,10 +165,11 @@ namespace ScheduleManagement
             this.label7.TabIndex = 15;
             this.label7.Text = "说明:";
             // 
-            // comboBox1
+            // cmbBox_category
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbBox_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBox_category.FormattingEnabled = true;
+            this.cmbBox_category.Items.AddRange(new object[] {
             "聚会",
             "旅游",
             "起床",
@@ -175,32 +178,42 @@ namespace ScheduleManagement
             "听课",
             "午休",
             "座谈会"});
-            this.comboBox1.Location = new System.Drawing.Point(167, 223);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(128, 23);
-            this.comboBox1.TabIndex = 17;
+            this.cmbBox_category.Location = new System.Drawing.Point(167, 223);
+            this.cmbBox_category.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbBox_category.Name = "cmbBox_category";
+            this.cmbBox_category.Size = new System.Drawing.Size(128, 23);
+            this.cmbBox_category.TabIndex = 17;
+            // 
+            // btnFinish
+            // 
+            this.btnFinish.Location = new System.Drawing.Point(219, 392);
+            this.btnFinish.Name = "btnFinish";
+            this.btnFinish.Size = new System.Drawing.Size(102, 33);
+            this.btnFinish.TabIndex = 18;
+            this.btnFinish.Text = "保存";
+            this.btnFinish.UseVisualStyleBackColor = true;
             // 
             // UserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ScheduleManagement.Properties.Resources.背景;
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.btnFinish);
+            this.Controls.Add(this.cmbBox_category);
+            this.Controls.Add(this.txt_content);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txt_place);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txt_starttime);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txt_title);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_id);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(485, 375);
+            this.Size = new System.Drawing.Size(586, 449);
             this.Load += new System.EventHandler(this.UserControl1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -211,16 +224,17 @@ namespace ScheduleManagement
 
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_id;
+        private System.Windows.Forms.TextBox txt_title;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_starttime;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_place;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txt_content;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbBox_category;
+        private System.Windows.Forms.Button btnFinish;
     }
 }

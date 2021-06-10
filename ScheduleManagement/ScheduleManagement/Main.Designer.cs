@@ -59,21 +59,38 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
+            this.btnRemoveSE = new System.Windows.Forms.Button();
+            this.btnUpdateSE = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.bdsScheduleEntity = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsTo_Do_AffairEntity = new System.Windows.Forms.BindingSource(this.components);
+            this.btn_S_search = new System.Windows.Forms.Button();
+            this.txt_Category = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtUrgency = new System.Windows.Forms.TextBox();
+            this.btn_T_search = new System.Windows.Forms.Button();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsScheduleEntity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsTo_Do_AffairEntity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(324, 44);
+            this.button1.Location = new System.Drawing.Point(-1, 507);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 44);
+            this.button1.Size = new System.Drawing.Size(99, 53);
             this.button1.TabIndex = 1;
             this.button1.Text = "添加提醒";
             this.button1.UseVisualStyleBackColor = false;
@@ -260,7 +277,8 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(173, 39);
             this.label7.TabIndex = 10;
-            this.label7.Text = "待办事项";
+            this.label7.Text = "日程";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label8
             // 
@@ -269,30 +287,31 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(155, 39);
             this.label8.TabIndex = 11;
-            this.label8.Text = "  日程";
+            this.label8.Text = "待办事项";
             // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-1, 101);
+            this.dataGridView1.Location = new System.Drawing.Point(-1, 162);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(307, 418);
+            this.dataGridView1.Size = new System.Drawing.Size(307, 346);
             this.dataGridView1.TabIndex = 12;
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(789, 101);
+            this.dataGridView2.Location = new System.Drawing.Point(789, 162);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(359, 418);
+            this.dataGridView2.Size = new System.Drawing.Size(359, 341);
             this.dataGridView2.TabIndex = 13;
             // 
             // panel1
@@ -352,6 +371,92 @@
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // btnRemoveSE
+            // 
+            this.btnRemoveSE.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnRemoveSE.Location = new System.Drawing.Point(93, 507);
+            this.btnRemoveSE.Name = "btnRemoveSE";
+            this.btnRemoveSE.Size = new System.Drawing.Size(109, 53);
+            this.btnRemoveSE.TabIndex = 16;
+            this.btnRemoveSE.Text = "删除日程";
+            this.btnRemoveSE.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdateSE
+            // 
+            this.btnUpdateSE.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnUpdateSE.Location = new System.Drawing.Point(199, 507);
+            this.btnUpdateSE.Name = "btnUpdateSE";
+            this.btnUpdateSE.Size = new System.Drawing.Size(107, 53);
+            this.btnUpdateSE.TabIndex = 17;
+            this.btnUpdateSE.Text = "修改日程";
+            this.btnUpdateSE.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button9.Location = new System.Drawing.Point(324, 44);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(117, 44);
+            this.button9.TabIndex = 18;
+            this.button9.Text = "添加待办";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // bdsScheduleEntity
+            // 
+            this.bdsScheduleEntity.Position = 0;
+            // 
+            // btn_S_search
+            // 
+            this.btn_S_search.Location = new System.Drawing.Point(193, 113);
+            this.btn_S_search.Name = "btn_S_search";
+            this.btn_S_search.Size = new System.Drawing.Size(75, 23);
+            this.btn_S_search.TabIndex = 19;
+            this.btn_S_search.Text = "查询";
+            this.btn_S_search.UseVisualStyleBackColor = true;
+            // 
+            // txt_Category
+            // 
+            this.txt_Category.Location = new System.Drawing.Point(87, 114);
+            this.txt_Category.Name = "txt_Category";
+            this.txt_Category.Size = new System.Drawing.Size(100, 25);
+            this.txt_Category.TabIndex = 20;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Location = new System.Drawing.Point(12, 117);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(69, 20);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "类别：";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.Location = new System.Drawing.Point(817, 114);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(104, 19);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "紧急程度：";
+            // 
+            // txtUrgency
+            // 
+            this.txtUrgency.Location = new System.Drawing.Point(927, 113);
+            this.txtUrgency.Name = "txtUrgency";
+            this.txtUrgency.Size = new System.Drawing.Size(100, 25);
+            this.txtUrgency.TabIndex = 23;
+            // 
+            // btn_T_search
+            // 
+            this.btn_T_search.Location = new System.Drawing.Point(1047, 114);
+            this.btn_T_search.Name = "btn_T_search";
+            this.btn_T_search.Size = new System.Drawing.Size(75, 23);
+            this.btn_T_search.TabIndex = 24;
+            this.btn_T_search.Text = "查询";
+            this.btn_T_search.UseVisualStyleBackColor = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -359,6 +464,13 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::ScheduleManagement.Properties.Resources.背景;
             this.ClientSize = new System.Drawing.Size(1148, 561);
+            this.Controls.Add(this.btn_T_search);
+            this.Controls.Add(this.txtUrgency);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txt_Category);
+            this.Controls.Add(this.btn_S_search);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView2);
@@ -373,8 +485,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.btnUpdateSE);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRemoveSE);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -387,6 +501,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bdsScheduleEntity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsTo_Do_AffairEntity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -422,5 +540,18 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnRemoveSE;
+        private System.Windows.Forms.Button btnUpdateSE;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.BindingSource bdsScheduleEntity;
+        private System.Windows.Forms.BindingSource bdsTo_Do_AffairEntity;
+        private System.Windows.Forms.Button btn_S_search;
+        private System.Windows.Forms.TextBox txt_Category;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtUrgency;
+        private System.Windows.Forms.Button btn_T_search;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.BindingSource bindingSource2;
     }
 }

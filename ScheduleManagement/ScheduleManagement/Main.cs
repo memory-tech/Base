@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
+using ScheduleManagement.Service;
+using ScheduleManagement.Entity;
 
 namespace ScheduleManagement
 {
@@ -19,9 +21,25 @@ namespace ScheduleManagement
         public UserControl4 f4; //创建用户控件四变量
         public UserControl5 f5; //创建用户控件五变量
 
+        ScheduleService scheduleservice;
+        public String Keyword1 { get; set; }
+
+        To_Do_AffairsService to_do_affairservice;
+        public String Keyword2 { get; set; }
+        //public Action<UserControl1> ShowUserControl1 { get; set; }
         public Main()
         { 
         InitializeComponent();
+            scheduleservice = new ScheduleService();
+            bdsScheduleEntity.DataSource = scheduleservice.Schedules;
+            txt_Category.DataBindings.Add("Text", this, "Keyword1");
+            //cbx_Category.SelectedIndex = 0;
+            //txtKeyword1.DataBindings.Add("Text", this, "Keyword1");
+            to_do_affairservice = new To_Do_AffairsService();
+            bdsTo_Do_AffairEntity.DataSource = to_do_affairservice.To_Do_Affairs;
+            //cbxUrgency.SelectedIndex = 0;
+            //txtKeyword2.DataBindings.Add("Text", this, "Keyword2");
+            txtUrgency.DataBindings.Add("Text", this, "Keyword2");
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -69,9 +87,41 @@ namespace ScheduleManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //UserControl1 f1 = new UserControl1(new ScheduleEntity(), false, scheduleservice);
+            //UserControl1 f1 = new UserControl1(new ScheduleEntity());    //实例化f1
             f1.Show();   //将窗体一进行显示
             panel1.Controls.Clear();    //清空原容器上的控件
             panel1.Controls.Add(f1);    //将窗体一加入容器panel1
+
+            ScheduleService.AddScheduleEntity(f1.CurrentScheduleEntity);
+            bdsScheduleEntity.DataSource = ScheduleService.GetAllScheduleEntity();
+            bdsScheduleEntity.ResetBindings(false);
+        }
+
+        private void btnRemoveSE_Click(object sender, EventArgs e)
+        {
+            ScheduleEntity schedule = bdsScheduleEntity.Current as ScheduleEntity;
+            if (schedule == null)
+            {
+                MessageBox.Show("请选择一个日程进行删除");
+                return;
+            }
+            ScheduleService.RemoveScheduleEntity(schedule.ScheduleId);
+            bdsScheduleEntity.DataSource = ScheduleService.GetAllScheduleEntity();
+            bdsScheduleEntity.ResetBindings(false);
+        }
+
+        private void btnUpdateSE_Click(object sender, EventArgs e)
+        {
+            ScheduleEntity schedule1 = bdsScheduleEntity.Current as ScheduleEntity;
+            ScheduleService.RemoveScheduleEntity(schedule1.ScheduleId);
+            ScheduleService.AddScheduleEntity(schedule1);
+        }
+        private void btn_S_search_Click(object sender, EventArgs e)
+        {
+
+            bdsScheduleEntity.DataSource = ScheduleService.ShowSchedulesByCategory(Keyword1);
+            bdsScheduleEntity.ResetBindings(false);
         }
 
         private void button2_Click(object sender, EventArgs e)
