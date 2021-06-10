@@ -26,9 +26,9 @@ namespace ScheduleManagement
         private Graphics graphics;
 
 
-        private void Clawer_NewsDownloaded(clawerbasketball crawler, string day, string time ,string player1,string player2,string turn,string link)
+        private void Clawer_NewsDownloaded(clawerbasketball crawler, string day, string weekday,string time ,string player1,string player2,string turn,string link)
         {
-            var newpage = new { Index = resultBindingSource.Count + 1, Day = day, Time = time,P1 = player1,P2=player2,T=turn,detail = link };
+            var newpage = new { Index = resultBindingSource.Count + 1, Day = day, weekday = weekday, Time = time,P1 = player1,P2=player2,T=turn,detail = link };
             Action action = () => { resultBindingSource.Add(newpage); };
             if (this.InvokeRequired)
             {

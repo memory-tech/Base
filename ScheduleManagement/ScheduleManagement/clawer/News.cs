@@ -13,8 +13,6 @@ namespace ScheduleManagement.clawer
         public string Player1;
         public string Player2;
         public string Turn;
-
-        public string Content;
-        public string Author;
+        public string weekday;
     }
 }
