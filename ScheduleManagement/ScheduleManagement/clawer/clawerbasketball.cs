@@ -52,6 +52,7 @@ namespace ScheduleManagement.clawer
             //下面的意思是：通过属性class的值，来定位节点信息
             HtmlNodeCollection htmlNodes = doc.DocumentNode.SelectNodes("//section[@class='match-section match-today']");
 
+
             if (htmlNodes.Count == 0)
                 return false;//没取到，说明没赛程安排
             var htmlNodeList = htmlNodes.ToList();

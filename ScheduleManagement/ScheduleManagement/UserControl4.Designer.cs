@@ -82,8 +82,9 @@ namespace ScheduleManagement
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "篮球",
-            "足球",
+            "欧洲杯",
+            "中超",
+            "美洲杯",
             "近期电影"});
             this.comboBox1.Location = new System.Drawing.Point(218, 3);
             this.comboBox1.Name = "comboBox1";

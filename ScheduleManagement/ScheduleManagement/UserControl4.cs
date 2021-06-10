@@ -53,7 +53,18 @@ namespace ScheduleManagement
         private void button1_Click(object sender, EventArgs e)
         {
             resultBindingSource.Clear();
-            claw.Excute();
+            switch (comboBox1.SelectedIndex)
+            {
+                case 0:
+                    break;
+                case 1:
+                    claw.Excute();
+                    break;
+                case 2:
+                    break;
+                default:
+                    break;
+            }
            // Task task = Task.Run(() => claw.Excute());
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
