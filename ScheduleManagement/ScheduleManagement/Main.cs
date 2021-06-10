@@ -8,8 +8,6 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
-using ScheduleManagement.Entity;
-using ScheduleManagement.Service;
 
 namespace ScheduleManagement
 {
@@ -21,22 +19,9 @@ namespace ScheduleManagement
         public UserControl4 f4; //创建用户控件四变量
         public UserControl5 f5; //创建用户控件五变量
 
-        ScheduleService scheduleservice;
-        public String Keyword1 { get; set; }
-
-        To_Do_AffairsService to_do_affairservice;
-        public String Keyword2 { get; set; }
         public Main()
         { 
         InitializeComponent();
-        scheduleservice = new ScheduleService();
-        bdsScheduleEntity.DataSource = scheduleservice.Schedules;
-        //cbxCategory.SelectedIndex = 0;
-        //txtKeyword1.DataBindings.Add("Text", this, "Keyword1");
-        to_do_affairservice = new To_Do_AffairsService();
-        bdsTo_Do_AffairEntity.DataSource = to_do_affairservice.To_Do_Affairs;
-        //cbxUrgency.SelectedIndex = 0;
-        //txtKeyword2.DataBindings.Add("Text", this, "Keyword2");
         }
 
         private void Form3_Load(object sender, EventArgs e)

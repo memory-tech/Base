@@ -59,27 +59,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
-            this.bdsScheduleEntity = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsTo_Do_AffairEntity = new System.Windows.Forms.BindingSource(this.components);
-            this.scheduleIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datetimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.placeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toDoAffairIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endtimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.placeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.urgencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsScheduleEntity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsTo_Do_AffairEntity)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -289,17 +273,8 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.scheduleIdDataGridViewTextBoxColumn,
-            this.titleDataGridViewTextBoxColumn,
-            this.datetimeDataGridViewTextBoxColumn,
-            this.placeDataGridViewTextBoxColumn,
-            this.contentDataGridViewTextBoxColumn,
-            this.categoryDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.bdsScheduleEntity;
             this.dataGridView1.Location = new System.Drawing.Point(-1, 101);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
@@ -310,17 +285,8 @@
             // 
             // dataGridView2
             // 
-            this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.toDoAffairIdDataGridViewTextBoxColumn,
-            this.titleDataGridViewTextBoxColumn1,
-            this.endtimeDataGridViewTextBoxColumn,
-            this.placeDataGridViewTextBoxColumn1,
-            this.contentDataGridViewTextBoxColumn1,
-            this.urgencyDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.bdsTo_Do_AffairEntity;
             this.dataGridView2.Location = new System.Drawing.Point(789, 101);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
@@ -386,110 +352,6 @@
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // bdsScheduleEntity
-            // 
-            this.bdsScheduleEntity.DataSource = typeof(ScheduleManagement.Entity.ScheduleEntity);
-            // 
-            // bdsTo_Do_AffairEntity
-            // 
-            this.bdsTo_Do_AffairEntity.DataSource = typeof(ScheduleManagement.Entity.To_Do_AffairEntity);
-            // 
-            // scheduleIdDataGridViewTextBoxColumn
-            // 
-            this.scheduleIdDataGridViewTextBoxColumn.DataPropertyName = "ScheduleId";
-            this.scheduleIdDataGridViewTextBoxColumn.HeaderText = "编号";
-            this.scheduleIdDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.scheduleIdDataGridViewTextBoxColumn.Name = "scheduleIdDataGridViewTextBoxColumn";
-            this.scheduleIdDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "主题";
-            this.titleDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            this.titleDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // datetimeDataGridViewTextBoxColumn
-            // 
-            this.datetimeDataGridViewTextBoxColumn.DataPropertyName = "Datetime";
-            this.datetimeDataGridViewTextBoxColumn.HeaderText = "时间";
-            this.datetimeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.datetimeDataGridViewTextBoxColumn.Name = "datetimeDataGridViewTextBoxColumn";
-            this.datetimeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // placeDataGridViewTextBoxColumn
-            // 
-            this.placeDataGridViewTextBoxColumn.DataPropertyName = "Place";
-            this.placeDataGridViewTextBoxColumn.HeaderText = "地点";
-            this.placeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.placeDataGridViewTextBoxColumn.Name = "placeDataGridViewTextBoxColumn";
-            this.placeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // contentDataGridViewTextBoxColumn
-            // 
-            this.contentDataGridViewTextBoxColumn.DataPropertyName = "Content";
-            this.contentDataGridViewTextBoxColumn.HeaderText = "备注";
-            this.contentDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.contentDataGridViewTextBoxColumn.Name = "contentDataGridViewTextBoxColumn";
-            this.contentDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // categoryDataGridViewTextBoxColumn
-            // 
-            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
-            this.categoryDataGridViewTextBoxColumn.HeaderText = "类别";
-            this.categoryDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
-            this.categoryDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // toDoAffairIdDataGridViewTextBoxColumn
-            // 
-            this.toDoAffairIdDataGridViewTextBoxColumn.DataPropertyName = "To_Do_AffairId";
-            this.toDoAffairIdDataGridViewTextBoxColumn.HeaderText = "编号";
-            this.toDoAffairIdDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.toDoAffairIdDataGridViewTextBoxColumn.Name = "toDoAffairIdDataGridViewTextBoxColumn";
-            this.toDoAffairIdDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // titleDataGridViewTextBoxColumn1
-            // 
-            this.titleDataGridViewTextBoxColumn1.DataPropertyName = "Title";
-            this.titleDataGridViewTextBoxColumn1.HeaderText = "主题";
-            this.titleDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.titleDataGridViewTextBoxColumn1.Name = "titleDataGridViewTextBoxColumn1";
-            this.titleDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // endtimeDataGridViewTextBoxColumn
-            // 
-            this.endtimeDataGridViewTextBoxColumn.DataPropertyName = "Endtime";
-            this.endtimeDataGridViewTextBoxColumn.HeaderText = "截止时间";
-            this.endtimeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.endtimeDataGridViewTextBoxColumn.Name = "endtimeDataGridViewTextBoxColumn";
-            this.endtimeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // placeDataGridViewTextBoxColumn1
-            // 
-            this.placeDataGridViewTextBoxColumn1.DataPropertyName = "Place";
-            this.placeDataGridViewTextBoxColumn1.HeaderText = "地点";
-            this.placeDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.placeDataGridViewTextBoxColumn1.Name = "placeDataGridViewTextBoxColumn1";
-            this.placeDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // contentDataGridViewTextBoxColumn1
-            // 
-            this.contentDataGridViewTextBoxColumn1.DataPropertyName = "Content";
-            this.contentDataGridViewTextBoxColumn1.HeaderText = "内容";
-            this.contentDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.contentDataGridViewTextBoxColumn1.Name = "contentDataGridViewTextBoxColumn1";
-            this.contentDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // urgencyDataGridViewTextBoxColumn
-            // 
-            this.urgencyDataGridViewTextBoxColumn.DataPropertyName = "Urgency";
-            this.urgencyDataGridViewTextBoxColumn.HeaderText = "紧急情况";
-            this.urgencyDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.urgencyDataGridViewTextBoxColumn.Name = "urgencyDataGridViewTextBoxColumn";
-            this.urgencyDataGridViewTextBoxColumn.Width = 125;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -525,8 +387,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bdsScheduleEntity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsTo_Do_AffairEntity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -562,19 +422,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.BindingSource bdsScheduleEntity;
-        private System.Windows.Forms.BindingSource bdsTo_Do_AffairEntity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn scheduleIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn datetimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn placeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn toDoAffairIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn endtimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn placeDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contentDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn urgencyDataGridViewTextBoxColumn;
     }
 }

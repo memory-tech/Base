@@ -62,10 +62,6 @@
     <Reference Include="HtmlAgilityPack, Version=1.11.34.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.11.34\lib\Net40\HtmlAgilityPack.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=8.0.25.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 8.0.25\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -86,9 +82,6 @@
     <Compile Include="clawer\zhongchao.cs" />
     <Compile Include="clawer\Zc.cs" />
     <Compile Include="clawer\RISDBContext.cs" />
-    <Compile Include="Entity\ReminderEntity.cs" />
-    <Compile Include="Entity\Schedule.cs" />
-    <Compile Include="Entity\To_Do_Affair.cs" />
     <Compile Include="main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,19 +90,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
     <Compile Include="TomatoSet.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TomatoSet.Designer.cs">
       <DependentUpon>TomatoSet.cs</DependentUpon>
     </Compile>
-=======
-    <Compile Include="ScheduleContext.cs" />
-    <Compile Include="Service\ReminderSetting.cs" />
-    <Compile Include="Service\ScheduleService.cs" />
-    <Compile Include="Service\To_Do_AffairsService.cs" />
->>>>>>> ea6d400efeeeeb42da601db2a68401a0796d76f0
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -174,35 +160,6 @@
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\Main.datasource" />
-    <None Include="Properties\DataSources\Program.datasource" />
-    <None Include="Properties\DataSources\ScheduleContext.datasource" />
-    <None Include="Properties\DataSources\ScheduleManagement.clawer.AFC.datasource" />
-    <None Include="Properties\DataSources\ScheduleManagement.clawer.afcs.datasource" />
-    <None Include="Properties\DataSources\ScheduleManagement.clawer.EC.datasource" />
-    <None Include="Properties\DataSources\ScheduleManagement.clawer.EuropeanCup.datasource" />
-    <None Include="Properties\DataSources\ScheduleManagement.clawer.Movie.datasource" />
-    <None Include="Properties\DataSources\ScheduleManagement.clawer.Ms.datasource" />
-    <None Include="Properties\DataSources\ScheduleManagement.clawer.RISDBContext.datasource" />
-    <None Include="Properties\DataSources\ScheduleManagement.clawer.wc.datasource" />
-    <None Include="Properties\DataSources\ScheduleManagement.clawer.WorldCup.datasource" />
-    <None Include="Properties\DataSources\ScheduleManagement.clawer.Zc.datasource" />
-    <None Include="Properties\DataSources\ScheduleManagement.clawer.zhongchao.datasource" />
-    <None Include="Properties\DataSources\ScheduleManagement.Entity.ReminderEntity.datasource" />
-    <None Include="Properties\DataSources\ScheduleManagement.Entity.ScheduleEntity.datasource" />
-    <None Include="Properties\DataSources\ScheduleManagement.Entity.To_Do_AffairEntity.datasource" />
-    <None Include="Properties\DataSources\ScheduleManagement.Properties.Resources.datasource" />
-    <None Include="Properties\DataSources\ScheduleManagement.Properties.Resources1.datasource" />
-    <None Include="Properties\DataSources\ScheduleManagement.Properties.Settings.datasource" />
-    <None Include="Properties\DataSources\ScheduleManagement.Properties.Settings1.datasource" />
-    <None Include="Properties\DataSources\ScheduleManagement.Service.ReminderSetting.datasource" />
-    <None Include="Properties\DataSources\ScheduleManagement.Service.ScheduleService.datasource" />
-    <None Include="Properties\DataSources\ScheduleManagement.Service.To_Do_AffairsService.datasource" />
-    <None Include="Properties\DataSources\UserControl1.datasource" />
-    <None Include="Properties\DataSources\UserControl2.datasource" />
-    <None Include="Properties\DataSources\UserControl3.datasource" />
-    <None Include="Properties\DataSources\UserControl4.datasource" />
-    <None Include="Properties\DataSources\UserControl5.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
