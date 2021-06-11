@@ -15,7 +15,7 @@ namespace ScheduleManagement.Service
 
         public ScheduleService()
         {
-            /*
+            
             using (var ctx = new ScheduleContext())
             {
                 if (ctx.Schedules.Count() == 0)
@@ -23,7 +23,7 @@ namespace ScheduleManagement.Service
                     ctx.Schedules.Add(new ScheduleEntity("0", "0", DateTime.Parse("2021-01-01 12:00:00"), "0", " 0", "0"));
                     ctx.SaveChanges();
                 }
-            }*/
+            }
         }
 
         public static List<ScheduleEntity> Schedules

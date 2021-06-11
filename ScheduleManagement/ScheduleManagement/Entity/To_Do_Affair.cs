@@ -13,7 +13,6 @@ namespace ScheduleManagement.Entity
         public string To_Do_AffairId { get; set; }
         public string Title { get; set; }
         public DateTime Endtime { get; set; }
-        public string Place { get; set; }
         public string Content { get; set; }
         public string Urgency { get; set; }
         public bool IsFinished { get; set; }
