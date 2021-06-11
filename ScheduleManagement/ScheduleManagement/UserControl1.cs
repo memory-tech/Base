@@ -23,7 +23,7 @@ namespace ScheduleManagement
             //this.CurrentScheduleEntity = scheduleentity;
             //bdsScheduleEntity.DataSource = CurrentSchedule;
         }
-
+        
         public UserControl1(ScheduleEntity scheduleentity) : this()
         {
             InitializeComponent();
@@ -33,16 +33,17 @@ namespace ScheduleManagement
             //CurrentOrder.Client = (Client)clientBindingSource.Current;
 
         }
-
+        
         private void btnFinish_Click(object sender, EventArgs e)
         {
+            
             CurrentScheduleEntity.ScheduleId = txt_id.Text;
             CurrentScheduleEntity.Title = txt_title.Text;
             CurrentScheduleEntity.Datetime = DateTime.Parse(txt_starttime.Text);  //DateTime.Parse("2021-01-01 12:00:00")
             CurrentScheduleEntity.Place = txt_place.Text;
             CurrentScheduleEntity.Category = cmbBox_category.SelectedItem.ToString();
             CurrentScheduleEntity.Content = txt_content.Text;
-
+            
         }
         private void UserControl1_Load(object sender, EventArgs e)
         {

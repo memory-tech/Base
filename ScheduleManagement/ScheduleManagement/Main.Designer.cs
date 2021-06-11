@@ -70,10 +70,10 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtUrgency = new System.Windows.Forms.TextBox();
             this.btn_T_search = new System.Windows.Forms.Button();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -92,7 +92,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(99, 53);
             this.button1.TabIndex = 1;
-            this.button1.Text = "添加提醒";
+            this.button1.Text = "添加日程";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -100,12 +100,12 @@
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.Font = new System.Drawing.Font("宋体", 12F);
-            this.button2.Location = new System.Drawing.Point(474, 44);
+            this.button2.Location = new System.Drawing.Point(328, 105);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 44);
+            this.button2.Size = new System.Drawing.Size(117, 44);
             this.button2.TabIndex = 1;
-            this.button2.Text = "修改提醒";
+            this.button2.Text = "提醒设置";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -113,7 +113,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.Font = new System.Drawing.Font("宋体", 12F);
-            this.button3.Location = new System.Drawing.Point(639, 44);
+            this.button3.Location = new System.Drawing.Point(474, 44);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(133, 44);
@@ -223,7 +223,7 @@
             // 
             this.button4.BackColor = System.Drawing.Color.Transparent;
             this.button4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button4.Location = new System.Drawing.Point(324, 101);
+            this.button4.Location = new System.Drawing.Point(328, 46);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(117, 44);
@@ -236,7 +236,7 @@
             // 
             this.button5.BackColor = System.Drawing.Color.Transparent;
             this.button5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button5.Location = new System.Drawing.Point(474, 101);
+            this.button5.Location = new System.Drawing.Point(639, 43);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(133, 44);
@@ -291,15 +291,8 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewImageColumn1,
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewCheckBoxColumn1});
-            this.dataGridView1.DataSource = this.bdsScheduleEntity;
             this.dataGridView1.Location = new System.Drawing.Point(-1, 162);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
@@ -322,7 +315,7 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(359, 341);
+            this.dataGridView2.Size = new System.Drawing.Size(359, 347);
             this.dataGridView2.TabIndex = 13;
             // 
             // panel1
@@ -373,7 +366,7 @@
             // 
             this.button6.BackColor = System.Drawing.Color.Transparent;
             this.button6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button6.Location = new System.Drawing.Point(639, 101);
+            this.button6.Location = new System.Drawing.Point(474, 102);
             this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(133, 44);
@@ -405,12 +398,16 @@
             // button9
             // 
             this.button9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button9.Location = new System.Drawing.Point(324, 44);
+            this.button9.Location = new System.Drawing.Point(789, 507);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(117, 44);
+            this.button9.Size = new System.Drawing.Size(123, 53);
             this.button9.TabIndex = 18;
             this.button9.Text = "添加待办";
             this.button9.UseVisualStyleBackColor = true;
+            // 
+            // bdsTo_Do_AffairEntity
+            // 
+            this.bdsTo_Do_AffairEntity.Position = 0;
             // 
             // btn_S_search
             // 
@@ -464,41 +461,42 @@
             this.btn_T_search.Text = "查询";
             this.btn_T_search.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewImageColumn1
+            // button7
             // 
-            this.dataGridViewImageColumn1.DataPropertyName = "Image";
-            this.dataGridViewImageColumn1.HeaderText = "Image";
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Width = 125;
+            this.button7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button7.Location = new System.Drawing.Point(910, 509);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(122, 51);
+            this.button7.TabIndex = 25;
+            this.button7.Text = "删除待办";
+            this.button7.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewTextBoxColumn1
+            // button8
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 125;
+            this.button8.Location = new System.Drawing.Point(1030, 507);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(118, 53);
+            this.button8.TabIndex = 26;
+            this.button8.Text = "修改待办";
+            this.button8.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewTextBoxColumn2
+            // button10
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TypeName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "TypeName";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 125;
+            this.button10.Location = new System.Drawing.Point(6, 140);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 23);
+            this.button10.TabIndex = 27;
+            this.button10.Text = "所有日程";
+            this.button10.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewCheckBoxColumn1
+            // button11
             // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "IsDesignable";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "IsDesignable";
-            this.dataGridViewCheckBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn1.Width = 125;
+            this.button11.Location = new System.Drawing.Point(821, 141);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(75, 23);
+            this.button11.TabIndex = 28;
+            this.button11.Text = "所有待办";
+            this.button11.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -507,6 +505,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::ScheduleManagement.Properties.Resources.背景;
             this.ClientSize = new System.Drawing.Size(1148, 561);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.btn_T_search);
             this.Controls.Add(this.txtUrgency);
             this.Controls.Add(this.label10);
@@ -532,6 +531,9 @@
             this.Controls.Add(this.btnUpdateSE);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnRemoveSE);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button10);
+            this.Controls.Add(this.button11);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -600,5 +602,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
     }
 }
