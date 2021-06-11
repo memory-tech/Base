@@ -9,7 +9,7 @@ using System.Data;
 namespace ScheduleManagement.Entity
 {
     public class To_Do_AffairEntity
-    {/*
+    {
         public string To_Do_AffairId { get; set; }
         public string Title { get; set; }
         public DateTime Endtime { get; set; }
@@ -51,21 +51,7 @@ namespace ScheduleManagement.Entity
 
         public override int GetHashCode()
         {
-<<<<<<< Updated upstream
             return base.GetHashCode();
-        }*/
-=======
-            int hashCode = -129458056;
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(To_Do_AffairId);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Title);
-            hashCode = hashCode * -1521134295 + Endtime.GetHashCode();
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Content);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Urgency);
-            hashCode = hashCode * -1521134295 + IsFinished.GetHashCode();
-            hashCode = hashCode * -1521134295 + Tomato_Number.GetHashCode();
-            hashCode = hashCode * -1521134295 + Tomato_Time.GetHashCode();
-            return hashCode;
         }
->>>>>>> Stashed changes
     }
 }
