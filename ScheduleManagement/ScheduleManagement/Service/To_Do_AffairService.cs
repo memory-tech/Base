@@ -9,7 +9,7 @@ using ScheduleManagement.Entity;
 namespace ScheduleManagement.Service
 {
     class To_Do_AffairsService
-    {/*
+    {
         public To_Do_AffairsService()
         {
             using (var ctx = new ScheduleContext())
@@ -87,6 +87,6 @@ namespace ScheduleManagement.Service
         /// 自动更新事务状态
         /// 自动更新事务等级
         /// 构造当日未完成事务
-        /// </summary>*/
+        /// </summary>
     }
 }
