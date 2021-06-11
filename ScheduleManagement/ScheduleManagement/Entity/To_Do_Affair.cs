@@ -24,29 +24,48 @@ namespace ScheduleManagement.Entity
             To_Do_AffairId = Guid.NewGuid().ToString();
         }
 
-        public To_Do_AffairEntity(string to_do_affairid, string title, DateTime endtime, string place, string content,
-                                  string urgency, bool isfinished, int tomato_number, int tomato_time) : this()
+        public To_Do_AffairEntity(string to_Do_AffairId, string title, DateTime endtime, string content, string urgency, bool isFinished, int tomato_Number, int tomato_Time)
         {
-            this.To_Do_AffairId = to_do_affairid;
-            this.Title = title;
-            this.Endtime = endtime;
-            this.Place = place;
-            this.Content = content;
-            this.Urgency = urgency;
-            this.IsFinished = isfinished;
-            this.Tomato_Number = tomato_number;
-            this.Tomato_Time = tomato_time;
+            To_Do_AffairId = to_Do_AffairId;
+            Title = title;
+            Endtime = endtime;
+            Content = content;
+            Urgency = urgency;
+            IsFinished = isFinished;
+            Tomato_Number = tomato_Number;
+            Tomato_Time = tomato_Time;
         }
+
         public override bool Equals(object obj)
         {
-            var to_do_affairentity = obj as To_Do_AffairEntity;
-            return to_do_affairentity != null &&
-                   To_Do_AffairId == to_do_affairentity.To_Do_AffairId;
+            return obj is To_Do_AffairEntity entity &&
+                   To_Do_AffairId == entity.To_Do_AffairId &&
+                   Title == entity.Title &&
+                   Endtime == entity.Endtime &&
+                   Content == entity.Content &&
+                   Urgency == entity.Urgency &&
+                   IsFinished == entity.IsFinished &&
+                   Tomato_Number == entity.Tomato_Number &&
+                   Tomato_Time == entity.Tomato_Time;
         }
 
         public override int GetHashCode()
         {
+<<<<<<< Updated upstream
             return base.GetHashCode();
         }*/
+=======
+            int hashCode = -129458056;
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(To_Do_AffairId);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Title);
+            hashCode = hashCode * -1521134295 + Endtime.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Content);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Urgency);
+            hashCode = hashCode * -1521134295 + IsFinished.GetHashCode();
+            hashCode = hashCode * -1521134295 + Tomato_Number.GetHashCode();
+            hashCode = hashCode * -1521134295 + Tomato_Time.GetHashCode();
+            return hashCode;
+        }
+>>>>>>> Stashed changes
     }
 }

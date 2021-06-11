@@ -17,7 +17,8 @@ namespace ScheduleManagement
     {
         public UserControl1 f1; //创建用户控件一变量
         public UserControl2 f2; //创建用户控件二变量
-        public Tomato f3; //创建用户控件三变量
+        //番茄钟我在后面创建
+        //public Tomato f3; //创建用户控件三变量
         public UserControl4 f4; //创建用户控件四变量
         public UserControl5 f5; //创建用户控件五变量
 
@@ -49,7 +50,7 @@ namespace ScheduleManagement
         {
             f1 = new UserControl1();    //实例化f1
             f2 = new UserControl2();    //实例化f2
-            f3 = new Tomato();    //实例化f3
+            //f3 = new Tomato();    //实例化f3
             f4 = new UserControl4();    //实例化f4
             f5 = new UserControl5();    //实例化f5
 
@@ -139,15 +140,12 @@ namespace ScheduleManagement
             MessageBox.Show("欢迎使用个性化日程管理系统");
         }
 
-       
-
-       
-
         private void button3_Click(object sender, EventArgs e)
         {
-            f3.Show();   //将窗体三进行显示
-            panel1.Controls.Clear();    //清空原容器上的控件
-            panel1.Controls.Add(f3);    //将窗体三加入容器panel1
+            //Tomato f3 = new Tomato();
+            //f3.Show();   //将窗体三进行显示
+            //panel1.Controls.Clear();    //清空原容器上的控件
+            //panel1.Controls.Add(f3);    //将窗体三加入容器panel1
         }
 
         
@@ -239,6 +237,15 @@ namespace ScheduleManagement
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
 
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            To_Do_AffairEntity affair = bdsTo_Do_AffairEntity.Current as To_Do_AffairEntity;
+            Tomato tomato = new Tomato(affair);
+            tomato.Show();   //将窗体三进行显示
+            panel1.Controls.Clear();    //清空原容器上的控件
+            panel1.Controls.Add(tomato);    //将窗体三加入容器panel1
         }
     }
 }

@@ -70,10 +70,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtUrgency = new System.Windows.Forms.TextBox();
             this.btn_T_search = new System.Windows.Forms.Button();
+<<<<<<< Updated upstream
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+=======
+>>>>>>> Stashed changes
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -293,6 +296,10 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+<<<<<<< Updated upstream
+=======
+            this.dataGridView1.DataSource = this.bdsScheduleEntity;
+>>>>>>> Stashed changes
             this.dataGridView1.Location = new System.Drawing.Point(-1, 162);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
@@ -300,10 +307,6 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(307, 346);
             this.dataGridView1.TabIndex = 12;
-            // 
-            // bdsScheduleEntity
-            // 
-            this.bdsScheduleEntity.Position = 0;
             // 
             // dataGridView2
             // 
@@ -317,6 +320,7 @@
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.Size = new System.Drawing.Size(359, 347);
             this.dataGridView2.TabIndex = 13;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // panel1
             // 
@@ -461,6 +465,7 @@
             this.btn_T_search.Text = "查询";
             this.btn_T_search.UseVisualStyleBackColor = true;
             // 
+<<<<<<< Updated upstream
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -498,6 +503,8 @@
             this.button11.Text = "所有待办";
             this.button11.UseVisualStyleBackColor = true;
             // 
+=======
+>>>>>>> Stashed changes
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -606,6 +613,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
+<<<<<<< Updated upstream
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
@@ -614,5 +622,7 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
+=======
+>>>>>>> Stashed changes
     }
 }

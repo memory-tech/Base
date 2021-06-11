@@ -33,11 +33,11 @@ namespace ScheduleManagement
             this.btnEnd = new System.Windows.Forms.Button();
             this.TimeSet = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label = new System.Windows.Forms.Label();
             this.cmbRemindStyle = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +64,7 @@ namespace ScheduleManagement
             this.btnEnd.Name = "btnEnd";
             this.btnEnd.Size = new System.Drawing.Size(113, 44);
             this.btnEnd.TabIndex = 9;
-            this.btnEnd.Text = "结束";
+            this.btnEnd.Text = "暂停";
             this.btnEnd.UseVisualStyleBackColor = false;
             this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
             // 
@@ -91,10 +91,26 @@ namespace ScheduleManagement
             this.panel1.Controls.Add(this.cmbRemindStyle);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 30);
+            this.panel1.Location = new System.Drawing.Point(0, 28);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(485, 192);
             this.panel1.TabIndex = 12;
+            // 
+            // label
+            // 
+            this.label.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("隶书", 24F, System.Drawing.FontStyle.Bold);
+            this.label.ForeColor = System.Drawing.Color.MediumAquamarine;
+            this.label.Location = new System.Drawing.Point(179, 20);
+            this.label.Name = "label";
+            this.label.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label.Size = new System.Drawing.Size(122, 40);
+            this.label.TabIndex = 16;
+            this.label.Text = "label";
+            this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cmbRemindStyle
             // 
@@ -131,32 +147,16 @@ namespace ScheduleManagement
             this.设置ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(485, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(485, 28);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // 设置ToolStripMenuItem
             // 
             this.设置ToolStripMenuItem.Name = "设置ToolStripMenuItem";
-            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(53, 26);
+            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.设置ToolStripMenuItem.Text = "设置";
             this.设置ToolStripMenuItem.Click += new System.EventHandler(this.设置ToolStripMenuItem_Click);
-            // 
-            // label
-            // 
-            this.label.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label.AutoSize = true;
-            this.label.Font = new System.Drawing.Font("隶书", 24F, System.Drawing.FontStyle.Bold);
-            this.label.ForeColor = System.Drawing.Color.MediumAquamarine;
-            this.label.Location = new System.Drawing.Point(179, 20);
-            this.label.Name = "label";
-            this.label.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label.Size = new System.Drawing.Size(122, 40);
-            this.label.TabIndex = 16;
-            this.label.Text = "label";
-            this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Tomato
             // 

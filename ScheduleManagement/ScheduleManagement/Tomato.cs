@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ScheduleManagement.Entity;
 
 namespace ScheduleManagement
 {
@@ -18,8 +19,9 @@ namespace ScheduleManagement
         static int sumRead = 0;
         static int sumWrite = 0;
         static int sumRest = 0;
+        public To_Do_AffairEntity AffairItem { get; set; }
         //任务总时长
-        public int TotalTime { get; set; }
+        public int TotalTime { get=>AffairItem!=null?AffairItem.Tomato_Time*60:0; set=>TotalTime=value; }
         //番茄时钟时长
         public int Interval { get; set; }
         //休息间隔
@@ -29,16 +31,17 @@ namespace ScheduleManagement
         //时间间隔对应秒数
         public int Seconds2 { get; set; }
         //定义定时器
-        Timer MyTimer = new Timer();
-        Timer BreakTimer = new Timer();
-        public Tomato()
+        Timer MyTimer = new Timer();//番茄时间定时器
+        Timer BreakTimer = new Timer();//休息间隔倒计时
+        public Tomato(To_Do_AffairEntity AffairItem)
         {
             InitializeComponent();
+            this.AffairItem = AffairItem;
         }
 
         private void 设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TomatoSet tomatoSet = new TomatoSet(this, TotalTime, Interval, BreakInterval);
+            TomatoSet tomatoSet = new TomatoSet(this, Interval, BreakInterval);
             tomatoSet.ShowDialog();
             TotalTime *= 60;
             Seconds = 60 * Interval;
@@ -53,6 +56,7 @@ namespace ScheduleManagement
             BreakTimer.Interval = 1000;
             BreakTimer.Tick += new EventHandler(TimerProcessor2);
         }
+        //番茄钟倒计时函数
         void TimerProcessor(Object myObject, EventArgs myEventArgs)
         {
             --TotalTime;
@@ -93,6 +97,8 @@ namespace ScheduleManagement
                         Shake();
                         break;
                 }
+                AffairItem.Tomato_Number = AffairItem.Tomato_Time / Interval;
+                AffairItem.IsFinished = true;
                 int temp = Interval * 60 - Seconds;
                 int tmp = temp / 60;
                 /*switch (cmbTaskType.SelectedIndex)
@@ -148,7 +154,7 @@ namespace ScheduleManagement
                 }*/
                 //sum += Interval;
                 //label3.Text = sum + "分钟";
-                tomatoes++;
+                //tomatoes++;
                 //tomatoAmount.Text = tomatoes + "";
                 BreakTimer.Start();
                 label.Text = "休息中";
@@ -163,6 +169,7 @@ namespace ScheduleManagement
 
             }
         }
+        //倒计时处理
         void TimerProcessor2(Object myObject, EventArgs myEventArgs)
         {
             --Seconds2;
@@ -232,7 +239,6 @@ namespace ScheduleManagement
         private void Tomato_Load(object sender, EventArgs e)
         {
             this.Interval = 15;
-            this.TotalTime = 15;
             this.BreakInterval = 5;
             this.Seconds = 60 * Interval;
             this.btnEnd.Enabled = false;
@@ -262,7 +268,8 @@ namespace ScheduleManagement
             if (MyTimer.Enabled)
             {
                 MyTimer.Stop();
-                int temp = (60 * Interval - Seconds) / 60;
+
+                //int temp = (60 * Interval - Seconds) / 60;
                 /*switch (cmbTaskType.SelectedIndex)
                 {
                     case 0:
@@ -278,13 +285,35 @@ namespace ScheduleManagement
                 }*/
                 //sum += temp;
                 //label3.Text = sum + "分钟";
-                Seconds = 60 * Interval;
-                TimeSet.Text = Interval + ":00";
-                TimeSet.Enabled = true;
-                btnBegin.Enabled = true;
+                //Seconds = 60 * Interval;
+                //TimeSet.Text = Interval + ":00";
+                //TimeSet.Enabled = true;
+                //btnBegin.Enabled = true;
                 //cmbTaskType.Enabled = true;
-                cmbRemindStyle.Enabled = true;
-                label.Text = "番茄钟";
+                //cmbRemindStyle.Enabled = true;
+                label.Text = "暂停中";
+                btnEnd.Text = "继续";
+            }
+            if (BreakTimer.Enabled)
+            {
+                BreakTimer.Stop();
+                label.Text = "暂停中";
+                btnEnd.Text = "继续";
+            }
+            if (btnEnd.Text == "继续")
+            {
+                if (Seconds2 != BreakInterval * 60)
+                {
+                    BreakTimer.Start();
+                    label.Text = "休息中";
+                    btnEnd.Text = "暂停";
+                }
+                else
+                {
+                    MyTimer.Start();
+                    label.Text = "工作中";
+                    btnEnd.Text = "暂停";
+                }
             }
         }
     }

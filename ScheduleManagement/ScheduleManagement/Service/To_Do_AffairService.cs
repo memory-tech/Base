@@ -14,7 +14,11 @@ namespace ScheduleManagement.Service
         {
             using (var ctx = new ScheduleContext())
             {
+<<<<<<< Updated upstream
                 ctx.To_Do_Affairs.Add(new To_Do_AffairEntity("0", "0", DateTime.Parse("2021-01-01 12:00:00"), "0", "0", "0", false, 0, 0));
+=======
+                ctx.To_Do_Affairs.Add(new To_Do_AffairEntity("0", "NULL", DateTime.Parse("2021-06-26 12:00:00"), "NULL", "NULL", false, 0, 0));
+>>>>>>> Stashed changes
                 ctx.SaveChanges();
             }
         }

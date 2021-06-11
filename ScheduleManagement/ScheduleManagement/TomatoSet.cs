@@ -12,15 +12,13 @@ namespace ScheduleManagement
     public partial class TomatoSet : Form
     {
         public Tomato Tomato { get; set; }
-        public int TotalTime { get; set; }
         public int Interval { get; set; }
         public int BreakInterval { get; set; }
         //
-        public TomatoSet(Tomato Tomato, int TotalTime, int Interval, int BreakInterval)
+        public TomatoSet(Tomato Tomato, int Interval, int BreakInterval)
         {
             InitializeComponent();
             this.Tomato = Tomato;
-            this.TotalTime = TotalTime;
             this.Interval = Interval;
             this.BreakInterval = BreakInterval;
         }
@@ -55,7 +53,6 @@ namespace ScheduleManagement
                 case 1:
                     BreakInterval = 10; break;
             }
-            Tomato.TotalTime = (int)numericUpDown1.Value;
             Tomato.Interval = Interval;
             Tomato.BreakInterval = BreakInterval;
             this.Close();
