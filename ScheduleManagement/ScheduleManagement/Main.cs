@@ -33,13 +33,13 @@ namespace ScheduleManagement
         InitializeComponent();
         //schedules = ScheduleService.GetAllScheduleEntity();
         scheduleservice = new ScheduleService();
-        bdsScheduleEntity.DataSource = ScheduleService.Schedules;
+    //    bdsScheduleEntity.DataSource = ScheduleService.Schedules;
         txt_Category.DataBindings.Add("Text", this, "Keyword1");
             //cbx_Category.SelectedIndex = 0;
             //txtKeyword1.DataBindings.Add("Text", this, "Keyword1");
             
         to_do_affairservice = new To_Do_AffairsService();
-        bdsTo_Do_AffairEntity.DataSource = To_Do_AffairsService.To_Do_Affairs;
+    //    bdsTo_Do_AffairEntity.DataSource = To_Do_AffairsService.To_Do_Affairs;
             //cbxUrgency.SelectedIndex = 0;
             //txtKeyword2.DataBindings.Add("Text", this, "Keyword2");
         txtUrgency.DataBindings.Add("Text", this, "Keyword2");
@@ -96,8 +96,8 @@ namespace ScheduleManagement
             panel1.Controls.Clear();    //清空原容器上的控件
             panel1.Controls.Add(f1);    //将窗体一加入容器panel1
 
-            ScheduleService.AddScheduleEntity(f1.CurrentScheduleEntity);
-            bdsScheduleEntity.DataSource = ScheduleService.GetAllScheduleEntity();
+       //     ScheduleService.AddScheduleEntity(f1.CurrentScheduleEntity);
+       //     bdsScheduleEntity.DataSource = ScheduleService.GetAllScheduleEntity();
             bdsScheduleEntity.ResetBindings(false);
         }
 
@@ -109,21 +109,21 @@ namespace ScheduleManagement
                 MessageBox.Show("请选择一个日程进行删除");
                 return;
             }
-            ScheduleService.RemoveScheduleEntity(schedule.ScheduleId);
-            bdsScheduleEntity.DataSource = ScheduleService.GetAllScheduleEntity();
+      //      ScheduleService.RemoveScheduleEntity(schedule.ScheduleId);
+      //      bdsScheduleEntity.DataSource = ScheduleService.GetAllScheduleEntity();
             bdsScheduleEntity.ResetBindings(false);
         }
 
         private void btnUpdateSE_Click(object sender, EventArgs e)
         {
             ScheduleEntity schedule1 = bdsScheduleEntity.Current as ScheduleEntity;
-            ScheduleService.RemoveScheduleEntity(schedule1.ScheduleId);
-            ScheduleService.AddScheduleEntity(schedule1);
+      //      ScheduleService.RemoveScheduleEntity(schedule1.ScheduleId);
+      //      ScheduleService.AddScheduleEntity(schedule1);
         }
         private void btn_S_search_Click(object sender, EventArgs e)
         {
 
-            bdsScheduleEntity.DataSource = ScheduleService.ShowSchedulesByCategory(Keyword1);
+       //     bdsScheduleEntity.DataSource = ScheduleService.ShowSchedulesByCategory(Keyword1);
             bdsScheduleEntity.ResetBindings(false);
         }
 

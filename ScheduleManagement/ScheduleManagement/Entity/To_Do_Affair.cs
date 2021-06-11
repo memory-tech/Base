@@ -9,7 +9,7 @@ using System.Data;
 namespace ScheduleManagement.Entity
 {
     public class To_Do_AffairEntity
-    {
+    {/*
         public string To_Do_AffairId { get; set; }
         public string Title { get; set; }
         public DateTime Endtime { get; set; }
@@ -47,6 +47,6 @@ namespace ScheduleManagement.Entity
         public override int GetHashCode()
         {
             return base.GetHashCode();
-        }
+        }*/
     }
 }

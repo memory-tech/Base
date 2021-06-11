@@ -12,7 +12,7 @@ namespace ScheduleManagement.Service
 {
     public class ScheduleService
     {
-
+        /*
         public ScheduleService()
         {
             
@@ -102,6 +102,6 @@ namespace ScheduleManagement.Service
         /// 自动更新日程状态
         /// 构造当日未完成事务
         /// </summary>
-
+        */
     }
 }
