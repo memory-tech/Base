@@ -26,7 +26,7 @@ namespace ScheduleManagement.Service
             }
         }
 
-        public static List<ScheduleEntity> Schedules
+        public List<ScheduleEntity> Schedules
         {
             get
             {
@@ -36,7 +36,7 @@ namespace ScheduleManagement.Service
                 }
             }
         }
-        public ScheduleEntity GetScheduleEntity(string id)
+        public  ScheduleEntity GetScheduleEntity(string id)
         {
             using (var ctx = new ScheduleContext())
             {

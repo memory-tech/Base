@@ -14,12 +14,12 @@ namespace ScheduleManagement.Service
         {
             using (var ctx = new ScheduleContext())
             {
-                ctx.To_Do_Affairs.Add(new To_Do_AffairEntity("0", "NULL", DateTime.Parse("2021-01-01 12:00:00"), "NULL", "NULL", "NULL", false, 0, 0));
+                ctx.To_Do_Affairs.Add(new To_Do_AffairEntity("0", "0", DateTime.Parse("2021-01-01 12:00:00"), "0", "0", "0", false, 0, 0));
                 ctx.SaveChanges();
             }
         }
 
-        public static List<To_Do_AffairEntity> To_Do_Affairs
+        public List<To_Do_AffairEntity> To_Do_Affairs
         {
             get
             {
