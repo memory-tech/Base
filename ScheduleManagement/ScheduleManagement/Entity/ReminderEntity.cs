@@ -15,6 +15,6 @@ namespace ScheduleManagement.Entity
         public int T_Minutes { get; set; }
         //待办事项提前提醒时间
 
-        public
+        
     }
 }

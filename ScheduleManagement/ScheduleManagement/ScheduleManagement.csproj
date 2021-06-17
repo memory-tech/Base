@@ -156,10 +156,12 @@
     <None Include="Properties\DataSources\ScheduleManagement.clawer.News.datasource" />
     <None Include="Properties\DataSources\ScheduleManagement.clawer.RISDBContext.datasource" />
     <None Include="Properties\DataSources\ScheduleManagement.clawer.zhongchao.datasource" />
+    <None Include="Properties\DataSources\ScheduleManagement.Entity.ReminderEntity.datasource" />
     <None Include="Properties\DataSources\ScheduleManagement.Entity.ScheduleEntity.datasource" />
     <None Include="Properties\DataSources\ScheduleManagement.Entity.To_Do_AffairEntity.datasource" />
     <None Include="Properties\DataSources\ScheduleManagement.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\ScheduleManagement.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\ScheduleManagement.Service.ReminderSetting.datasource" />
     <None Include="Properties\DataSources\ScheduleManagement.Service.ScheduleService.datasource" />
     <None Include="Properties\DataSources\ScheduleManagement.Service.To_Do_AffairsService.datasource" />
     <None Include="Properties\DataSources\UserControl1.datasource" />
