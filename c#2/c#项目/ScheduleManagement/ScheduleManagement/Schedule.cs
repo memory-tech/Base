@@ -12,7 +12,7 @@ namespace ScheduleManagement
     public partial class Schedule : UserControl
     {
         //public Schedule Schedule { get; set; }
-        public Main Main { get; set; }
+        public Main Main = new Main();
         public Schedule(Main m)
         {
             Main = m;
@@ -36,7 +36,7 @@ namespace ScheduleManagement
 
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Pomodoro p = new Pomodoro(this);
+            Pomodoro p = new Pomodoro(Main);
             Main.Hide();
             p.ShowDialog();
         }

@@ -15,7 +15,7 @@ namespace ScheduleManagement
 {
     public partial class Affair : UserControl
     {
-        public Main Main { get; set; }
+        public Main Main = new Main();
         public Affair(Main m)
         {
             Main = m;
@@ -106,7 +106,9 @@ namespace ScheduleManagement
 
         private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Pomodoro p = new Pomodoro(this);
+            var a=this.DataGridView1.CurrentRow.Cells[1].Value.ToString();
+            MessageBox.Show(a);
+            Pomodoro p = new Pomodoro(Main, a);
             Main.Hide();
             p.ShowDialog();
         }

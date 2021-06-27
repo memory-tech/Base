@@ -6,6 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SQLite;
+using ScheduleManagement.Service;
 
 namespace ScheduleManagement
 {
@@ -15,28 +18,43 @@ namespace ScheduleManagement
         public int TomatoTime { get; set; }
         //番茄间隔
         public int Interval { get; set; }
-        Timer WorkTimer = new Timer();//番茄时间定时器
-        Timer BreakTimer = new Timer();//休息间隔倒计时
-        public Schedule Schedule { get; set; }
-        public Affair Affair { get; set; }
-        public Pomodoro(Schedule s)
+        //番茄时间定时器
+        Timer WorkTimer = new Timer();
+        //休息间隔倒计时
+        Timer BreakTimer = new Timer();
+        //父界面
+        public Main Main { get; }
+        //任务标题/类型
+        public string Type { get; }
+        //统计该项任务工作时长
+        public int TaskTime { get; set; }
+        //统计该项任务所得番茄数
+        public int Tomatoes { get; set; }
+
+        //Affair
+        //private Entity.Affair affair = new Entity.Affair(1, "w", "s", DateTime.Now, "1", "ss");
+
+        public Pomodoro(Main main,string title)
         {
-            Schedule = s;
+            Main = main;
+            Type = title;
             InitializeComponent();
         }
-        public Pomodoro(Affair a)
+        TomatoService service = new TomatoService();
+        //添加到数据库
+        private void Add(Entity.TomatoData tomatoData)
         {
-            Affair = a;
-            InitializeComponent();
+            service.Add(tomatoData);
         }
         //加载界面，初始化番茄时长和番茄间隔
         private void Form_Load(object sender, EventArgs e)
         {
-            TomatoTime = 25 * 60;
-            Interval = 5 * 60;
-            Schedule = null;
-            Affair = null;
+            TomatoTime =  6;
+            Interval = 6;
+            TaskTime = 0;
+            Tomatoes = 0;
             label.Text = "番茄钟";
+            tomatoLabel.Text = "" + Tomatoes;
             this.btnEnd.Enabled = false;
             SetTimeInterval();
         }
@@ -52,6 +70,7 @@ namespace ScheduleManagement
         void TimerProcessor(Object myObject, EventArgs myEventArgs)
         {
             --TomatoTime;
+            ++TaskTime;
             int left = TomatoTime / 60;
             int right = TomatoTime % 60;
             string minute;
@@ -77,6 +96,8 @@ namespace ScheduleManagement
             if (TomatoTime == 0)
             {
                 TomatoTime = 25 * 60;
+                Tomatoes++;
+                tomatoLabel.Text = "" + Tomatoes;
                 WorkTimer.Stop();
                 switch (cmbRemindStyle.SelectedIndex)
                 {
@@ -190,15 +211,15 @@ namespace ScheduleManagement
         //结束
         private void btnEnd_Click(object sender, EventArgs e)
         {
+            Entity.TomatoData tomatoData = new Entity.TomatoData(DateTime.Now, Type, Tomatoes, TaskTime);
+            Add(tomatoData);
             this.Close();
-            if (Schedule!=null){
-                Schedule.Main.Show();
-            }
-            if (Affair!= null)
-            {
-                Affair.Main.Show();
-            }
-            
+            Main.Show();
+        }
+
+        private void Pomodoro_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Main.Show();
         }
     }
 }

@@ -31,6 +31,8 @@ namespace ScheduleManagement
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pomodoro));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tomatoLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.TimeSet = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
             this.cmbRemindStyle = new System.Windows.Forms.ComboBox();
@@ -43,6 +45,8 @@ namespace ScheduleManagement
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.Controls.Add(this.tomatoLabel);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.TimeSet);
             this.panel1.Controls.Add(this.label);
             this.panel1.Controls.Add(this.cmbRemindStyle);
@@ -53,13 +57,35 @@ namespace ScheduleManagement
             this.panel1.Size = new System.Drawing.Size(483, 304);
             this.panel1.TabIndex = 16;
             // 
+            // tomatoLabel
+            // 
+            this.tomatoLabel.AutoSize = true;
+            this.tomatoLabel.Font = new System.Drawing.Font("楷体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tomatoLabel.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.tomatoLabel.Location = new System.Drawing.Point(82, 11);
+            this.tomatoLabel.Name = "tomatoLabel";
+            this.tomatoLabel.Size = new System.Drawing.Size(15, 15);
+            this.tomatoLabel.TabIndex = 18;
+            this.tomatoLabel.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("楷体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label1.Location = new System.Drawing.Point(7, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 19);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "番茄数";
+            // 
             // TimeSet
             // 
             this.TimeSet.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TimeSet.AutoSize = true;
             this.TimeSet.Font = new System.Drawing.Font("隶书", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.TimeSet.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.TimeSet.Location = new System.Drawing.Point(179, 92);
+            this.TimeSet.Location = new System.Drawing.Point(184, 92);
             this.TimeSet.Name = "TimeSet";
             this.TimeSet.Size = new System.Drawing.Size(122, 40);
             this.TimeSet.TabIndex = 10;
@@ -72,7 +98,7 @@ namespace ScheduleManagement
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("隶书", 24F, System.Drawing.FontStyle.Bold);
             this.label.ForeColor = System.Drawing.Color.MediumAquamarine;
-            this.label.Location = new System.Drawing.Point(179, 20);
+            this.label.Location = new System.Drawing.Point(174, 21);
             this.label.Name = "label";
             this.label.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label.Size = new System.Drawing.Size(122, 40);
@@ -89,7 +115,7 @@ namespace ScheduleManagement
             "响铃",
             "震动",
             "响铃且震动"});
-            this.cmbRemindStyle.Location = new System.Drawing.Point(258, 182);
+            this.cmbRemindStyle.Location = new System.Drawing.Point(263, 182);
             this.cmbRemindStyle.Name = "cmbRemindStyle";
             this.cmbRemindStyle.Size = new System.Drawing.Size(121, 23);
             this.cmbRemindStyle.TabIndex = 14;
@@ -98,7 +124,7 @@ namespace ScheduleManagement
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(133, 185);
+            this.label5.Location = new System.Drawing.Point(138, 185);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 15);
             this.label5.TabIndex = 15;
@@ -141,7 +167,8 @@ namespace ScheduleManagement
             this.Controls.Add(this.btnBegin);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Pomodoro";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Pomodoro_FormClosing);
             this.Load += new System.EventHandler(this.Form_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -158,5 +185,7 @@ namespace ScheduleManagement
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnEnd;
         private System.Windows.Forms.Button btnBegin;
+        private System.Windows.Forms.Label tomatoLabel;
+        private System.Windows.Forms.Label label1;
     }
 }

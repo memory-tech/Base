@@ -108,6 +108,7 @@
     <Compile Include="clawer\zhongchao.cs" />
     <Compile Include="Entity\Affair.cs" />
     <Compile Include="Entity\ReminderEntity.cs" />
+    <Compile Include="Entity\TomatoData.cs" />
     <Compile Include="main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,7 +128,6 @@
     <Compile Include="Service\AffairsService.cs" />
     <Compile Include="Service\DbHelperSQLite.cs" />
     <Compile Include="Service\ReminderSetting.cs" />
-    <Compile Include="Service\ScheduleService.cs" />
     <Compile Include="AddAffair.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -158,6 +158,7 @@
     <Compile Include="Schedule.Designer.cs">
       <DependentUpon>Schedule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Service\TomatoService.cs" />
     <EmbeddedResource Include="Achievement.resx">
       <DependentUpon>Achievement.cs</DependentUpon>
     </EmbeddedResource>
