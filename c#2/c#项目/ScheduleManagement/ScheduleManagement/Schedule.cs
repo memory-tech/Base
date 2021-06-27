@@ -11,8 +11,11 @@ namespace ScheduleManagement
 {
     public partial class Schedule : UserControl
     {
-        public Schedule()
+        //public Schedule Schedule { get; set; }
+        public Main Main = new Main();
+        public Schedule(Main m)
         {
+            Main = m;
             InitializeComponent();
         }
 
@@ -24,6 +27,18 @@ namespace ScheduleManagement
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Pomodoro p = new Pomodoro(Main);
+            Main.Hide();
+            p.ShowDialog();
         }
     }
 }
