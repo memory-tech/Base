@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ScheduleManagement.clawer
 {
-    class News
+    class Zc
     {
         public string Day;
         public string Time;

@@ -93,9 +93,19 @@
     <Compile Include="Achievement.Designer.cs">
       <DependentUpon>Achievement.cs</DependentUpon>
     </Compile>
-    <Compile Include="clawer\zhongchao.cs" />
-    <Compile Include="clawer\News.cs" />
+    <Compile Include="clawer\AFC.cs" />
+    <Compile Include="clawer\afcs.cs" />
+    <Compile Include="clawer\CSlecture.cs" />
+    <Compile Include="clawer\EC.cs" />
+    <Compile Include="clawer\EuropeanCup.cs" />
+    <Compile Include="clawer\lecture.cs" />
+    <Compile Include="clawer\Movie.cs" />
+    <Compile Include="clawer\Ms.cs" />
     <Compile Include="clawer\RISDBContext.cs" />
+    <Compile Include="clawer\wc.cs" />
+    <Compile Include="clawer\WorldCup.cs" />
+    <Compile Include="clawer\Zc.cs" />
+    <Compile Include="clawer\zhongchao.cs" />
     <Compile Include="Entity\Affair.cs" />
     <Compile Include="Entity\ReminderEntity.cs" />
     <Compile Include="main.cs">
