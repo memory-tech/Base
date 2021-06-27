@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -9,11 +11,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using ScheduleManagement.clawer;
+using ScheduleManagement.Entity;
+using ScheduleManagement.Service;
 
 namespace ScheduleManagement
 {
     public partial class Clawer : UserControl
     {
+        SQLiteConnection m_dbConnection;
+        AffairService aff = new AffairService();
         BindingSource resultBindingSource = new BindingSource();
         EuropeanCup claw0 = new EuropeanCup();
         zhongchao claw = new zhongchao();
@@ -34,6 +40,7 @@ namespace ScheduleManagement
 
         }
         private Graphics graphics;
+
 
         private void Clawer_ENewsDownloaded(EuropeanCup crawler, string zt, string day, string time, string player1, string player2, string link)
         {
@@ -164,6 +171,59 @@ namespace ScheduleManagement
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Result_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {/*
+            DataGridViewRow row = this.Result.CurrentRow;
+            this.label1.Text = row.Cells[0].Value.ToString();
+            this.textBox1.Text = row.Cells[1].Value.ToString();
+            this.textBox2.Text = row.Cells[2].Value.ToString();
+            this.textBox3.Text = row.Cells[3].Value.ToString();
+            this.textBox4.Text = row.Cells[4].Value.ToString();
+            this.textBox5.Text = row.Cells[5].Value.ToString();
+            */
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = this.Result.CurrentRow;
+            string detail = row.Cells[7].Value.ToString();
+            System.Diagnostics.Process.Start(detail);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            /*      var newpage = new { 
+             *    0  序号 = resultBindingSource.Count + 1, 
+             *    1  报告题目 = title, 
+             *    2  报告日期 = Day, 
+             *    3  开始时间 = Time, 
+             *    4  报告地点 = address, 
+             *    5  报告人 = person, 
+             *    6  报告单位 = danwei, 
+             *    7  详情链接 = link };
+             */
+            DataGridViewRow row = this.Result.CurrentRow;
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("insert into AffairInfo(");
+            strSql.Append("Title,Place,DateTime,Urgency,Content)");
+            strSql.Append(" values (");
+            strSql.Append("@Title,@Place,@DateTime,@Urgency,@Content)");
+            SQLiteParameter[] parameters = {
+                    new SQLiteParameter("@Title", DbType.String,25),
+                    new SQLiteParameter("@Place", DbType.String,25),
+                    new SQLiteParameter("@DateTime", DbType.DateTime),
+                    new SQLiteParameter("@Urgency", DbType.String,25),
+                    new SQLiteParameter("@Content", DbType.String,100)};
+            parameters[0].Value = row.Cells[1].Value.ToString();
+            parameters[1].Value = row.Cells[4].Value.ToString();
+            parameters[2].Value = Convert.ToDateTime(row.Cells[2].Value.ToString() + "  "+row.Cells[3].Value.ToString());
+            parameters[3].Value = "111";
+            parameters[4].Value = "详情页： "+row.Cells[7].Value.ToString();
+
+
+            int rows = DbHelperSQLite.ExecuteSql(strSql.ToString(), parameters);
+     
         }
     }
 }

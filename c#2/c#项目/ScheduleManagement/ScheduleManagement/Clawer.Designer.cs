@@ -37,6 +37,8 @@ namespace ScheduleManagement
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.Result = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Result)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +47,7 @@ namespace ScheduleManagement
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label1.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(108, 60);
+            this.label1.Location = new System.Drawing.Point(108, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 24);
             this.label1.TabIndex = 2;
@@ -57,7 +59,7 @@ namespace ScheduleManagement
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label2.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(72, 126);
+            this.label2.Location = new System.Drawing.Point(63, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(135, 24);
             this.label2.TabIndex = 3;
@@ -73,7 +75,7 @@ namespace ScheduleManagement
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(227, 125);
+            this.textBox2.Location = new System.Drawing.Point(218, 70);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(176, 25);
             this.textBox2.TabIndex = 5;
@@ -88,7 +90,7 @@ namespace ScheduleManagement
             "近期电影",
             "亚冠",
             "计算机学院讲座"});
-            this.comboBox1.Location = new System.Drawing.Point(218, 3);
+            this.comboBox1.Location = new System.Drawing.Point(218, 26);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 23);
             this.comboBox1.TabIndex = 6;
@@ -98,7 +100,7 @@ namespace ScheduleManagement
             // 
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(124, 191);
+            this.button1.Location = new System.Drawing.Point(115, 127);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(224, 28);
             this.button1.TabIndex = 7;
@@ -109,18 +111,40 @@ namespace ScheduleManagement
             // Result
             // 
             this.Result.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Result.Location = new System.Drawing.Point(32, 274);
+            this.Result.Location = new System.Drawing.Point(24, 201);
             this.Result.Name = "Result";
             this.Result.RowHeadersWidth = 51;
             this.Result.RowTemplate.Height = 27;
             this.Result.Size = new System.Drawing.Size(429, 227);
             this.Result.TabIndex = 8;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(67, 461);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(256, 460);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "查看详情";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Clawer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ScheduleManagement.Properties.Resources.背景;
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.Result);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
@@ -130,7 +154,6 @@ namespace ScheduleManagement
             this.Controls.Add(this.label1);
             this.Name = "Clawer";
             this.Size = new System.Drawing.Size(501, 592);
-           // this.Load += new System.EventHandler(this.Clawer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Result)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -145,5 +168,7 @@ namespace ScheduleManagement
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView Result;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
