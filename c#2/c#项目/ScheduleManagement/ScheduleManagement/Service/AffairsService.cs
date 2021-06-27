@@ -40,21 +40,30 @@ namespace ScheduleManagement.Service
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into AffairInfo(");
-            strSql.Append("Title,Place,DateTime,Urgency,Content)");
+            strSql.Append("Title,Place,DateTime,EndTime,Urgency,Content,State,TimeInterval,Unit,RemindTimes)");
             strSql.Append(" values (");
-            strSql.Append("@Title,@Place,@DateTime,@Urgency,@Content)");
+            strSql.Append("@Title,@Place,@DateTime,@EndTime,@Urgency,@Content,@State,@TimeInterval,@Unit,@RemindTimes)");
             SQLiteParameter[] parameters = {
                     new SQLiteParameter("@Title", DbType.String,25),
                     new SQLiteParameter("@Place", DbType.String,25),
                     new SQLiteParameter("@DateTime", DbType.DateTime),
+                    new SQLiteParameter("@EndTime", DbType.DateTime),
                     new SQLiteParameter("@Urgency", DbType.String,25),
-                    new SQLiteParameter("@Content", DbType.String,100)};
+                    new SQLiteParameter("@Content", DbType.String,100),
+                    new SQLiteParameter("@State",DbType.String,25),
+                    new SQLiteParameter("@TimeInterval",DbType.Int32,8),
+                    new SQLiteParameter("@Unit",DbType.String,25),
+                    new SQLiteParameter("@RemindTimes",DbType.Int32,8)};
             parameters[0].Value = affair.Title;
             parameters[1].Value = affair.Place;
             parameters[2].Value = affair.DateTime;
-            parameters[3].Value = affair.Urgency;
-            parameters[4].Value = affair.Content;
-
+            parameters[3].Value = affair.EndTime;
+            parameters[4].Value = affair.Urgency;
+            parameters[5].Value = affair.Content;
+            parameters[6].Value = affair.State;
+            parameters[7].Value = affair.TimeInterval;
+            parameters[8].Value = affair.Unit;
+            parameters[9].Value = affair.RemindTimes;
 
             int rows = DbHelperSQLite.ExecuteSql(strSql.ToString(), parameters);
             if (rows > 0)
@@ -75,22 +84,37 @@ namespace ScheduleManagement.Service
             strSql.Append("Title=@Title,");
             strSql.Append("Place=@Place,");
             strSql.Append("DateTime=@DateTime,");
+            strSql.Append("EndTime=@EndTime,");
             strSql.Append("Urgency=@Urgency,");
-            strSql.Append("Content=@Content");
+            strSql.Append("Content=@Content,");
+            strSql.Append("State=@State,");
+            strSql.Append("TimeInterval=@TimeInterval,");
+            strSql.Append("Unit=@Unit,");
+            strSql.Append("RemindTimes=@RemindTimes");
             strSql.Append(" where AffairId=@AffairId ");
             SQLiteParameter[] parameters = {
                     new SQLiteParameter("@Title", DbType.String,25),
                     new SQLiteParameter("@Place", DbType.String,25),
                     new SQLiteParameter("@DateTime", DbType.DateTime),
+                    new SQLiteParameter("@EndTime", DbType.DateTime),
                     new SQLiteParameter("@Urgency", DbType.String,25),
                     new SQLiteParameter("@Content", DbType.String,100),
+                    new SQLiteParameter("@State",DbType.String,25),
+                    new SQLiteParameter("@TimeInterval",DbType.Int32,8),
+                    new SQLiteParameter("@Unit",DbType.String,25),
+                    new SQLiteParameter("@RemindTimes",DbType.Int32,8),
                     new SQLiteParameter("@AffairId", DbType.Int32,8)};
             parameters[0].Value = affair.Title;
             parameters[1].Value = affair.Place;
             parameters[2].Value = affair.DateTime;
-            parameters[3].Value = affair.Urgency;
-            parameters[4].Value = affair.Content;
-            parameters[5].Value = affair.AffairId;
+            parameters[3].Value = affair.EndTime;
+            parameters[4].Value = affair.Urgency;
+            parameters[5].Value = affair.Content;
+            parameters[6].Value = affair.State;
+            parameters[7].Value = affair.TimeInterval;
+            parameters[8].Value = affair.Unit;
+            parameters[9].Value = affair.RemindTimes;
+            parameters[10].Value = affair.AffairId;
 
             int rows = DbHelperSQLite.ExecuteSql(strSql.ToString(), parameters);
             if (rows > 0)
@@ -199,7 +223,7 @@ namespace ScheduleManagement.Service
         public DataSet GetList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select AffairId,Title,Place,DateTime,Urgency,Content ");
+            strSql.Append("select AffairId,Title,Place,DateTime,EndTime,Urgency,Content,State,TimeInterval,Unit,RemindTimes ");
             strSql.Append(" FROM AffairInfo ");
             if (strWhere.Trim() != "")
             {
