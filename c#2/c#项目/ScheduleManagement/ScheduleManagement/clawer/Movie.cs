@@ -30,8 +30,9 @@ namespace ScheduleManagement.clawer
             webRequest.KeepAlive = true;
             webRequest.ContentType = "application/x-www-form-urlencoded";
             webRequest.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,*;q=0.8";
-            webRequest.UserAgent = "Mozilla/5.0 (Windows; U; Windows NT 5.2; zh-CN; rv:1.9.2.8) Gecko/20100722 Firefox/3.6.8";
-            webRequest.UserAgent = "Mozilla / 5.0(Windows NT 10.0; Win64; x64; rv: 74.0) Gecko / 20100101 Firefox / 74.0";
+           // webRequest.UserAgent = "Mozilla/5.0 (Windows; U; Windows NT 5.2; zh-CN; rv:1.9.2.8) Gecko/20100722 Firefox/3.6.8";
+            //  webRequest.UserAgent = "Mozilla / 5.0(Windows NT 10.0; Win64; x64; rv: 74.0) Gecko / 20100101 Firefox / 74.0";
+            webRequest.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36";
             webRequest.CookieContainer = new CookieContainer();
 
 
@@ -59,9 +60,8 @@ namespace ScheduleManagement.clawer
             var doc = this.CreateHtmlDocument(html);
 
            
-            HtmlNodeCollection htmlNodesmovie = doc.DocumentNode.SelectNodes("//dl[@class='movies-list']/dd");
-
-
+            HtmlNodeCollection htmlNodesmovie = doc.DocumentNode.SelectNodes("//dd");
+           
             if (htmlNodesmovie.Count == 0)
                 return false;//没取到电影信息
             var htmlNodeList1 = htmlNodesmovie.ToList();
@@ -69,40 +69,63 @@ namespace ScheduleManagement.clawer
             for (var i = 0; i < htmlNodeList1.Count; i++)
             {
                 var htmlNode = htmlNodeList1[i];
-                //用temp而不是htmlNode再进行相关的赋值即可
                 var temp = HtmlNode.CreateNode(htmlNode.OuterHtml);
                 var news = new Ms();
 
                 //取电影名字
                 var TitleHtmlNode = temp.SelectSingleNode("//div[@class='channel-detail movie-item-title']/a");
                 news.name = TitleHtmlNode == null ? "" : TitleHtmlNode.InnerText;
-              //  news.name = Convert.ToString(htmlNodeList1.Count);
+                //  news.name = Convert.ToString(htmlNodeList1.Count);
+                
+                  //取详情页面url   
+                  var UrlHtmlNode = temp.SelectSingleNode("//div[@class='movie-item film-channel']");
+                  string str = UrlHtmlNode == null ? "" : Convert.ToString(UrlHtmlNode.InnerHtml);
+                  string reg = @"<a[^>]*href=([""'])?(?<href>[^'""]+)\1[^>]*>";
+                  Match item = Regex.Match(str, reg, RegexOptions.IgnoreCase);
+                  news.url = "https://maoyan.com"+item.Groups["href"].Value;
 
-                //取详情页面url   
-                var UrlHtmlNode = temp.SelectSingleNode("//div[@class='movie-item-hover']");
-                string str = UrlHtmlNode == null ? "" : Convert.ToString(UrlHtmlNode.InnerHtml);
-                string reg = @"<a[^>]*href=([""'])?(?<href>[^'""]+)\1[^>]*>";
-                Match item = Regex.Match(str, reg, RegexOptions.IgnoreCase);
-                news.url = "https://maoyan.com"+item.Groups["href"].Value;
+                  //类型
+                  var TypeHtmlNode = temp.SelectSingleNode("//div[@class='movie-hover-info']/div[2]");
+                // var TypeHtmlNodec = temp.SelectSingleNode("//div[@class='movie-hover-info']/div[2]/span");
+                // TypeHtmlNode = TypeHtmlNode.RemoveChild(TypeHtmlNodec);
+                string x = @"[\u4E00-\u9FFF]+";
+                MatchCollection Matchestype = Regex.Matches
+                (TypeHtmlNode.InnerText, x, RegexOptions.IgnoreCase);
+                StringBuilder itstype = new StringBuilder();
+                foreach (Match NextMatch in Matchestype)
+                {
+                    itstype.Append(NextMatch.Value);
+                }
+                string thetype = itstype.ToString();
+                news.type = TypeHtmlNode == null ? "" : thetype.Substring(2,thetype.Length-2);
 
-                //类型
-                var TypeHtmlNode = temp.SelectSingleNode("//div[@class='movie-hover-info']/div[2]");
-                news.type = TypeHtmlNode == null ? "" : TypeHtmlNode.InnerText;
+                  //主演
+                  var ActorsHtmlNode = temp.SelectSingleNode("//div[@class='movie-hover-info']/div[3]");
+                MatchCollection Matchesactor = Regex.Matches
+                (ActorsHtmlNode.InnerText, x, RegexOptions.IgnoreCase);
+                StringBuilder itsactor = new StringBuilder();
+                foreach (Match NextMatch in Matchesactor)
+                {
+                    itsactor.Append(NextMatch.Value);
+                }
+                string theactor = itsactor.ToString();
+                news.actors = ActorsHtmlNode == null ? "" : theactor.Substring(2, theactor.Length - 2);
 
-                //主演
-                var ActorsHtmlNode = temp.SelectSingleNode("//div[@class='movie-hover-info']/div[3]");
-                news.actors = ActorsHtmlNode == null ? "" : ActorsHtmlNode.InnerText;
+                  //上映时间
+                  var TimeHtmlNode = temp.SelectSingleNode("//div[@class='movie-hover-title movie-hover-brief']");
+                string timestr = Regex.Replace(TimeHtmlNode.InnerText, @"[^\d-^\d-^\d]", "");
+                news.time = TimeHtmlNode == null ? "" : timestr;
 
-                //上映时间
-                var TimeHtmlNode = temp.SelectSingleNode("//div[@class='movie-hover-info']/div[4]");
-                news.time = TimeHtmlNode == null ? "" : TimeHtmlNode.InnerText;
-
-                //评分
-                var ScoresHtmlNode = temp.SelectSingleNode("//div[@class='channel-detail channel-detail-orange']");
-                news.scores = ScoresHtmlNode == null ? "" : ScoresHtmlNode.InnerText;
+                  //评分
+                  var ScoresHtmlNode = temp.SelectSingleNode("//div[@class='channel-detail channel-detail-orange']");
+                  news.scores = ScoresHtmlNode == null ? "" : ScoresHtmlNode.InnerText;
+                
                 MoviesDownloaded(this, news.name, news.time, news.type, news.actors, news.scores, news.url);
+            
             }
+             
             return true;
+           
         }
         public void Excute()
         {

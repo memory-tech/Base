@@ -28,14 +28,14 @@ namespace ScheduleManagement.clawer
         {
             //使用 WebRequest 类
             HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(url);
-            //避免403被ban
+            
             webRequest.KeepAlive = true;
             webRequest.ContentType = "application/x-www-form-urlencoded";
             webRequest.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,*;q=0.8";
             webRequest.UserAgent = "Mozilla/5.0 (Windows; U; Windows NT 5.2; zh-CN; rv:1.9.2.8) Gecko/20100722 Firefox/3.6.8";
             webRequest.UserAgent = "Mozilla / 5.0(Windows NT 10.0; Win64; x64; rv: 74.0) Gecko / 20100101 Firefox / 74.0";
             webRequest.CookieContainer = new CookieContainer();
-
+            
 
             //模仿向浏览器输入了一个网页，再用WebResponse类获得响应
             HttpWebResponse webResponse = (HttpWebResponse)webRequest.GetResponse();
