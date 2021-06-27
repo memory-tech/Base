@@ -9,7 +9,7 @@ namespace ScheduleManagement.clawer
 {
     class RISDBContext
     {
-        public DbSet<News> News { get; set; }
+        public DbSet<Zc> News { get; set; }
         void SaveChanges() { }
     }
 }

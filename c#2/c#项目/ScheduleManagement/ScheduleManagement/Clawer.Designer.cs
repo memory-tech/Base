@@ -84,9 +84,11 @@ namespace ScheduleManagement
             this.comboBox1.Items.AddRange(new object[] {
             "欧洲杯",
             "中超",
-            "美洲杯",
-            "近期电影"});
-            this.comboBox1.Location = new System.Drawing.Point(227, 60);
+            "世界杯亚洲预选赛",
+            "近期电影",
+            "亚冠",
+            "计算机学院讲座"});
+            this.comboBox1.Location = new System.Drawing.Point(218, 3);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 23);
             this.comboBox1.TabIndex = 6;
@@ -128,7 +130,7 @@ namespace ScheduleManagement
             this.Controls.Add(this.label1);
             this.Name = "Clawer";
             this.Size = new System.Drawing.Size(501, 592);
-            this.Load += new System.EventHandler(this.Clawer_Load);
+           // this.Load += new System.EventHandler(this.Clawer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Result)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
