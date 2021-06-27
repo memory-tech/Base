@@ -29,125 +29,134 @@ namespace ScheduleManagement
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pomodoro));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.TimeSet = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
+            this.cmbRemindStyle = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnEnd = new System.Windows.Forms.Button();
+            this.btnBegin = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // panel1
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("宋体", 12F);
-            this.label1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label1.Location = new System.Drawing.Point(59, 70);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 27);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "番茄时长:";
+            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.Controls.Add(this.TimeSet);
+            this.panel1.Controls.Add(this.label);
+            this.panel1.Controls.Add(this.cmbRemindStyle);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(483, 304);
+            this.panel1.TabIndex = 16;
             // 
-            // label2
+            // TimeSet
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("宋体", 12F);
-            this.label2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label2.Location = new System.Drawing.Point(259, 70);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 27);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "休息时长:";
+            this.TimeSet.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TimeSet.AutoSize = true;
+            this.TimeSet.Font = new System.Drawing.Font("隶书", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TimeSet.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.TimeSet.Location = new System.Drawing.Point(179, 92);
+            this.TimeSet.Name = "TimeSet";
+            this.TimeSet.Size = new System.Drawing.Size(122, 40);
+            this.TimeSet.TabIndex = 10;
+            this.TimeSet.Text = "25:00";
+            this.TimeSet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button4
+            // label
             // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button4.Location = new System.Drawing.Point(102, 301);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(108, 44);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "开始";
-            this.button4.UseVisualStyleBackColor = false;
+            this.label.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("隶书", 24F, System.Drawing.FontStyle.Bold);
+            this.label.ForeColor = System.Drawing.Color.MediumAquamarine;
+            this.label.Location = new System.Drawing.Point(179, 20);
+            this.label.Name = "label";
+            this.label.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label.Size = new System.Drawing.Size(122, 40);
+            this.label.TabIndex = 16;
+            this.label.Text = "label";
+            this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // cmbRemindStyle
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(285, 301);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 44);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "结束";
-            this.button1.UseVisualStyleBackColor = false;
+            this.cmbRemindStyle.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cmbRemindStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRemindStyle.FormattingEnabled = true;
+            this.cmbRemindStyle.Items.AddRange(new object[] {
+            "响铃",
+            "震动",
+            "响铃且震动"});
+            this.cmbRemindStyle.Location = new System.Drawing.Point(258, 182);
+            this.cmbRemindStyle.Name = "cmbRemindStyle";
+            this.cmbRemindStyle.Size = new System.Drawing.Size(121, 23);
+            this.cmbRemindStyle.TabIndex = 14;
             // 
-            // dateTimePicker1
+            // label5
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(87, 137);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(137, 25);
-            this.dateTimePicker1.TabIndex = 10;
-            this.dateTimePicker1.Value = new System.DateTime(2021, 6, 6, 0, 0, 0, 0);
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(133, 185);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 15);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "提醒方式";
             // 
-            // dateTimePicker2
+            // btnEnd
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(274, 137);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(137, 25);
-            this.dateTimePicker2.TabIndex = 11;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            this.btnEnd.BackColor = System.Drawing.Color.Transparent;
+            this.btnEnd.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnEnd.Location = new System.Drawing.Point(276, 383);
+            this.btnEnd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEnd.Name = "btnEnd";
+            this.btnEnd.Size = new System.Drawing.Size(113, 44);
+            this.btnEnd.TabIndex = 15;
+            this.btnEnd.Text = "结束";
+            this.btnEnd.UseVisualStyleBackColor = false;
+            this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
             // 
-            // textBox1
+            // btnBegin
             // 
-            this.textBox1.Location = new System.Drawing.Point(156, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(87, 25);
-            this.textBox1.TabIndex = 12;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(355, 70);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(87, 25);
-            this.textBox2.TabIndex = 13;
+            this.btnBegin.BackColor = System.Drawing.Color.Transparent;
+            this.btnBegin.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnBegin.Location = new System.Drawing.Point(71, 383);
+            this.btnBegin.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBegin.Name = "btnBegin";
+            this.btnBegin.Size = new System.Drawing.Size(108, 44);
+            this.btnBegin.TabIndex = 14;
+            this.btnBegin.Text = "开始";
+            this.btnBegin.UseVisualStyleBackColor = false;
+            this.btnBegin.Click += new System.EventHandler(this.btnBegin_Click);
             // 
             // Pomodoro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ScheduleManagement.Properties.Resources.背景;
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(483, 545);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnEnd);
+            this.Controls.Add(this.btnBegin);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Pomodoro";
-            this.Size = new System.Drawing.Size(501, 592);
-            this.Load += new System.EventHandler(this.UserControl3_Load);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Load += new System.EventHandler(this.Form_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label TimeSet;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.ComboBox cmbRemindStyle;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnEnd;
+        private System.Windows.Forms.Button btnBegin;
     }
 }

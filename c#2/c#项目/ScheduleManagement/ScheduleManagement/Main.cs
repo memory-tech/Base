@@ -98,10 +98,10 @@ namespace ScheduleManagement
             timer1.Interval = 200;
             TopMost = true;
             f1 = new AddAffair();    //实例化f1
-            f2 = new Affair();    //实例化f2
-            f3 = new Pomodoro();    //实例化f3
+            f2 = new Affair(this);    //实例化f2
+            //f3 = new Pomodoro();    //实例化f3
             f4 = new Clawer();    //实例化f4
-            f5 = new Schedule();    //实例化f5
+            f5 = new Schedule(this);    //实例化f5
             f6 = new Achievement(); //实例化f6
         }
         

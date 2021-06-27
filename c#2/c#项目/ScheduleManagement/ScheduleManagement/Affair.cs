@@ -15,8 +15,10 @@ namespace ScheduleManagement
 {
     public partial class Affair : UserControl
     {
-        public Affair()
+        public Main Main { get; set; }
+        public Affair(Main m)
         {
+            Main = m;
             InitializeComponent();
         }
 
@@ -100,6 +102,13 @@ namespace ScheduleManagement
             this.textBox3.Text = row.Cells[3].Value.ToString();
             this.textBox4.Text = row.Cells[4].Value.ToString();
             this.textBox5.Text = row.Cells[5].Value.ToString();
+        }
+
+        private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Pomodoro p = new Pomodoro(this);
+            Main.Hide();
+            p.ShowDialog();
         }
     }
 }

@@ -131,7 +131,7 @@
       <DependentUpon>Affair.cs</DependentUpon>
     </Compile>
     <Compile Include="Pomodoro.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pomodoro.Designer.cs">
       <DependentUpon>Pomodoro.cs</DependentUpon>
