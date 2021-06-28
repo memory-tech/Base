@@ -15,8 +15,10 @@ namespace ScheduleManagement
 {
     public partial class Affair : UserControl
     {
-        public Affair()
+        public Main Main = new Main();
+        public Affair(Main m)
         {
+            Main = m;
             InitializeComponent();
         }
 
@@ -45,15 +47,8 @@ namespace ScheduleManagement
             userInfo.Title  = "Title" + count;
             userInfo.Place = "Place" + count;
             userInfo.DateTime = DateTime.Now;
-            userInfo.EndTime = DateTime.UtcNow;
             userInfo.Urgency = "Urgency" + count;
             userInfo.Content = "Conent" + count;
-            userInfo.State = "未完成";
-            userInfo.TimeInterval = 1;
-            userInfo.Unit = "分";
-            userInfo.RemindTimes = 1;
-
-
 
             aff.Add(userInfo);
 
@@ -68,13 +63,8 @@ namespace ScheduleManagement
             userInfo.Title = this.textBox1.Text;
             userInfo.Place = this.textBox2.Text;
             userInfo.DateTime = DateTime.Parse(this.textBox3.Text);
-            userInfo.EndTime = DateTime.Parse(this.textBox_EndTime.Text);
             userInfo.Urgency = this.textBox4.Text;
             userInfo.Content = this.textBox5.Text;
-            userInfo.State = this.textBox_state.Text;
-            userInfo.TimeInterval = Int32.Parse(this.textBox_TimeInterval.Text);
-            userInfo.Unit = this.textBox_Unit.Text;
-            userInfo.RemindTimes = Int32.Parse(this.textBox_RemindTimes.Text);
             aff.Update(userInfo);
 
 
@@ -110,13 +100,16 @@ namespace ScheduleManagement
             this.textBox1.Text = row.Cells[1].Value.ToString();
             this.textBox2.Text = row.Cells[2].Value.ToString();
             this.textBox3.Text = row.Cells[3].Value.ToString();
-            this.textBox_EndTime.Text = row.Cells[4].Value.ToString();
-            this.textBox4.Text = row.Cells[5].Value.ToString();
-            this.textBox5.Text = row.Cells[6].Value.ToString();
-            this.textBox_state.Text = row.Cells[7].Value.ToString();
-            this.textBox_TimeInterval.Text = row.Cells[8].Value.ToString();
-            this.textBox_Unit.Text = row.Cells[9].Value.ToString();
-            this.textBox_RemindTimes.Text = row.Cells[10].Value.ToString();
+            this.textBox4.Text = row.Cells[4].Value.ToString();
+            this.textBox5.Text = row.Cells[5].Value.ToString();
+        }
+
+        private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var s=this.DataGridView1.CurrentRow.Cells[1].Value.ToString();
+            Pomodoro p = new Pomodoro(Main, s);
+            Main.Hide();
+            p.ShowDialog();
         }
     }
 }

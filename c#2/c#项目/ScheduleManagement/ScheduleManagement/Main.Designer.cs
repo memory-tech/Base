@@ -286,7 +286,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(117, 44);
             this.button6.TabIndex = 15;
-            this.button6.Text = "成就榜";
+            this.button6.Text = "统计";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -325,6 +325,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "个性化日程管理系统";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.menuStrip1.ResumeLayout(false);
