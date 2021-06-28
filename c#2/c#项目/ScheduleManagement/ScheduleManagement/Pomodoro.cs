@@ -48,8 +48,8 @@ namespace ScheduleManagement
         //加载界面，初始化番茄时长和番茄间隔
         private void Form_Load(object sender, EventArgs e)
         {
-            TomatoTime =  6;
-            Interval = 6;
+            TomatoTime = 25 * 60;
+            Interval = 5 * 60;
             TaskTime = 0;
             Tomatoes = 0;
             label.Text = "番茄钟";

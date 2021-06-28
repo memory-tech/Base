@@ -61,6 +61,7 @@ namespace ScheduleManagement
             this.DataGridView1.Size = new System.Drawing.Size(193, 418);
             this.DataGridView1.TabIndex = 14;
             this.DataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
+            this.DataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellDoubleClick_1);
             // 
             // label7
             // 

@@ -178,4 +178,3 @@ E:\C#work\c#2\c#项目\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleM
 E:\C#work\c#2\c#项目\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.csproj.CoreCompileInputs.cache
 E:\C#work\c#2\c#项目\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.exe
 E:\C#work\c#2\c#项目\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.pdb
-C:\Users\memory\Desktop\Base\c#2\c#项目\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.csprojAssemblyReference.cache

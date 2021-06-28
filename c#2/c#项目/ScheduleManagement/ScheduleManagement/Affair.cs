@@ -103,10 +103,9 @@ namespace ScheduleManagement
             this.textBox4.Text = row.Cells[4].Value.ToString();
             this.textBox5.Text = row.Cells[5].Value.ToString();
         }
-
-        private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridView1_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            var s=this.DataGridView1.CurrentRow.Cells[1].Value.ToString();
+            var s = this.DataGridView1.CurrentRow.Cells[1].Value.ToString();
             Pomodoro p = new Pomodoro(Main, s);
             Main.Hide();
             p.ShowDialog();
