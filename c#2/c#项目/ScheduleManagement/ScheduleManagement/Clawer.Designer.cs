@@ -32,7 +32,7 @@ namespace ScheduleManagement
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clawer));
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.preference = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.Result = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
@@ -49,7 +49,7 @@ namespace ScheduleManagement
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 24);
             this.label1.TabIndex = 2;
-            this.label1.Text = "偏好";
+            this.label1.Text = "类型";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
@@ -60,24 +60,24 @@ namespace ScheduleManagement
             this.label3.Size = new System.Drawing.Size(0, 15);
             this.label3.TabIndex = 4;
             // 
-            // comboBox1
+            // preference
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "欧洲杯",
-            "中超",
-            "近期电影",
-            "亚冠",
+            this.preference.FormattingEnabled = true;
+            this.preference.Items.AddRange(new object[] {
             "计算机学院讲座",
+            "近期电影",
             "音乐会",
             "Livehouse",
             "舞蹈演出",
-            "话剧"});
-            this.comboBox1.Location = new System.Drawing.Point(234, 26);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 6;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            "话剧",
+            "欧洲杯",
+            "中超",
+            "亚冠"});
+            this.preference.Location = new System.Drawing.Point(234, 26);
+            this.preference.Name = "preference";
+            this.preference.Size = new System.Drawing.Size(121, 23);
+            this.preference.TabIndex = 6;
+            this.preference.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -105,17 +105,17 @@ namespace ScheduleManagement
             // 
             this.button2.Location = new System.Drawing.Point(75, 480);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(129, 23);
             this.button2.TabIndex = 9;
-            this.button2.Text = "button2";
+            this.button2.Text = "添加进待办事项";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(294, 480);
+            this.button3.Location = new System.Drawing.Point(286, 480);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(83, 27);
             this.button3.TabIndex = 10;
             this.button3.Text = "查看详情";
             this.button3.UseVisualStyleBackColor = true;
@@ -130,7 +130,7 @@ namespace ScheduleManagement
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Result);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.preference);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "Clawer";
@@ -144,7 +144,7 @@ namespace ScheduleManagement
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox preference;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView Result;
         private System.Windows.Forms.Button button2;

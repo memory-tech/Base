@@ -84,7 +84,10 @@ namespace ScheduleManagement.clawer
                 
                 string reg = @"<a[^>]*href=([""'])?(?<href>[^'""]+)\1[^>]*>";
                 Match item = Regex.Match(str, reg, RegexOptions.IgnoreCase);
-                news.url = "https://www.moretickets.com/" + item.Groups["href"].Value;
+                //去掉//中的一个，保证拼接出正确的url
+                string s = item.Groups["href"].Value;
+                s = s.Substring(1, s.Length-1);
+                news.url = "https://www.moretickets.com/" + s;
                 
 
                 //演出时间

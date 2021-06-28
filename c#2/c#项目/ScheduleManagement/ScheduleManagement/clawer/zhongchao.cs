@@ -96,10 +96,8 @@ namespace ScheduleManagement.clawer
                 //场次
                 var TurnHtmlNode = temp.SelectSingleNode("//div[@class='match-played']");
                 news.Turn = TurnHtmlNode == null ? "" : TurnHtmlNode.InnerText;
-                if (loveplayer == "" || news.Player1.Contains(loveplayer) || news.Player2.Contains(loveplayer))
-                {
-                    NewsDownloaded(this, news.Day, news.weekday, news.Time, news.Player1, news.Player2, news.Turn, news.Link);
-                }
+                NewsDownloaded(this, news.Day, news.weekday, news.Time, news.Player1, news.Player2, news.Turn, news.Link);
+                
                 //当天第二队
 
                 //取日期，几号
@@ -126,10 +124,7 @@ namespace ScheduleManagement.clawer
                 //场次
                 TurnHtmlNode = temp.SelectSingleNode("//section[@class='match-section match-today']/div[3]/a/div[@class='match-played']");
                 news.Turn = TurnHtmlNode == null ? "" : TurnHtmlNode.InnerText;
-                if (loveplayer == "" || news.Player1.Contains(loveplayer) || news.Player2.Contains(loveplayer))
-                {
-                    NewsDownloaded(this, news.Day, news.weekday, news.Time, news.Player1, news.Player2, news.Turn, news.Link);
-                }
+                NewsDownloaded(this, news.Day, news.weekday, news.Time, news.Player1, news.Player2, news.Turn, news.Link);
             }
 
             //接下来三天
@@ -176,10 +171,8 @@ namespace ScheduleManagement.clawer
                 //场次
                 var TurnHtmlNode = temp.SelectSingleNode("//div[@class='match-played']");
                 news.Turn = TurnHtmlNode == null ? "" : TurnHtmlNode.InnerText;
-                if (loveplayer == "" || news.Player1.Contains(loveplayer) || news.Player2.Contains(loveplayer))
-                {
-                    NewsDownloaded(this, news.Day, news.weekday, news.Time, news.Player1, news.Player2, news.Turn, news.Link);
-                }
+                NewsDownloaded(this, news.Day, news.weekday, news.Time, news.Player1, news.Player2, news.Turn, news.Link);
+                
 
                 //当天第二队
 
@@ -207,10 +200,8 @@ namespace ScheduleManagement.clawer
                 //场次
                 TurnHtmlNode = temp.SelectSingleNode("//section[@class='match-section ']/div[3]/a/div[@class='match-played']");
                 news.Turn = TurnHtmlNode == null ? "" : TurnHtmlNode.InnerText;
-                if (loveplayer == "" || news.Player1.Contains(loveplayer) ||  news.Player2.Contains(loveplayer))
-                {
-                    NewsDownloaded(this, news.Day, news.weekday, news.Time, news.Player1, news.Player2, news.Turn, news.Link);
-                }
+                NewsDownloaded(this, news.Day, news.weekday, news.Time, news.Player1, news.Player2, news.Turn, news.Link);
+                
             }
             return true;
         }

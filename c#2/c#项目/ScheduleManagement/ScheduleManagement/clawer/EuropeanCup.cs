@@ -92,10 +92,8 @@ namespace ScheduleManagement.clawer
                 string reg = @"<a[^>]*href=([""'])?(?<href>[^'""]+)\1[^>]*>";
                 Match item = Regex.Match(str, reg, RegexOptions.IgnoreCase);
                 news.Link = "https://www.24zbw.com/"+item.Groups["href"].Value;
-                if (loveplayer == "" || news.Player1.Contains(loveplayer) || news.Player2.Contains(loveplayer))
-                {
-                    ENewsDownloaded(this, news.zt, news.Day, news.Time, news.Player1, news.Player2, news.Link);
-                }
+                ENewsDownloaded(this, news.zt, news.Day, news.Time, news.Player1, news.Player2, news.Link);
+                
             }
             return true;
         }
