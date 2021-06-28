@@ -86,7 +86,6 @@ namespace ScheduleManagement
             this.comboBox1.Items.AddRange(new object[] {
             "欧洲杯",
             "中超",
-            "世界杯亚洲预选赛",
             "近期电影",
             "亚冠",
             "计算机学院讲座"});
@@ -113,7 +112,7 @@ namespace ScheduleManagement
             this.Result.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Result.Location = new System.Drawing.Point(24, 201);
             this.Result.Name = "Result";
-            this.Result.RowHeadersWidth = 51;
+            this.Result.RowHeadersWidth = 25;
             this.Result.RowTemplate.Height = 27;
             this.Result.Size = new System.Drawing.Size(429, 227);
             this.Result.TabIndex = 8;
