@@ -41,12 +41,16 @@ namespace ScheduleManagement
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox_EndTime = new System.Windows.Forms.TextBox();
+            this.textBox_TimeInterval = new System.Windows.Forms.TextBox();
+            this.textBox_Unit = new System.Windows.Forms.TextBox();
+            this.textBox_RemindTimes = new System.Windows.Forms.TextBox();
+            this.textBox_state = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // DataGridView1
             // 
-            this.DataGridView1.AllowUserToAddRows = false;
             this.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView1.Location = new System.Drawing.Point(20, 107);
@@ -54,10 +58,9 @@ namespace ScheduleManagement
             this.DataGridView1.Name = "DataGridView1";
             this.DataGridView1.RowHeadersWidth = 51;
             this.DataGridView1.RowTemplate.Height = 23;
-            this.DataGridView1.Size = new System.Drawing.Size(307, 418);
+            this.DataGridView1.Size = new System.Drawing.Size(193, 418);
             this.DataGridView1.TabIndex = 14;
             this.DataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-            this.DataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellDoubleClick);
             // 
             // label7
             // 
@@ -152,11 +155,51 @@ namespace ScheduleManagement
             this.label1.TabIndex = 24;
             this.label1.Text = "序号";
             // 
+            // textBox_EndTime
+            // 
+            this.textBox_EndTime.Location = new System.Drawing.Point(227, 222);
+            this.textBox_EndTime.Name = "textBox_EndTime";
+            this.textBox_EndTime.Size = new System.Drawing.Size(100, 25);
+            this.textBox_EndTime.TabIndex = 25;
+            // 
+            // textBox_TimeInterval
+            // 
+            this.textBox_TimeInterval.Location = new System.Drawing.Point(227, 403);
+            this.textBox_TimeInterval.Name = "textBox_TimeInterval";
+            this.textBox_TimeInterval.Size = new System.Drawing.Size(100, 25);
+            this.textBox_TimeInterval.TabIndex = 27;
+            // 
+            // textBox_Unit
+            // 
+            this.textBox_Unit.Location = new System.Drawing.Point(227, 443);
+            this.textBox_Unit.Name = "textBox_Unit";
+            this.textBox_Unit.Size = new System.Drawing.Size(100, 25);
+            this.textBox_Unit.TabIndex = 28;
+            // 
+            // textBox_RemindTimes
+            // 
+            this.textBox_RemindTimes.Location = new System.Drawing.Point(227, 481);
+            this.textBox_RemindTimes.Name = "textBox_RemindTimes";
+            this.textBox_RemindTimes.Size = new System.Drawing.Size(100, 25);
+            this.textBox_RemindTimes.TabIndex = 29;
+            // 
+            // textBox_state
+            // 
+            this.textBox_state.Location = new System.Drawing.Point(227, 362);
+            this.textBox_state.Name = "textBox_state";
+            this.textBox_state.Size = new System.Drawing.Size(100, 25);
+            this.textBox_state.TabIndex = 30;
+            // 
             // Affair
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ScheduleManagement.Properties.Resources.背景;
+            this.Controls.Add(this.textBox_state);
+            this.Controls.Add(this.textBox_RemindTimes);
+            this.Controls.Add(this.textBox_Unit);
+            this.Controls.Add(this.textBox_TimeInterval);
+            this.Controls.Add(this.textBox_EndTime);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -192,5 +235,10 @@ namespace ScheduleManagement
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox_EndTime;
+        private System.Windows.Forms.TextBox textBox_TimeInterval;
+        private System.Windows.Forms.TextBox textBox_Unit;
+        private System.Windows.Forms.TextBox textBox_RemindTimes;
+        private System.Windows.Forms.TextBox textBox_state;
     }
 }

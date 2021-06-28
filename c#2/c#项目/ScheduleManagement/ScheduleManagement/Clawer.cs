@@ -23,7 +23,6 @@ namespace ScheduleManagement
         BindingSource resultBindingSource = new BindingSource();
         EuropeanCup claw0 = new EuropeanCup();
         zhongchao claw = new zhongchao();
-        WorldCup claw2 = new WorldCup();
         Movie claw3 = new Movie();
         AFC claw4 = new AFC();
         CSlecture claw5 = new CSlecture();
@@ -33,7 +32,6 @@ namespace ScheduleManagement
             Result.DataSource = resultBindingSource;
             claw0.ENewsDownloaded += Clawer_ENewsDownloaded;
             claw.NewsDownloaded += Clawer_NewsDownloaded;
-            claw2.WNewsDownloaded += Clawer_WNewsDownloaded;
             claw3.MoviesDownloaded += Clawer_MoviesDownloaded;
             claw4.ANewsDownloaded += Clawer_ANewsDownloaded;
             claw5.LNewsDownloaded += Clawer_LNewsDownloaded;
@@ -69,7 +67,7 @@ namespace ScheduleManagement
                 action();
             }
         }
-
+        /*
         private void Clawer_WNewsDownloaded(WorldCup crawler, string zt, string day, string time, string player1, string player2, string link)
         {
             var newpage = new { 序号 = resultBindingSource.Count + 1, 状态 = zt, 日期 = day, 开始时间 = time, 对阵双方左 = player1, 对阵双方右 = player2, 直播链接 = link };
@@ -83,7 +81,7 @@ namespace ScheduleManagement
                 action();
             }
         }
-
+        */
         private void Clawer_MoviesDownloaded(Movie crawler, string name, string time, string type, string actors, string scores, string url)
         {
             var newpage = new { Index = resultBindingSource.Count + 1, Name = name, Time = time, Type = type, Actors = actors, Scores = scores, Url = url };
@@ -141,7 +139,6 @@ namespace ScheduleManagement
             resultBindingSource.Clear();
             claw.loveplayer = textBox2.Text;
             claw0.loveplayer = textBox2.Text;
-            claw2.loveplayer = textBox2.Text;
             claw4.loveplayer = textBox2.Text;
             switch (comboBox1.SelectedIndex)
             {
@@ -152,7 +149,6 @@ namespace ScheduleManagement
                     claw.Excute();
                     break;
                 case 2:
-                    claw2.Excute();
                     break;
                 case 3:
                     claw3.Excute();
@@ -172,25 +168,14 @@ namespace ScheduleManagement
         {
 
         }
-
-        private void Result_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {/*
-            DataGridViewRow row = this.Result.CurrentRow;
-            this.label1.Text = row.Cells[0].Value.ToString();
-            this.textBox1.Text = row.Cells[1].Value.ToString();
-            this.textBox2.Text = row.Cells[2].Value.ToString();
-            this.textBox3.Text = row.Cells[3].Value.ToString();
-            this.textBox4.Text = row.Cells[4].Value.ToString();
-            this.textBox5.Text = row.Cells[5].Value.ToString();
-            */
-        }
+        //使用默认浏览器跳转到详情页面
         private void button3_Click(object sender, EventArgs e)
         {
             DataGridViewRow row = this.Result.CurrentRow;
             string detail = row.Cells[7].Value.ToString();
             System.Diagnostics.Process.Start(detail);
         }
-
+        //将该事件添加进入待办事项
         private void button2_Click(object sender, EventArgs e)
         {
             /*      var newpage = new { 
@@ -220,10 +205,7 @@ namespace ScheduleManagement
             parameters[2].Value = Convert.ToDateTime(row.Cells[2].Value.ToString() + "  "+row.Cells[3].Value.ToString());
             parameters[3].Value = "111";
             parameters[4].Value = "详情页： "+row.Cells[7].Value.ToString();
-
-
-            int rows = DbHelperSQLite.ExecuteSql(strSql.ToString(), parameters);
-     
+            int rows = DbHelperSQLite.ExecuteSql(strSql.ToString(), parameters);    
         }
     }
 }
