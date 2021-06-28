@@ -54,24 +54,24 @@ namespace ScheduleManagement
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(483, 304);
+            this.panel1.Size = new System.Drawing.Size(353, 285);
             this.panel1.TabIndex = 16;
             // 
             // tomatoLabel
             // 
             this.tomatoLabel.AutoSize = true;
-            this.tomatoLabel.Font = new System.Drawing.Font("楷体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tomatoLabel.Font = new System.Drawing.Font("楷体", 10F);
             this.tomatoLabel.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.tomatoLabel.Location = new System.Drawing.Point(82, 11);
             this.tomatoLabel.Name = "tomatoLabel";
-            this.tomatoLabel.Size = new System.Drawing.Size(15, 15);
+            this.tomatoLabel.Size = new System.Drawing.Size(17, 17);
             this.tomatoLabel.TabIndex = 18;
             this.tomatoLabel.Text = "0";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("楷体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Font = new System.Drawing.Font("楷体", 11F);
             this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label1.Location = new System.Drawing.Point(7, 9);
             this.label1.Name = "label1";
@@ -85,7 +85,7 @@ namespace ScheduleManagement
             this.TimeSet.AutoSize = true;
             this.TimeSet.Font = new System.Drawing.Font("隶书", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.TimeSet.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.TimeSet.Location = new System.Drawing.Point(184, 92);
+            this.TimeSet.Location = new System.Drawing.Point(119, 92);
             this.TimeSet.Name = "TimeSet";
             this.TimeSet.Size = new System.Drawing.Size(122, 40);
             this.TimeSet.TabIndex = 10;
@@ -98,7 +98,7 @@ namespace ScheduleManagement
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("隶书", 24F, System.Drawing.FontStyle.Bold);
             this.label.ForeColor = System.Drawing.Color.MediumAquamarine;
-            this.label.Location = new System.Drawing.Point(174, 21);
+            this.label.Location = new System.Drawing.Point(109, 21);
             this.label.Name = "label";
             this.label.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label.Size = new System.Drawing.Size(122, 40);
@@ -115,7 +115,7 @@ namespace ScheduleManagement
             "响铃",
             "震动",
             "响铃且震动"});
-            this.cmbRemindStyle.Location = new System.Drawing.Point(263, 182);
+            this.cmbRemindStyle.Location = new System.Drawing.Point(198, 182);
             this.cmbRemindStyle.Name = "cmbRemindStyle";
             this.cmbRemindStyle.Size = new System.Drawing.Size(121, 23);
             this.cmbRemindStyle.TabIndex = 14;
@@ -124,7 +124,7 @@ namespace ScheduleManagement
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(138, 185);
+            this.label5.Location = new System.Drawing.Point(73, 185);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 15);
             this.label5.TabIndex = 15;
@@ -134,10 +134,10 @@ namespace ScheduleManagement
             // 
             this.btnEnd.BackColor = System.Drawing.Color.Transparent;
             this.btnEnd.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnEnd.Location = new System.Drawing.Point(276, 383);
+            this.btnEnd.Location = new System.Drawing.Point(215, 327);
             this.btnEnd.Margin = new System.Windows.Forms.Padding(4);
             this.btnEnd.Name = "btnEnd";
-            this.btnEnd.Size = new System.Drawing.Size(113, 44);
+            this.btnEnd.Size = new System.Drawing.Size(104, 44);
             this.btnEnd.TabIndex = 15;
             this.btnEnd.Text = "结束";
             this.btnEnd.UseVisualStyleBackColor = false;
@@ -147,10 +147,10 @@ namespace ScheduleManagement
             // 
             this.btnBegin.BackColor = System.Drawing.Color.Transparent;
             this.btnBegin.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnBegin.Location = new System.Drawing.Point(71, 383);
+            this.btnBegin.Location = new System.Drawing.Point(32, 327);
             this.btnBegin.Margin = new System.Windows.Forms.Padding(4);
             this.btnBegin.Name = "btnBegin";
-            this.btnBegin.Size = new System.Drawing.Size(108, 44);
+            this.btnBegin.Size = new System.Drawing.Size(95, 44);
             this.btnBegin.TabIndex = 14;
             this.btnBegin.Text = "开始";
             this.btnBegin.UseVisualStyleBackColor = false;
@@ -161,10 +161,11 @@ namespace ScheduleManagement
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ScheduleManagement.Properties.Resources.背景;
-            this.ClientSize = new System.Drawing.Size(483, 545);
+            this.ClientSize = new System.Drawing.Size(353, 393);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnEnd);
             this.Controls.Add(this.btnBegin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Pomodoro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;

@@ -106,9 +106,8 @@ namespace ScheduleManagement
 
         private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var a=this.DataGridView1.CurrentRow.Cells[1].Value.ToString();
-            MessageBox.Show(a);
-            Pomodoro p = new Pomodoro(Main, a);
+            var s=this.DataGridView1.CurrentRow.Cells[1].Value.ToString();
+            Pomodoro p = new Pomodoro(Main, s);
             Main.Hide();
             p.ShowDialog();
         }

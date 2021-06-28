@@ -36,7 +36,7 @@ namespace ScheduleManagement
 
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Pomodoro p = new Pomodoro(Main);
+            Pomodoro p = new Pomodoro(Main,"a");
             Main.Hide();
             p.ShowDialog();
         }

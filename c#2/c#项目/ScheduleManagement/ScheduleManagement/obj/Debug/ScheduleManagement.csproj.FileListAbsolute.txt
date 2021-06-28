@@ -144,7 +144,6 @@ C:\Users\memory\Desktop\Base\c#2\c#项目\ScheduleManagement\ScheduleManagement\
 C:\Users\memory\Desktop\Base\c#2\c#项目\ScheduleManagement\ScheduleManagement\bin\Debug\System.Data.SQLite.xml
 C:\Users\memory\Desktop\Base\c#2\c#项目\ScheduleManagement\ScheduleManagement\bin\Debug\Interop.WMPLib.dll
 C:\Users\memory\Desktop\Base\c#2\c#项目\ScheduleManagement\ScheduleManagement\bin\Debug\AxInterop.WMPLib.dll
-C:\Users\memory\Desktop\Base\c#2\c#项目\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.csprojAssemblyReference.cache
 C:\Users\memory\Desktop\Base\c#2\c#项目\ScheduleManagement\ScheduleManagement\obj\Debug\Interop.WMPLib.dll
 C:\Users\memory\Desktop\Base\c#2\c#项目\ScheduleManagement\ScheduleManagement\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\memory\Desktop\Base\c#2\c#项目\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.csproj.ResolveComReference.cache
