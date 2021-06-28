@@ -14,25 +14,24 @@ using System.Text.RegularExpressions;
 
 namespace ScheduleManagement.clawer
 {
-    class AFC
+    class AFC//亚冠
     {
+        //定义委托，实时显示爬取到的数据
         public event Action<AFC, string, string, string, string, string, string> ANewsDownloaded;
-        public string loveplayer;
         //要爬取的网址
         public string requestUrl = "https://www.24zbw.com/live/zuqiu/yaguan/";
 
         /// 加载URL
-
         public string LoadUrl(string url, Encoding encoding)
         {
             //使用 WebRequest 类
             HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(url);
-            //避免403被ban
+            //设置代理，避免403被ban
             webRequest.KeepAlive = true;
             webRequest.ContentType = "application/x-www-form-urlencoded";
             webRequest.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,*;q=0.8";
-            webRequest.UserAgent = "Mozilla/5.0 (Windows; U; Windows NT 5.2; zh-CN; rv:1.9.2.8) Gecko/20100722 Firefox/3.6.8";
-            webRequest.UserAgent = "Mozilla / 5.0(Windows NT 10.0; Win64; x64; rv: 74.0) Gecko / 20100101 Firefox / 74.0";
+          //  webRequest.UserAgent = "Mozilla/5.0 (Windows; U; Windows NT 5.2; zh-CN; rv:1.9.2.8) Gecko/20100722 Firefox/3.6.8";
+          //  webRequest.UserAgent = "Mozilla / 5.0(Windows NT 10.0; Win64; x64; rv: 74.0) Gecko / 20100101 Firefox / 74.0";
             webRequest.CookieContainer = new CookieContainer();
 
 
@@ -46,18 +45,19 @@ namespace ScheduleManagement.clawer
 
             return html;
         }
-
+        //获取document
         public HtmlAgilityPack.HtmlDocument CreateHtmlDocument(string html)
         {
             HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
             doc.LoadHtml(html);
             return doc;
         }
+        //对document解析，得到需要的各种信息
         public bool JieXiHtml(string html)
         {
 
             var doc = this.CreateHtmlDocument(html);
-
+            //筛选出每一条
             HtmlNodeCollection htmlNodes1 = doc.DocumentNode.SelectNodes("//div[@class='topic_match_list']/div[@class='list_block']");
 
 
@@ -65,14 +65,17 @@ namespace ScheduleManagement.clawer
                 return false;
             var htmlNodeList1 = htmlNodes1.ToList();
 
+            //对每一条进行遍历
             for (var i = 0; i < htmlNodeList1.Count; i++)
             {
                 var htmlNode = htmlNodeList1[i];
                 var temp = HtmlNode.CreateNode(htmlNode.OuterHtml);
-                var news = new EC();
+                var news = new EC();//EC类定义每一条比赛所需要的属性
+
                 //取状态，是否开始了
                 var ZtHtmlNode = temp.SelectSingleNode("//a/div[1]");
                 news.zt = ZtHtmlNode == null ? "" : ZtHtmlNode.InnerText;
+
                 //取时间，几号，几点
                 var DayHtmlNode = temp.SelectSingleNode("//time[@class='time']");
                 string t = DayHtmlNode == null ? "" : DayHtmlNode.InnerText;
@@ -82,34 +85,36 @@ namespace ScheduleManagement.clawer
                 //球队1
                 var Player1HtmlNode = temp.SelectSingleNode("//div[@class='match_name']/span[@class='text_left text-ignore']");
                 news.Player1 = Player1HtmlNode == null ? "" : Player1HtmlNode.InnerText;
+
                 //球队2
                 var Player2HtmlNode = temp.SelectSingleNode("//div[@class='match_name']/span[@class='text_right text-ignore']");
                 news.Player2 = Player2HtmlNode == null ? "" : Player2HtmlNode.InnerText;
-                //取详情页面url   
+
+                //取详情页面url，使用正则表达式取出<a……href=‘’>里href的url   
                 var UrlHtmlNode = temp;
                 string str = UrlHtmlNode == null ? "" : Convert.ToString(UrlHtmlNode.InnerHtml);
                 string reg = @"<a[^>]*href=([""'])?(?<href>[^'""]+)\1[^>]*>";
                 Match item = Regex.Match(str, reg, RegexOptions.IgnoreCase);
                 news.Link = "https://www.24zbw.com" + item.Groups["href"].Value;
-                if (loveplayer == "" || news.Player1.Contains(loveplayer) || news.Player2.Contains(loveplayer))
-                {
-                    ANewsDownloaded(this, news.zt, news.Day, news.Time, news.Player1, news.Player2, news.Link);
-                }
+
+
+                ANewsDownloaded(this, news.zt, news.Day, news.Time, news.Player1, news.Player2, news.Link);
             }
             return true;
         }
 
 
-
+        //爬虫入口
         public void Excute()
         {
             this.Start(requestUrl);
         }
-
+        //开始爬取
         public bool Start(string url)
         {
-            var html = this.LoadUrl(url, Encoding.UTF8);
-            return this.JieXiHtml(html);
+            var html = this.LoadUrl(url, Encoding.UTF8);//对要爬取到网站转格式
+            return this.JieXiHtml(html); 
         }
+
     }
 }

@@ -95,13 +95,17 @@
     </Compile>
     <Compile Include="clawer\AFC.cs" />
     <Compile Include="clawer\afcs.cs" />
+    <Compile Include="clawer\Concert.cs" />
+    <Compile Include="clawer\Concerts.cs" />
     <Compile Include="clawer\CSlecture.cs" />
+    <Compile Include="clawer\Dance.cs" />
     <Compile Include="clawer\EC.cs" />
     <Compile Include="clawer\EuropeanCup.cs" />
     <Compile Include="clawer\lecture.cs" />
+    <Compile Include="clawer\Livehouse.cs" />
+    <Compile Include="clawer\ModernDrama.cs" />
     <Compile Include="clawer\Movie.cs" />
     <Compile Include="clawer\Ms.cs" />
-    <Compile Include="clawer\RISDBContext.cs" />
     <Compile Include="clawer\Zc.cs" />
     <Compile Include="clawer\zhongchao.cs" />
     <Compile Include="Entity\Affair.cs" />

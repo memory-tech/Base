@@ -75,12 +75,16 @@ namespace ScheduleManagement.clawer
                 news.weekday = t.Substring(11, 3);
                 //取详情页面url   
                 var UrlHtmlNode = temp.SelectSingleNode("//section[@class='match-section match-today']/div[@class='match-list match-list-notstarted']");
+                if(UrlHtmlNode == null)
+                {
+                    UrlHtmlNode = temp.SelectSingleNode("//section[@class='match-section match-today']/div[@class='match-list match-list-competition']");
+                }
                 string str = UrlHtmlNode == null ? "" : Convert.ToString(UrlHtmlNode.InnerHtml);
                 string reg = @"<a[^>]*href=([""'])?(?<href>[^'""]+)\1[^>]*>";
                 Match item = Regex.Match(str, reg, RegexOptions.IgnoreCase);
                 news.Link = item.Groups["href"].Value;
                 //具体几点
-                var TimeHtmlNode = temp.SelectSingleNode("//div[@class='match-state']");
+                var TimeHtmlNode = temp.SelectSingleNode("//div[@class='match-col-1']");
                 news.Time = TimeHtmlNode == null ? "" : TimeHtmlNode.InnerText;
 
                 //球队1
@@ -111,7 +115,7 @@ namespace ScheduleManagement.clawer
                 item = Regex.Match(str, reg, RegexOptions.IgnoreCase);
                 news.Link = item.Groups["href"].Value;
                 //具体几点
-                TimeHtmlNode = temp.SelectSingleNode("//section[@class='match-section match-today']/div[3]/a/div[@class='match-col-1']/ div[@class='match-state']");
+                TimeHtmlNode = temp.SelectSingleNode("//section[@class='match-section match-today']/div[3]/a/div[@class='match-col-1']");
                 news.Time = TimeHtmlNode == null ? "" : TimeHtmlNode.InnerText;
                 //球队1
                 Player1HtmlNode = temp.SelectSingleNode("//section[@class='match-section match-today']/div[3]/a/div[@class='team-name']/div[1]/h4");
@@ -152,12 +156,16 @@ namespace ScheduleManagement.clawer
                 news.weekday = t.Substring(11, 3);
                 //取详情页面url  
                 var UrlHtmlNode = temp.SelectSingleNode("//div[@class='match-list match-list-notstarted']");
+                if (UrlHtmlNode == null)
+                {
+                    UrlHtmlNode = temp.SelectSingleNode("//div[@class='match-list match-list-competition']");
+                }
                 string str = UrlHtmlNode == null ? "" : Convert.ToString(UrlHtmlNode.InnerHtml);
                 string reg = @"<a[^>]*href=([""'])?(?<href>[^'""]+)\1[^>]*>";
                 Match item = Regex.Match(str, reg, RegexOptions.IgnoreCase);
                 news.Link = item.Groups["href"].Value;
                 //具体几点
-                var TimeHtmlNode = temp.SelectSingleNode("//div[@class='match-state']");
+                var TimeHtmlNode = temp.SelectSingleNode("//div[@class='match-col-1']");
                 news.Time = TimeHtmlNode == null ? "" : TimeHtmlNode.InnerText;
                 //球队1
                 var Player1HtmlNode = temp.SelectSingleNode("//div[@class='team-name']/div[1]/h4");
@@ -188,7 +196,7 @@ namespace ScheduleManagement.clawer
                 item = Regex.Match(str, reg, RegexOptions.IgnoreCase);
                 news.Link = item.Groups["href"].Value;
                 //具体几点
-                TimeHtmlNode = temp.SelectSingleNode("//section[@class='match-section ']/div[3]/a/div[@class='match-col-1']/ div[@class='match-state']");
+                TimeHtmlNode = temp.SelectSingleNode("//section[@class='match-section ']/div[3]/a/div[@class='match-col-1']");
                 news.Time = TimeHtmlNode == null ? "" : TimeHtmlNode.InnerText;
                 //球队1
                 Player1HtmlNode = temp.SelectSingleNode("//section[@class='match-section ']/div[3]/a/div[@class='team-name']/div[1]/h4");
