@@ -26,6 +26,10 @@ namespace ScheduleManagement
         Movie claw3 = new Movie();
         AFC claw4 = new AFC();
         CSlecture claw5 = new CSlecture();
+        Concert claw6 = new Concert();
+        Livehouse claw7 = new Livehouse();
+        Dance claw8 = new Dance();
+        ModernDrama claw9 = new ModernDrama();
         public Clawer()
         {
             InitializeComponent();
@@ -35,6 +39,10 @@ namespace ScheduleManagement
             claw3.MoviesDownloaded += Clawer_MoviesDownloaded;
             claw4.ANewsDownloaded += Clawer_ANewsDownloaded;
             claw5.LNewsDownloaded += Clawer_LNewsDownloaded;
+            claw6.ConcertDownloaded += Clawer_ConcertDownloaded;
+            claw7.LivehouseDownloaded += Clawer_LivehouseDownloaded;
+            claw8.DanceDownloaded += Clawer_DanceDownloaded;
+            claw9.ModernDramaDownloaded += Clawer_ModernDramaDownloaded;
 
         }
         private Graphics graphics;
@@ -67,10 +75,10 @@ namespace ScheduleManagement
                 action();
             }
         }
-        /*
-        private void Clawer_WNewsDownloaded(WorldCup crawler, string zt, string day, string time, string player1, string player2, string link)
+        
+        private void Clawer_ConcertDownloaded(Concert crawler, string state, string name, string time, string place,string money, string link)
         {
-            var newpage = new { 序号 = resultBindingSource.Count + 1, 状态 = zt, 日期 = day, 开始时间 = time, 对阵双方左 = player1, 对阵双方右 = player2, 直播链接 = link };
+            var newpage = new { 序号 = resultBindingSource.Count + 1, 状态 = state, 主题 = name, 时间 = time, 地点 = place, 价格 = money, 直播链接 = link };
             Action action = () => { resultBindingSource.Add(newpage); };
             if (this.InvokeRequired)
             {
@@ -81,7 +89,47 @@ namespace ScheduleManagement
                 action();
             }
         }
-        */
+
+        private void Clawer_LivehouseDownloaded(Livehouse crawler, string state, string name, string time, string place, string money, string link)
+        {
+            var newpage = new { 序号 = resultBindingSource.Count + 1, 状态 = state, 主题 = name, 时间 = time, 地点 = place, 价格 = money, 直播链接 = link };
+            Action action = () => { resultBindingSource.Add(newpage); };
+            if (this.InvokeRequired)
+            {
+                this.Invoke(action);
+            }
+            else
+            {
+                action();
+            }
+        }
+        private void Clawer_DanceDownloaded(Dance crawler, string state, string name, string time, string place, string money, string link)
+        {
+            var newpage = new { 序号 = resultBindingSource.Count + 1, 状态 = state, 主题 = name, 时间 = time, 地点 = place, 价格 = money, 直播链接 = link };
+            Action action = () => { resultBindingSource.Add(newpage); };
+            if (this.InvokeRequired)
+            {
+                this.Invoke(action);
+            }
+            else
+            {
+                action();
+            }
+        }
+        private void Clawer_ModernDramaDownloaded(ModernDrama crawler, string state, string name, string time, string place, string money, string link)
+        {
+            var newpage = new { 序号 = resultBindingSource.Count + 1, 状态 = state, 主题 = name, 时间 = time, 地点 = place, 价格 = money, 直播链接 = link };
+            Action action = () => { resultBindingSource.Add(newpage); };
+            if (this.InvokeRequired)
+            {
+                this.Invoke(action);
+            }
+            else
+            {
+                action();
+            }
+        }
+
         private void Clawer_MoviesDownloaded(Movie crawler, string name, string time, string type, string actors, string scores, string url)
         {
             var newpage = new { Index = resultBindingSource.Count + 1, Name = name, Time = time, Type = type, Actors = actors, Scores = scores, Url = url };
@@ -137,9 +185,6 @@ namespace ScheduleManagement
         private void button1_Click(object sender, EventArgs e)
         {
             resultBindingSource.Clear();
-            claw.loveplayer = textBox2.Text;
-            claw0.loveplayer = textBox2.Text;
-            claw4.loveplayer = textBox2.Text;
             switch (comboBox1.SelectedIndex)
             {
                 case 0:
@@ -149,15 +194,25 @@ namespace ScheduleManagement
                     claw.Excute();
                     break;
                 case 2:
-                    break;
-                case 3:
                     claw3.Excute();
                     break;
-                case 4:
+                case 3:
                     claw4.Excute();
                     break;
-                case 5:
+                case 4:
                     claw5.Excute();
+                    break;
+                case 5:
+                    claw6.Excute();
+                    break;
+                case 6:
+                    claw7.Excute();
+                    break;
+                case 7:
+                    claw8.Excute();
+                    break;
+                case 8:
+                    claw9.Excute();
                     break;
                 default:
                     break;
