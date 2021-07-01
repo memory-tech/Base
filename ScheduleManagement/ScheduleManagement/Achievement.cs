@@ -28,9 +28,6 @@ namespace ScheduleManagement
         private void Achievement_Load(object sender, EventArgs e)
         {
             
-            label1.Visible = false;
-            label2.Visible = false;
-            label3.Visible = false;
         }
         OthersServiceDetails osd = new OthersServiceDetails();
         private void queryBtn_Click(object sender, EventArgs e)
@@ -100,9 +97,7 @@ namespace ScheduleManagement
             }
             chart1.Series[0].Points.DataBindXY(xData, yData);
             chart2.Series[0].Points.DataBindXY(xDatas, yDatas);
-            label1.Visible = true;
-            label2.Visible = true;
-            label3.Visible = true;
+            
         }
     }
 }
