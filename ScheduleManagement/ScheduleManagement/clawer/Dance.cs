@@ -26,7 +26,7 @@ namespace ScheduleManagement.clawer
         {
             //使用 WebRequest 类
             HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(url);
-            //避免403被ban
+            //设置代理，避免403被ban
             webRequest.KeepAlive = true;
             webRequest.ContentType = "application/x-www-form-urlencoded";
             webRequest.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,*;q=0.8";
@@ -53,15 +53,12 @@ namespace ScheduleManagement.clawer
             doc.LoadHtml(html);
             return doc;
         }
+        //获取需要的信息
         public bool JieXiHtml(string html)
-        {
-            //  using (RISDBContext dbContext = new RISDBContext())
-            //  {
+        {           
             var doc = this.CreateHtmlDocument(html);
 
-
             HtmlNodeCollection htmlNodesmovie = doc.DocumentNode.SelectNodes("//a[@class='show-items sa_entrance']");
-
 
             if (htmlNodesmovie.Count == 0)
                 return false;//没取到舞蹈演出信息
@@ -71,7 +68,7 @@ namespace ScheduleManagement.clawer
             {
                 var htmlNode = htmlNodeList1[i];
                 var temp = HtmlNode.CreateNode(htmlNode.OuterHtml);
-                var news = new Concerts();
+                var news = new news();
 
                 //取舞蹈演出名字
                 var TitleHtmlNode = temp.SelectSingleNode("//div[@class='show-name']");
@@ -86,12 +83,11 @@ namespace ScheduleManagement.clawer
                 //去掉//中的一个，保证拼接出正确的url
                 string s = item.Groups["href"].Value;
                 s = s.Substring(1, s.Length-1);
-                news.url = "https://www.moretickets.com/" + s;
-
+                news.Link = "https://www.moretickets.com/" + s;
 
                 //演出时间
                 var TimeHtmlNode = temp.SelectSingleNode("//div[@class='row-wrapper bottom-align']/div[@class='show-time']");
-                news.time = TimeHtmlNode == null ? "" : TimeHtmlNode.InnerText;
+                news.Time = TimeHtmlNode == null ? "" : TimeHtmlNode.InnerText;
 
                 //演出地点
                 var PlaceHtmlNode = temp.SelectSingleNode("//div[@class='row-wrapper bottom-align']/div[@class='show-addr']");
@@ -104,7 +100,8 @@ namespace ScheduleManagement.clawer
                 //价格
                 var MoneyHtmlNode = temp.SelectSingleNode("//div[@class='row-wrapper bottom-align']/div[@class='show-price']");
                 news.money = MoneyHtmlNode == null ? "" : MoneyHtmlNode.InnerText;
-                DanceDownloaded(this, news.state, news.name, news.time, news.place, news.money, news.url);
+                //委托的调用
+                DanceDownloaded(this, news.state, news.name, news.Time, news.place, news.money, news.Link);
             }
 
             return true;

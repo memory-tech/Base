@@ -70,7 +70,7 @@ namespace ScheduleManagement.clawer
             {
                 var htmlNode = htmlNodeList1[i];
                 var temppp = HtmlNode.CreateNode(htmlNode.OuterHtml);
-                var news = new EC();//EC类定义每一条比赛所需要的属性
+                var news = new news();//EC类定义每一条比赛所需要的属性
 
                 //取时间，几号
                 var DayHtmlNode = temppp.SelectSingleNode("//div[@class='date']");
@@ -96,10 +96,6 @@ namespace ScheduleManagement.clawer
 
                 ANewsDownloaded(this, news.Day, news.Time, news.Player1, news.Player2, news.Link);
 
-                //   temp = temppp.SelectSingleNode("//div[@class='sfc-contacts-list']/div[2]");
-                /*取状态，是否开始了
-                var ZtHtmlNode = temp.SelectSingleNode("//div[@class='cont cont1 clearfix']/p[@class='status']");*/
-                news.zt = "";//ZtHtmlNode == null ? "" : ZtHtmlNode.InnerText;
 
                 //取时间，几点
                 TimeHtmlNode = temp.SelectSingleNode("//div[@class='sfc-contacts-list']/div[2]/a/div[@class='vs-info']/div[@class='vs-info-date']/div[@class='vs-info-date-content']/div[@class='font-14 c-gap-bottom-small']");
@@ -116,12 +112,7 @@ namespace ScheduleManagement.clawer
 
                 news.Link = "https://www.huya.com/lpl";
 
-                ANewsDownloaded(this, news.Day, news.Time, news.Player1, news.Player2, news.Link);
-
-                //   temp = temppp.SelectSingleNode("//div[@class='sfc-contacts-list']/div[2]");
-                /*取状态，是否开始了
-                var ZtHtmlNode = temp.SelectSingleNode("//div[@class='cont cont1 clearfix']/p[@class='status']");*/
-                news.zt = "";//ZtHtmlNode == null ? "" : ZtHtmlNode.InnerText;
+                ANewsDownloaded(this, news.Day, news.Time, news.Player1, news.Player2, news.Link);             
 
                 //取时间，几点
                 TimeHtmlNode = temp.SelectSingleNode("//div[@class='sfc-contacts-list']/div[3]/a/div[@class='vs-info']/div[@class='vs-info-date']/div[@class='vs-info-date-content']/div[@class='font-14 c-gap-bottom-small']");

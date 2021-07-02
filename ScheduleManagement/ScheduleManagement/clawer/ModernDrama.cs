@@ -71,7 +71,7 @@ namespace ScheduleManagement.clawer
             {
                 var htmlNode = htmlNodeList1[i];
                 var temp = HtmlNode.CreateNode(htmlNode.OuterHtml);
-                var news = new Concerts();
+                var news = new news();
 
                 //取舞蹈演出名字
                 var TitleHtmlNode = temp.SelectSingleNode("//div[@class='show-name']");
@@ -86,12 +86,12 @@ namespace ScheduleManagement.clawer
                 //去掉//中的一个，保证拼接出正确的url
                 string s = item.Groups["href"].Value;
                 s = s.Substring(1, s.Length-1);
-                news.url = "https://www.moretickets.com/" + s;
+                news.Link = "https://www.moretickets.com/" + s;
 
 
                 //演出时间
                 var TimeHtmlNode = temp.SelectSingleNode("//div[@class='row-wrapper bottom-align']/div[@class='show-time']");
-                news.time = TimeHtmlNode == null ? "" : TimeHtmlNode.InnerText;
+                news.Time = TimeHtmlNode == null ? "" : TimeHtmlNode.InnerText;
 
                 //演出地点
                 var PlaceHtmlNode = temp.SelectSingleNode("//div[@class='row-wrapper bottom-align']/div[@class='show-addr']");
@@ -104,7 +104,7 @@ namespace ScheduleManagement.clawer
                 //价格
                 var MoneyHtmlNode = temp.SelectSingleNode("//div[@class='row-wrapper bottom-align']/div[@class='show-price']");
                 news.money = MoneyHtmlNode == null ? "" : MoneyHtmlNode.InnerText;
-                ModernDramaDownloaded(this, news.state, news.name, news.time, news.place, news.money, news.url);
+                ModernDramaDownloaded(this, news.state, news.name, news.Time, news.place, news.money, news.Link);
             }
 
             return true;

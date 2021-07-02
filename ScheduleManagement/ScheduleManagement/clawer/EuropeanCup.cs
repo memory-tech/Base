@@ -70,10 +70,10 @@ namespace ScheduleManagement.clawer
             {
                 var htmlNode = htmlNodeList1[i];
                 var temp = HtmlNode.CreateNode(htmlNode.OuterHtml);
-                var news = new EC();
+                var news = new news();
                 //取状态，是否开始了
                 var ZtHtmlNode = temp.SelectSingleNode("//span[@class='wks']");
-                news.zt = ZtHtmlNode == null ? "" : ZtHtmlNode.InnerText;
+                news.state = ZtHtmlNode == null ? "" : ZtHtmlNode.InnerText;
                 //取时间，几号，几点
                 var DayHtmlNode = temp.SelectSingleNode("//time[@class='time']");
                 string t = DayHtmlNode == null ? "" : DayHtmlNode.InnerText;
@@ -92,7 +92,7 @@ namespace ScheduleManagement.clawer
                 string reg = @"<a[^>]*href=([""'])?(?<href>[^'""]+)\1[^>]*>";
                 Match item = Regex.Match(str, reg, RegexOptions.IgnoreCase);
                 news.Link = "https://www.24zbw.com/"+item.Groups["href"].Value;
-                ENewsDownloaded(this, news.zt, news.Day, news.Time, news.Player1, news.Player2, news.Link);
+                ENewsDownloaded(this, news.state, news.Day, news.Time, news.Player1, news.Player2, news.Link);
                 
             }
             return true;

@@ -232,8 +232,16 @@ namespace ScheduleManagement
                     break;
 
                 case 2://音乐会、livehouse、话剧、舞蹈表演
-                   //标题
-                    parameters[0].Value = row.Cells[1].Value.ToString();
+                       //标题
+                    string x = @"[\u4E00-\u9FFF]+";
+                    MatchCollection Matchestype = Regex.Matches
+                    (row.Cells[1].Value.ToString(), x, RegexOptions.IgnoreCase);
+                    StringBuilder itstype = new StringBuilder();
+                    foreach (Match NextMatch in Matchestype)
+                    {
+                        itstype.Append(NextMatch.Value);
+                    }
+                    parameters[0].Value = itstype.ToString();
                     //地点
                     parameters[1].Value = row.Cells[4].Value.ToString();
                     //处理特殊情况，时间段  2021.11.11-2021.11.12
@@ -274,17 +282,21 @@ namespace ScheduleManagement
                     break;
 
                 case 4://中超
-                   //标题
-                    parameters[0].Value = row.Cells[3].Value.ToString() + " VS " + row.Cells[4].Value.ToString();
-                    //地点
-                    parameters[1].Value = "线上观看";
-                    //时间
-                    parameters[2].Value = Convert.ToDateTime(row.Cells[1].Value.ToString());
-                    //内容
-                    parameters[4].Value = "轮次： " + row.Cells[5].Value.ToString();
-                    //若为0则为今天
-                    parameters[7].Value = Convert.ToInt32(d2.Subtract(Convert.ToDateTime(row.Cells[1].Value.ToString())).Days);
+                   // DialogResult rstt = MessageBox.Show("        比赛已延期！\r\n    请等待后续消息!");
+                
+               //标题
+                parameters[0].Value ="比赛已延期！ "+ row.Cells[3].Value.ToString() + " VS " + row.Cells[4].Value.ToString();
+                //地点
+                parameters[1].Value = "线上观看";
+                //时间
+                parameters[2].Value = Convert.ToDateTime(row.Cells[1].Value.ToString()+" 12:00:00");
+                //内容
+                parameters[4].Value = "轮次： " + row.Cells[5].Value.ToString();
+                //若为0则为今天
+                parameters[7].Value = Convert.ToInt32(d2.Subtract(Convert.ToDateTime(row.Cells[1].Value.ToString())).Days);
+                
                     break;
+                
 
                 case 8://LPL
                    //标题

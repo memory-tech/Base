@@ -66,7 +66,7 @@ namespace ScheduleManagement.clawer
                 //取页面section中的内容
                 //用temp而不是htmlNode再进行相关的赋值即可
                 var temp = HtmlNode.CreateNode(htmlNode.OuterHtml);
-                var news = new Zc();
+                var news = new news();
                 //取日期，几号
                 var DayHtmlNode = temp.SelectSingleNode("//div[@class='time-label']/span");
                 string t = DayHtmlNode == null ? "" : DayHtmlNode.InnerText;
@@ -127,7 +127,7 @@ namespace ScheduleManagement.clawer
                 NewsDownloaded(this, news.Day, news.weekday, news.Time, news.Player1, news.Player2, news.Turn, news.Link);
             }
 
-            //接下来三天
+            //接下来三天，由于第一天和其他天的class的值不同，因此需要分开再取一次
             //下面的意思是：通过属性class的值，来定位节点信息
             HtmlNodeCollection htmlNodes = doc.DocumentNode.SelectNodes("//section[@class='match-section ']");
 
@@ -142,7 +142,7 @@ namespace ScheduleManagement.clawer
                 //取页面section中的内容
                 //用temp而不是htmlNode再进行相关的赋值即可
                 var temp = HtmlNode.CreateNode(htmlNode.OuterHtml);
-                var news = new Zc();
+                var news = new news();
                 //取日期，几号
                 var DayHtmlNode = temp.SelectSingleNode("//div[@class='time-label']/span");
                 string t = DayHtmlNode == null ? "" : DayHtmlNode.InnerText;
@@ -206,51 +206,9 @@ namespace ScheduleManagement.clawer
             return true;
         }
 
-            //对比赛详情页的查询统计,首场6.21
-            /*
-            if (!string.IsNullOrEmpty(news.Link) && news.Link.Contains("http://"))
-            {
-                var contentHtml = this.LoadUrl(news.Link, Encoding.Default);
-                var contentDoc = this.CreateHtmlDocument(contentHtml);
-                HtmlNode sourceHtmlNode = contentDoc.DocumentNode.SelectSingleNode("//div[@id='cont_1_1_2']/div[@class='left-time']/div[@class='left-t']");
-                news.Source = sourceHtmlNode == null ? "" : sourceHtmlNode.InnerText;
-                HtmlNode contentHtmlNode = contentDoc.DocumentNode.SelectSingleNode("//div[@id='cont_1_1_2']/div[@class='left_zw']");
-                news.Content = contentHtmlNode == null ? "" : contentHtmlNode.InnerHtml;
-                HtmlNode authorHtmlNode = contentDoc.DocumentNode.SelectSingleNode("//div[@id='cont_1_1_2']/div[@class='left_name']/div[@class='left_name']");
-                news.Author = authorHtmlNode == null ? "" : authorHtmlNode.InnerText;
-            }
-            */
-            //保存到数据库    dbContext.News.Add(news);
-            //     }
-            /*
-            try
-            {
-             //保存到数据库   dbContext.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-
-            }
-
-            return true;//继续爬取
-        }
-
-        return false;
-            
-               
-        }
-       */
-
-        public void Excute()//(object sender, EventArgs e)
+        public void Excute()
         {
-           // var isTrue = true;
-            this.Start(requestUrl);
-            /*
-            while (isTrue)
-            {
-                isTrue = this.Start(requestUrl);
-            }
-            */
+            this.Start(requestUrl);         
         }
 
         public bool Start(string url)

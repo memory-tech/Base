@@ -15,7 +15,7 @@ namespace ScheduleManagement
 {
     public partial class Main : Form
     {
-        public AddAffair f1; //创建用户控件一变量
+        public Setting f1; //创建用户控件一变量
         public Affair f2; //创建用户控件二变量
         public Pomodoro f3; //创建用户控件三变量
         public Clawer f4; //创建用户控件四变量
@@ -116,7 +116,7 @@ namespace ScheduleManagement
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            f1 = new AddAffair();    //实例化f1
+            f1 = new Setting();    //实例化f1
             f1.Show();   //将窗体一进行显示
             panel1.Controls.Clear();    //清空原容器上的控件
             panel1.Controls.Add(f1);    //将窗体一加入容器panel1

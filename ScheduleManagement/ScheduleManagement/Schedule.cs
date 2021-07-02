@@ -32,22 +32,29 @@ namespace ScheduleManagement
         {
             Main = m;
             InitializeComponent();
+            
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select DateTime,AffairId,Title,Place,EndTime,Urgency,Content,State,TimeInterval,Unit,RemindTimes,Stander ");
-            strSql.Append(" FROM AffairInfo Order by DateTime");
+            strSql.Append(" FROM AffairInfo Order by DateTime ASC");
             DataSet ds = DbHelperSQLite.Query(strSql.ToString());
-            DataRow[] dd = ds.Tables[0].Select("stander = '0'");
+            DataRow[] dd = ds.Tables[0].Select("Stander = '0'");
             DataTable today = this.ToDataTable(dd);
             this.dataGridView2.DataSource = today;
-
-            DataGridViewRow row = this.dataGridView2.Rows[1];
-            dataGridView2.Columns[0].HeaderCell.Value = "时间";
-            dataGridView2.Columns[2].HeaderCell.Value = "事项";
-            placeBox.Text = row.Cells[3].Value.ToString();
-            starttimeBox.Text = row.Cells[0].Value.ToString();
-            endtimeBox.Text = row.Cells[4].Value.ToString();
-            stateBox.Text = row.Cells[7].Value.ToString();
-            if (endtimeBox.Text == "0001-01-01 00:00:00" || row.Cells[4].Value != null) endtimeBox.Text = "";
+            dataGridView2.Columns["DateTime"].Width = 125;
+            dataGridView2.Columns["Title"].Width = 107;
+            if (this.dataGridView2.Rows.Count > 0)
+            {
+                DataGridViewRow row = this.dataGridView2.Rows[0];
+                
+                dataGridView2.Columns[0].HeaderCell.Value = "时间";
+                dataGridView2.Columns[2].HeaderCell.Value = "事项";
+                placeBox.Text = row.Cells[3].Value == null?"":row.Cells[3].Value.ToString();
+                starttimeBox.Text = row.Cells[0].Value == null ? "" : row.Cells[0].Value.ToString();
+                endtimeBox.Text = row.Cells[4].Value == null ? "" : row.Cells[4].Value.ToString();
+                stateBox.Text = row.Cells[7].Value == null ? "" : row.Cells[7].Value.ToString();
+                if (endtimeBox.Text == "0001-01-01 00:00:00" || row.Cells[4].Value != null) endtimeBox.Text = "";
+            }
+            
             //隐藏列            
             dataGridView2.Columns[1].Visible = false;     
             dataGridView2.Columns[3].Visible = false;     
@@ -63,12 +70,24 @@ namespace ScheduleManagement
         //用于委托，在main里每次进入该界面时被调用，来刷新datagridview
         private void UserControl5_Load(object sender, EventArgs e)
         {
-            AffairService aff = new AffairService();
-            DataSet ds = aff.GetAllList();
-
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select DateTime,AffairId,Title,Place,EndTime,Urgency,Content,State,TimeInterval,Unit,RemindTimes,Stander ");
+            strSql.Append(" FROM AffairInfo Order by DateTime ASC");
+            DataSet ds = DbHelperSQLite.Query(strSql.ToString());
             DataRow[] dd = ds.Tables[0].Select("stander = '0'");
             DataTable today = this.ToDataTable(dd);
             this.dataGridView2.DataSource = today;
+            if (this.dataGridView2.Rows.Count > 0)
+            {
+                DataGridViewRow row = this.dataGridView2.Rows[0];
+                dataGridView2.Columns[0].HeaderCell.Value = "时间";
+                dataGridView2.Columns[2].HeaderCell.Value = "事项";
+                placeBox.Text = row.Cells[3].Value == null ? "" : row.Cells[3].Value.ToString();
+                starttimeBox.Text = row.Cells[0].Value == null ? "" : row.Cells[0].Value.ToString();
+                endtimeBox.Text = row.Cells[4].Value == null ? "" : row.Cells[4].Value.ToString();
+                stateBox.Text = row.Cells[7].Value == null ? "" : row.Cells[7].Value.ToString();
+                if (endtimeBox.Text == "0001-01-01 00:00:00" || row.Cells[4].Value != null) endtimeBox.Text = "";
+            }
         }
         //设置行的颜色
         string st;
@@ -79,11 +98,11 @@ namespace ScheduleManagement
                 st = this.dataGridView2.Rows[e.RowIndex].Cells[7].Value.ToString();
                 if (st == "完成")
                 {
-                    dataGridView2.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGreen;
+                    dataGridView2.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.PaleTurquoise;
                 }
                 else if (st == "未完成")
                 {
-                    dataGridView2.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.OrangeRed;
+                    dataGridView2.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Orange;
                 }
             }
         }
@@ -101,13 +120,13 @@ namespace ScheduleManagement
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = this.dataGridView2.CurrentRow;
-            if (row.Cells[7].Value.ToString() != "已完成")
+            if (row.Cells[7].Value.ToString() != "完成")
             {
                 Entity.Affair affair = new Entity.Affair();
-                affair.AffairId = Int32.Parse(dataGridView2.CurrentRow.Cells[0].Value.ToString());
-                affair.Title = dataGridView2.CurrentRow.Cells[1].Value.ToString();
-                affair.Place = dataGridView2.CurrentRow.Cells[2].Value.ToString();
-                affair.DateTime = DateTime.Parse(dataGridView2.CurrentRow.Cells[3].Value.ToString());
+                affair.AffairId = Int32.Parse(dataGridView2.CurrentRow.Cells[1].Value.ToString());
+                affair.Title = dataGridView2.CurrentRow.Cells[2].Value.ToString();
+                affair.Place = dataGridView2.CurrentRow.Cells[3].Value.ToString();
+                affair.DateTime = DateTime.Parse(dataGridView2.CurrentRow.Cells[0].Value.ToString());
                 affair.EndTime = DateTime.Parse(dataGridView2.CurrentRow.Cells[4].Value.ToString());
                 affair.Urgency = dataGridView2.CurrentRow.Cells[5].Value.ToString();
                 affair.Content = dataGridView2.CurrentRow.Cells[6].Value.ToString();
@@ -126,10 +145,10 @@ namespace ScheduleManagement
             DataGridViewRow row = this.dataGridView2.CurrentRow;
             Entity.Affair affair = new Entity.Affair();
             AffairService aff = new AffairService();
-            affair.AffairId = Convert.ToInt32(row.Cells[0].Value.ToString());
-            affair.Title = row.Cells[1].Value.ToString();
-            affair.Place = row.Cells[2].Value.ToString();
-            affair.DateTime = DateTime.Parse(row.Cells[3].Value.ToString());
+            affair.AffairId = Convert.ToInt32(row.Cells[1].Value.ToString());
+            affair.Title = row.Cells[2].Value.ToString();
+            affair.Place = row.Cells[3].Value.ToString();
+            affair.DateTime = DateTime.Parse(row.Cells[0].Value.ToString());
             affair.EndTime = DateTime.Parse(row.Cells[4].Value.ToString());
             affair.Urgency = row.Cells[5].Value.ToString();
             affair.Content = row.Cells[6].Value.ToString();

@@ -364,3 +364,37 @@ C:\Users\memory\Desktop\Base\ScheduleManagement\ScheduleManagement\obj\Debug\Sch
 C:\Users\memory\Desktop\Base\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.csproj.CopyComplete
 C:\Users\memory\Desktop\Base\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.exe
 C:\Users\memory\Desktop\Base\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.pdb
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\bin\Debug\ScheduleManagement.exe.config
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\bin\Debug\ScheduleManagement.exe
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\bin\Debug\ScheduleManagement.pdb
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\bin\Debug\EntityFramework.dll
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\bin\Debug\HtmlAgilityPack.dll
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\bin\Debug\System.Data.SQLite.dll
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\bin\Debug\EntityFramework.xml
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\bin\Debug\HtmlAgilityPack.xml
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\bin\Debug\System.Data.SQLite.xml
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\bin\Debug\Interop.WMPLib.dll
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.csprojAssemblyReference.cache
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\obj\Debug\Interop.WMPLib.dll
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.csproj.ResolveComReference.cache
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.Achievement.resources
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.Main.resources
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.MainWindow.resources
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.Properties.Resources.resources
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.Affair.resources
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.Pomodoro.resources
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.Clawer.resources
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.Schedule.resources
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.csproj.GenerateResource.cache
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.csproj.CoreCompileInputs.cache
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.csproj.CopyComplete
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.exe
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.pdb
+C:\Users\86130\Documents\Tencent Files\2511367264\FileRecv\新建 ZIP 压缩文件1\ScheduleManagement\ScheduleManagement\obj\Debug\ScheduleManagement.Setting.resources

@@ -95,19 +95,14 @@
       <DependentUpon>Achievement.cs</DependentUpon>
     </Compile>
     <Compile Include="clawer\Concert.cs" />
-    <Compile Include="clawer\Concerts.cs" />
     <Compile Include="clawer\CSlecture.cs" />
     <Compile Include="clawer\Dance.cs" />
-    <Compile Include="clawer\EC.cs" />
     <Compile Include="clawer\EuropeanCup.cs" />
-    <Compile Include="clawer\lecture.cs" />
     <Compile Include="clawer\Livehouse.cs" />
     <Compile Include="clawer\LPL.cs" />
     <Compile Include="clawer\ModernDrama.cs" />
     <Compile Include="clawer\Movie.cs" />
-    <Compile Include="clawer\Ms.cs" />
     <Compile Include="clawer\news.cs" />
-    <Compile Include="clawer\Zc.cs" />
     <Compile Include="clawer\zhongchao.cs" />
     <Compile Include="Entity\Affair.cs" />
     <Compile Include="Entity\ReminderTime.cs" />
@@ -130,11 +125,11 @@
     <Compile Include="Service\AffairsService.cs" />
     <Compile Include="Service\DbHelperSQLite.cs" />
     <Compile Include="Service\ReminderService.cs" />
-    <Compile Include="AddAffair.cs">
+    <Compile Include="Setting.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AddAffair.Designer.cs">
-      <DependentUpon>AddAffair.cs</DependentUpon>
+    <Compile Include="Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
     </Compile>
     <Compile Include="Affair.cs">
       <SubType>UserControl</SubType>
@@ -182,8 +177,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="AddAffair.resx">
-      <DependentUpon>AddAffair.cs</DependentUpon>
+    <EmbeddedResource Include="Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Affair.resx">
       <DependentUpon>Affair.cs</DependentUpon>

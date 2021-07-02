@@ -21,7 +21,6 @@ namespace ScheduleManagement.clawer
         public string requestUrl = "https://www.moretickets.com/search/%E6%AD%A6%E6%B1%89%20%E9%9F%B3%E4%B9%90%E4%BC%9A/musicale";
 
         /// 加载URL
-
         public string LoadUrl(string url, Encoding encoding)
         {
             //使用 WebRequest 类
@@ -55,13 +54,9 @@ namespace ScheduleManagement.clawer
         }
         public bool JieXiHtml(string html)
         {
-            //  using (RISDBContext dbContext = new RISDBContext())
-            //  {
             var doc = this.CreateHtmlDocument(html);
 
-
-            HtmlNodeCollection htmlNodesmovie = doc.DocumentNode.SelectNodes("//a[@class='show-items sa_entrance']");
-            
+            HtmlNodeCollection htmlNodesmovie = doc.DocumentNode.SelectNodes("//a[@class='show-items sa_entrance']");          
 
             if (htmlNodesmovie.Count == 0)
                 return false;//没取到音乐会信息
@@ -71,28 +66,27 @@ namespace ScheduleManagement.clawer
             {
                 var htmlNode = htmlNodeList1[i];
                 var temp = HtmlNode.CreateNode(htmlNode.OuterHtml);
-                var news = new Concerts();
+                var news = new news();
 
                 //取音乐会名字
                 var TitleHtmlNode = temp.SelectSingleNode("//div[@class='show-name']");
                 news.name = TitleHtmlNode == null ? "" : TitleHtmlNode.InnerText;
-                //  news.name = Convert.ToString(htmlNodeList1.Count);
 
                 //取详情页面url   
                 var UrlHtmlNode = temp;
                 string str = UrlHtmlNode == null ? "" : Convert.ToString(UrlHtmlNode.OuterHtml);
-                
+                //正则表达取url
                 string reg = @"<a[^>]*href=([""'])?(?<href>[^'""]+)\1[^>]*>";
                 Match item = Regex.Match(str, reg, RegexOptions.IgnoreCase);
                 //去掉//中的一个，保证拼接出正确的url
                 string s = item.Groups["href"].Value;
                 s = s.Substring(1, s.Length-1);
-                news.url = "https://www.moretickets.com/" + s;
+                news.Link = "https://www.moretickets.com/" + s;
                 
 
                 //演出时间
                 var TimeHtmlNode = temp.SelectSingleNode("//div[@class='row-wrapper bottom-align']/div[@class='show-time']");
-                news.time = TimeHtmlNode == null ? "" : TimeHtmlNode.InnerText;
+                news.Time = TimeHtmlNode == null ? "" : TimeHtmlNode.InnerText;
 
                 //演出地点
                 var PlaceHtmlNode = temp.SelectSingleNode("//div[@class='row-wrapper bottom-align']/div[@class='show-addr']");
@@ -105,7 +99,7 @@ namespace ScheduleManagement.clawer
                 //价格
                 var MoneyHtmlNode = temp.SelectSingleNode("//div[@class='row-wrapper bottom-align']/div[@class='show-price']");
                 news.money = MoneyHtmlNode == null ? "" : MoneyHtmlNode.InnerText;
-                ConcertDownloaded(this, news.state, news.name, news.time, news.place, news.money, news.url);
+                ConcertDownloaded(this, news.state, news.name, news.Time, news.place, news.money, news.Link);
             }
 
             return true;

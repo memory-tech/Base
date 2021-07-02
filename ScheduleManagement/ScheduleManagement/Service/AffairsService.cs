@@ -220,9 +220,9 @@ namespace ScheduleManagement.Service
 
         public int GetStander(DateTime d1)
         {
-            DateTime d2 = DateTime.Now;
-            TimeSpan d3 = d2.Subtract(d1);
-            return Convert.ToInt32(d3.Days);
+            int d2 = DateTime.Now.Day;
+            int d3 = (d2 == d1.Day) ? 0 : 1;
+            return d3;
         }
         
         //获取所需的记录数（新增）

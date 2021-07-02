@@ -55,11 +55,8 @@ namespace ScheduleManagement.clawer
         }
         public bool JieXiHtml(string html)
         {
-            //  using (RISDBContext dbContext = new RISDBContext())
-            //  {
             var doc = this.CreateHtmlDocument(html);
-
-           
+          
             HtmlNodeCollection htmlNodesmovie = doc.DocumentNode.SelectNodes("//dd");
            
             if (htmlNodesmovie.Count == 0)
@@ -70,24 +67,22 @@ namespace ScheduleManagement.clawer
             {
                 var htmlNode = htmlNodeList1[i];
                 var temp = HtmlNode.CreateNode(htmlNode.OuterHtml);
-                var news = new Ms();
+                var news = new news();
 
                 //取电影名字
                 var TitleHtmlNode = temp.SelectSingleNode("//div[@class='channel-detail movie-item-title']/a");
                 news.name = TitleHtmlNode == null ? "" : TitleHtmlNode.InnerText;
-                //  news.name = Convert.ToString(htmlNodeList1.Count);
                 
                   //取详情页面url   
                   var UrlHtmlNode = temp.SelectSingleNode("//div[@class='movie-item film-channel']");
                   string str = UrlHtmlNode == null ? "" : Convert.ToString(UrlHtmlNode.InnerHtml);
                   string reg = @"<a[^>]*href=([""'])?(?<href>[^'""]+)\1[^>]*>";
                   Match item = Regex.Match(str, reg, RegexOptions.IgnoreCase);
-                  news.url = "https://maoyan.com"+item.Groups["href"].Value;
+                  news.Link = "https://maoyan.com"+item.Groups["href"].Value;
 
                   //类型
                   var TypeHtmlNode = temp.SelectSingleNode("//div[@class='movie-hover-info']/div[2]");
-                // var TypeHtmlNodec = temp.SelectSingleNode("//div[@class='movie-hover-info']/div[2]/span");
-                // TypeHtmlNode = TypeHtmlNode.RemoveChild(TypeHtmlNodec);
+                //通过正则表达式取出需要的内容，过滤掉冗余内容
                 string x = @"[\u4E00-\u9FFF]+";
                 MatchCollection Matchestype = Regex.Matches
                 (TypeHtmlNode.InnerText, x, RegexOptions.IgnoreCase);
@@ -114,13 +109,13 @@ namespace ScheduleManagement.clawer
                   //上映时间
                   var TimeHtmlNode = temp.SelectSingleNode("//div[@class='movie-hover-title movie-hover-brief']");
                 string timestr = Regex.Replace(TimeHtmlNode.InnerText, @"[^\d-^\d-^\d]", "");
-                news.time = TimeHtmlNode == null ? "" : timestr;
+                news.Time = TimeHtmlNode == null ? "" : timestr;
 
                   //评分
                   var ScoresHtmlNode = temp.SelectSingleNode("//div[@class='channel-detail channel-detail-orange']");
                   news.scores = ScoresHtmlNode == null ? "" : ScoresHtmlNode.InnerText;
                 
-                MoviesDownloaded(this, news.name, news.time, news.type, news.actors, news.scores, news.url);
+                MoviesDownloaded(this, news.name, news.Time, news.type, news.actors, news.scores, news.Link);
             
             }
              

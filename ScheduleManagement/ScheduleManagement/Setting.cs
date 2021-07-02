@@ -12,16 +12,17 @@ using ScheduleManagement.Service;
 
 namespace ScheduleManagement
 {
-    public partial class AddAffair : UserControl
+    public partial class Setting : UserControl
     {
         private SoundPlayer AlarmBell;
-        public AddAffair()
+        string Title1;
+        public Setting()
         {
             InitializeComponent(); 
         }
         private void UserControl1_Load(object sender, EventArgs e)
         {
-            timer2.Interval = 900;
+            timer2.Interval = 990;
             timer2.Enabled = true;
             ToolTip testTip = new ToolTip();
             testTip.IsBalloon = true;
@@ -101,7 +102,7 @@ namespace ScheduleManagement
             AlarmBell = new SoundPlayer();
             AlarmBell.SoundLocation = PathBox.Text.Trim();
                 AlarmBell.PlayLooping();
-                DialogResult res = MessageBox.Show("时间到了",
+                DialogResult res = MessageBox.Show(Title1+"提醒时间到了",
                 "提示");
                 if (res == DialogResult.OK)
                 {
@@ -118,7 +119,7 @@ namespace ScheduleManagement
             ReminderService rs = new ReminderService();
             DataSet ds2 = rs.GetOrderedList("State1 like '未完成' ");
             DateTime AlarmTime = DateTime.Parse(ds2.Tables[0].Rows[0]["ClockTime1"].ToString());
-            this.textBox_test.Text = ds2.Tables[0].Rows[0]["ClockTime1"].ToString();
+            Title1 = ds2.Tables[0].Rows[0]["Title1"].ToString();
             int Year1 = AlarmTime.Year;
             int Month1 = AlarmTime.Month;
             int Day1 = AlarmTime.Day;

@@ -27,6 +27,7 @@ namespace ScheduleManagement
 
             //列的宽度
             DataGridView1.Columns["Urgency"].Width = 70;
+            DataGridView1.Columns["Title"].Width = 100;
 
             //修改数据列的标题名
             DataGridView1.Columns[1].HeaderCell.Value = "紧急程度";
@@ -86,6 +87,7 @@ namespace ScheduleManagement
             //点击添加事件后,右侧自动显示该事件默认属性值
             DataGridViewRow row = this.DataGridView1.Rows[aff.GetRecordCount("")-1];
             this.label1.Text = row.Cells[0].Value.ToString();
+            this.label_test_AffId.Text = this.label1.Text;
             this.cmb_urgency.SelectedItem = row.Cells[1].Value;
             this.textBox_place.Text = row.Cells[2].Value.ToString();
             this.dateTimePicker_datetime.Value = DateTime.Parse(row.Cells[3].Value.ToString());

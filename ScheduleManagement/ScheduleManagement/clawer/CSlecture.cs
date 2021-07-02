@@ -68,7 +68,7 @@ namespace ScheduleManagement.clawer
             {
                 var htmlNode = htmlNodeList1[i];
                 var temp = HtmlNode.CreateNode(htmlNode.OuterHtml);
-                var news = new lecture();
+                var news = new news();
 
                 //取详情页面url   
                 var UrlHtmlNode = temp.SelectSingleNode("//p[@class='p1']");
@@ -81,14 +81,11 @@ namespace ScheduleManagement.clawer
                 {
                     if (p == 1)
                     {
-                        news.link = "http://cs.whu.edu.cn"+m.Groups["href"].Value;
+                        news.Link = "http://cs.whu.edu.cn"+m.Groups["href"].Value;
                     }
                     p = p + 1;
                 }
 
-         //       string reg = @"<a[^>]*href=([""'])?(?<href>[^'""]+)\1[^>]*>";
-         //       Match item = Regex.Match(str, reg, RegexOptions.IgnoreCase);
-         //       news.link = item.Groups["href"].Value;
 
                 //取简介，然后处理
                 var AllHtmlNode = temp.SelectSingleNode("//p[@class='p2']");
@@ -106,21 +103,21 @@ namespace ScheduleManagement.clawer
                     int numdanwei = t.IndexOf("报告人单位：");
                     int numjianjie = t.IndexOf("报告人简介：");
 
-                    news.title = t.Substring(numtitle + 5, numday - numtitle - 5);
+                    news.name = t.Substring(numtitle + 5, numday - numtitle - 5);
                     news.Day = t.Substring(numday + 5, numtime - numday - 10);
                     news.Time = t.Substring(numtime + 1, numaddress - numtime - 1);
                     if (!news.Day.Contains("年"))
                     {
                         news.Day = "2021年" + news.Day;
                     }
-                    news.address = t.Substring(numaddress + 5, numperson - numaddress - 5);
-                    news.person = t.Substring(numperson + 4, numdanwei - numperson - 4);
+                    news.place = t.Substring(numaddress + 5, numperson - numaddress - 5);
+                    news.actors = t.Substring(numperson + 4, numdanwei - numperson - 4);
                     news.danwei = t.Substring(numdanwei + 6, numjianjie - numdanwei - 6);
                     while(news.danwei.Contains(" "))
                     {
                         news.danwei = news.danwei.Substring(1, numjianjie - numdanwei - 7);
                     }
-                    LNewsDownloaded(this, news.title, news.Day, news.Time, news.address, news.person, news.danwei, news.link);
+                    LNewsDownloaded(this, news.name, news.Day, news.Time, news.place, news.actors, news.danwei, news.Link);
                 }
                 else
                 {
@@ -132,14 +129,14 @@ namespace ScheduleManagement.clawer
                     int numdanwei = t.IndexOf("报告人单位：");
                     int numjianjie = t.IndexOf("报告人简介：");
 
-                    news.title = "Num1："+t.Substring(numtitle + 6, numday - numtitle - 6);
+                    news.name = "Num1："+t.Substring(numtitle + 6, numday - numtitle - 6);
                     news.Day = t.Substring(numday + 5, numtime - numday - 10);
                     news.Time = t.Substring(numtime + 1, numaddress - numtime - 1);
-                    news.address = t.Substring(numaddress + 5, numperson - numaddress - 5);
-                    news.person = t.Substring(numperson + 4, numdanwei - numperson - 4);
+                    news.place = t.Substring(numaddress + 5, numperson - numaddress - 5);
+                    news.actors = t.Substring(numperson + 4, numdanwei - numperson - 4);
                     news.danwei = t.Substring(numdanwei + 6, numjianjie - numdanwei - 6);
 
-                    LNewsDownloaded(this, news.title, news.Day, news.Time, news.address, news.person, news.danwei, news.link);
+                    LNewsDownloaded(this, news.name, news.Day, news.Time, news.place, news.actors, news.danwei, news.Link);
                 }
             }
             return true;
