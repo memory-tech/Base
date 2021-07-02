@@ -31,6 +31,7 @@ namespace ScheduleManagement
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clawer));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.preference = new System.Windows.Forms.ComboBox();
@@ -52,7 +53,6 @@ namespace ScheduleManagement
             this.label1.Size = new System.Drawing.Size(60, 24);
             this.label1.TabIndex = 2;
             this.label1.Text = "类型";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
@@ -96,14 +96,26 @@ namespace ScheduleManagement
             // Result
             // 
             this.Result.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.Result.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.Result.BackgroundColor = System.Drawing.Color.LightBlue;
             this.Result.ColumnHeadersHeight = 29;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Result.DefaultCellStyle = dataGridViewCellStyle1;
             this.Result.Location = new System.Drawing.Point(20, 70);
             this.Result.Name = "Result";
+            this.Result.RowHeadersVisible = false;
             this.Result.RowHeadersWidth = 25;
             this.Result.RowTemplate.Height = 27;
             this.Result.Size = new System.Drawing.Size(481, 479);
             this.Result.TabIndex = 8;
-            // 
+            this.Result.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Result_CellPainting);
+            //
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(37, 555);
@@ -147,9 +159,7 @@ namespace ScheduleManagement
             ((System.ComponentModel.ISupportInitialize)(this.Result)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
-
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;

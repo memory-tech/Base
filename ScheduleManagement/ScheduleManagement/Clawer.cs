@@ -60,15 +60,23 @@ namespace ScheduleManagement
             clawDance.DanceDownloaded += Clawer_DanceDownloaded;
             clawModernDrama.ModernDramaDownloaded += Clawer_ModernDramaDownloaded;
             
-            //
+            //在初始化的时候即从数据库取数据，实现一进入该界面就可以展示
             OthersServiceDetails osd = new OthersServiceDetails();
             DataSet ds = osd.GetPreferenceList();
             this.preference.SelectedIndex = Convert.ToInt32(ds.Tables[0].Rows[0]["Preference"]);
             this.search();
+         //设置为cell可自动换行  Result.Columns[1].CellTemplate.Style.WrapMode = DataGridViewTriState.True;
         }
-        //   private Graphics graphics;
-
         OthersServiceDetails osd = new OthersServiceDetails();
+        //设置每行颜色
+        private void Result_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {                
+              Result.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Gold;              
+            }
+        }
+        //开始搜索
         private void button1_Click(object sender, EventArgs e)
         {         
             this.search();
@@ -76,6 +84,7 @@ namespace ScheduleManagement
             others.Preference = preference.SelectedIndex;
             osd.UpdatePreference(others);
         }
+        //根据选取的类型爬取相应的数据进行展示，select用于添加待办事项时不同的处理方式
         public void search()
         {
             resultBindingSource.Clear();
@@ -132,8 +141,6 @@ namespace ScheduleManagement
         {
 
         }
-
-
         //点击查看——使用默认浏览器跳转到详情页面，快速查看详情，直接获取对应的url调用默认浏览器进行跳转
         private void button3_Click(object sender, EventArgs e)
         {
@@ -159,26 +166,13 @@ namespace ScheduleManagement
                 Process.Start(psi);
             }
             catch (Exception)
-            {
-             DialogResult rst = MessageBox.Show("        比赛已延期！\r\n    请等待后续消息!");
+            {//对特殊情况进行处理
+                DialogResult rst = MessageBox.Show("        比赛已延期！\r\n    请等待后续消息!");
             }
-            
         }
-
-
         //将选定的事件添加进入待办事项
         private void button2_Click(object sender, EventArgs e)
-        {
-            /*      var newpage = new { 
-             *    序号 = resultBindingSource.Count + 1, 
-                报告题目 = title,
-                报告人 = person,
-                报告日期 = Day, 
-                开始时间 = Time, 
-                报告地点 = address,
-                详情 = link,
-                报告单位 = danwei
-             */
+        {           
             DataGridViewRow row = this.Result.CurrentRow;
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into AffairInfo(");
@@ -198,9 +192,10 @@ namespace ScheduleManagement
                     new SQLiteParameter("@unit",DbType.String,10),
                     new SQLiteParameter("@remindtimes",DbType.Int32,10)};
             //优先级
-            parameters[3].Value = "5";
+            parameters[3].Value = "未知";
             //计算是不是今天，0为今天
             DateTime d2 = DateTime.Now;
+            //间隔时间以及提醒次数的设定
             parameters[8].Value = 1;
             parameters[9].Value = "分";
             parameters[10].Value = 1;
@@ -220,17 +215,8 @@ namespace ScheduleManagement
                     //若为0则为今天
                     parameters[7].Value = Convert.ToInt32(d2.Subtract(Convert.ToDateTime(row.Cells[3].Value.ToString() + "  " + row.Cells[4].Value.ToString())).Days);                   
                     break;
-
-                case 1://电影
-                    /*
-                序号 = resultBindingSource.Count + 1, 
-                片名 = name, 
-                时间 = time, 
-                类型 = type, 
-                主演 = actors, 
-                评分 = scores, 
-                详情 = url 
-                     */
+                    
+                case 1://电影                 
                     //标题
                     parameters[0].Value = row.Cells[1].Value.ToString();
                     //地点
@@ -246,16 +232,7 @@ namespace ScheduleManagement
                     break;
 
                 case 2://音乐会、livehouse、话剧、舞蹈表演
-                    /*
-                     序号 = resultBindingSource.Count + 1,
-                主题 = name,
-                状态 = state,                
-                时间 = time, 
-                地点 = place, 
-                价格 = money, 
-                详情 = link
-                     */
-                    //标题
+                   //标题
                     parameters[0].Value = row.Cells[1].Value.ToString();
                     //地点
                     parameters[1].Value = row.Cells[4].Value.ToString();
@@ -275,8 +252,6 @@ namespace ScheduleManagement
                     {
                         //时间
                         parameters[2].Value = Convert.ToDateTime(row.Cells[3].Value.ToString());
-                        //截止时间
-                        parameters[6].Value = Convert.ToDateTime(row.Cells[3].Value.ToString());
                         //若为0则为今天
                         parameters[7].Value = Convert.ToInt32(d2.Subtract(Convert.ToDateTime(row.Cells[3].Value.ToString())).Days);
                     }
@@ -286,16 +261,7 @@ namespace ScheduleManagement
                     break;
 
                 case 3://欧洲杯
-                    /*
-                序号 = resultBindingSource.Count + 1, 
-                状态 = zt, 
-                日期 = day, 
-                开始时间 = time, 
-                对阵双方左 = player1, 
-                对阵双方右 = player2, 
-                详情 = link
-                     */
-                    //标题
+                   //标题
                     parameters[0].Value = row.Cells[4].Value.ToString() + " VS " + row.Cells[5].Value.ToString();
                     //地点
                     parameters[1].Value = "线上观看";
@@ -308,16 +274,7 @@ namespace ScheduleManagement
                     break;
 
                 case 4://中超
-                    /*
-                序号 = resultBindingSource.Count + 1, 
-                日期 = day, 
-                开始时间 = time, 
-                对阵双方左 = player1, 
-                对阵双方右 = player2,
-                轮次 = turn,
-                详情 = link
-                     */
-                    //标题
+                   //标题
                     parameters[0].Value = row.Cells[3].Value.ToString() + " VS " + row.Cells[4].Value.ToString();
                     //地点
                     parameters[1].Value = "线上观看";
@@ -330,15 +287,7 @@ namespace ScheduleManagement
                     break;
 
                 case 8://LPL
-                    /*
-                序号 = resultBindingSource.Count + 1,
-                日期 = day,
-                开始时间 = time,
-                对阵双方左 = player1,
-                对阵双方右 = player2,
-                详情 = link
-                     */
-                    //标题
+                   //标题
                     parameters[0].Value = "2021LPL夏季赛"+row.Cells[3].Value.ToString() + " VS " + row.Cells[4].Value.ToString();
                     //地点
                     parameters[1].Value = "线上观看";
@@ -362,6 +311,7 @@ namespace ScheduleManagement
             {
                 parameters[5].Value = "完成";
             }
+            if (parameters[6].Value == null) parameters[6].Value = "2021-01-01 09:00:00";
             int rows = DbHelperSQLite.ExecuteSql(strSql.ToString(), parameters);
             DialogResult rst = MessageBox.Show(" 添加成功 !");
         }
@@ -562,16 +512,5 @@ namespace ScheduleManagement
                 action();
             }
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

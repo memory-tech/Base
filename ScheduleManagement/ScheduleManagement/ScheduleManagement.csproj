@@ -106,6 +106,7 @@
     <Compile Include="clawer\ModernDrama.cs" />
     <Compile Include="clawer\Movie.cs" />
     <Compile Include="clawer\Ms.cs" />
+    <Compile Include="clawer\news.cs" />
     <Compile Include="clawer\Zc.cs" />
     <Compile Include="clawer\zhongchao.cs" />
     <Compile Include="Entity\Affair.cs" />

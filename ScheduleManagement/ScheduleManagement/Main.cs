@@ -22,29 +22,15 @@ namespace ScheduleManagement
         public Schedule f5; //创建用户控件五变量
         public Achievement f6;//创建用户控件六变量
         public MainWindow f7;//创建用户控件七变量
-        //   ScheduleService scheduleservice;
         public String Keyword1 { get; set; }
-
-    //    To_Do_AffairsService to_do_affairservice;
         public String Keyword2 { get; set; }
         public Main()
         { 
         InitializeComponent();
-        /*
-        scheduleservice = new ScheduleService();
-        bdsScheduleEntity.DataSource = scheduleservice.Schedules;
-        //cbxCategory.SelectedIndex = 0;
-        //txtKeyword1.DataBindings.Add("Text", this, "Keyword1");
-        to_do_affairservice = new To_Do_AffairsService();
-        bdsTo_Do_AffairEntity.DataSource = to_do_affairservice.To_Do_Affairs;
-        //cbxUrgency.SelectedIndex = 0;
-        //txtKeyword2.DataBindings.Add("Text", this, "Keyword2");
-        */
+        
         }
-
         [DllImport("user32.dll")]
         public static extern IntPtr GetDesktopWindow();
-
         protected override CreateParams CreateParams
         {
             get
@@ -96,8 +82,6 @@ namespace ScheduleManagement
         {
             timer1.Enabled = false;
             timer1.Interval = 200;
-            //TopMost = true;
-            
         }
         
         [DllImport("user32.dll")]
@@ -106,7 +90,6 @@ namespace ScheduleManagement
         public static extern IntPtr GetParent(IntPtr hWnd);
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
             IntPtr vHandle = WindowFromPoint(Control.MousePosition);
             while (vHandle != IntPtr.Zero && vHandle != Handle)
                 vHandle = GetParent(vHandle);
@@ -131,12 +114,6 @@ namespace ScheduleManagement
                     Top = Screen.PrimaryScreen.Bounds.Height - OFFSET;
             }
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             f1 = new AddAffair();    //实例化f1
@@ -151,26 +128,19 @@ namespace ScheduleManagement
             f2.Show();   //将窗体二进行显示
             panel1.Controls.Clear();    //清空原容器上的控件
             panel1.Controls.Add(f2);    //将窗体二加入容器panel1
-
-
         }
-
         private void 关于ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("欢迎使用个性化日程管理系统");
-        }
-               
+        }  
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             this.Show();
         }
-
         private void 打开ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Show();
-            
         }
-
         private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -179,39 +149,19 @@ namespace ScheduleManagement
         private void timer2_Tick(object sender, EventArgs e)
         {
             label2.Text = System.DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss");
-            
         }
-
         private void 设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
-
         private void 退出ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void 关于ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("欢迎使用个性化日程管理系统");
         }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             f4 = new Clawer();    //实例化f4
@@ -219,7 +169,6 @@ namespace ScheduleManagement
             panel1.Controls.Clear();    //清空原容器上的控件
             panel1.Controls.Add(f4);    //将窗体四加入容器panel1
         }
-
         private void button5_Click(object sender, EventArgs e)
         {
             f5 = new Schedule(this);    //实例化f5
@@ -227,7 +176,6 @@ namespace ScheduleManagement
             panel1.Controls.Clear();    //清空原容器上的控件
             panel1.Controls.Add(f5);    //将窗体五加入容器panel1
         }
-
         private void button6_Click(object sender, EventArgs e)
         {
             f6 = new Achievement(); //实例化f6
@@ -235,42 +183,6 @@ namespace ScheduleManagement
             panel1.Controls.Clear();//清空原容器上的控件
             panel1.Controls.Add(f6);//将窗体六加入容器panel
         }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void bdsTo_Do_AffairEntity_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void 返回ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button7_Click(object sender, EventArgs e)
         {
             f7 = new MainWindow();//实例化f7

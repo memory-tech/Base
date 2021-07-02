@@ -67,7 +67,7 @@ namespace ScheduleManagement
             legend1.Title = "待办完成情况";
             legend1.TitleForeColor = System.Drawing.Color.BlanchedAlmond;
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(34, 69);
+            this.chart1.Location = new System.Drawing.Point(34, 94);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
@@ -76,7 +76,7 @@ namespace ScheduleManagement
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(423, 252);
+            this.chart1.Size = new System.Drawing.Size(423, 227);
             this.chart1.TabIndex = 3;
             this.chart1.Text = "chart1";
             // 
@@ -118,7 +118,7 @@ namespace ScheduleManagement
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("隶书", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.label2.Location = new System.Drawing.Point(42, 78);
+            this.label2.Location = new System.Drawing.Point(35, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 28);
             this.label2.TabIndex = 8;
@@ -160,7 +160,6 @@ namespace ScheduleManagement
             this.Controls.Add(this.queryBtn);
             this.Name = "Achievement";
             this.Size = new System.Drawing.Size(501, 592);
-            this.Load += new System.EventHandler(this.Achievement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);

@@ -83,7 +83,6 @@ namespace ScheduleManagement
             this.PathBox.ReadOnly = true;
             this.PathBox.Size = new System.Drawing.Size(333, 24);
             this.PathBox.TabIndex = 41;
-            this.PathBox.TextChanged += new System.EventHandler(this.PathBox_TextChanged);
             // 
             // TestButton
             // 
@@ -112,10 +111,6 @@ namespace ScheduleManagement
             this.Alarm_Bell.Size = new System.Drawing.Size(137, 25);
             this.Alarm_Bell.TabIndex = 39;
             this.Alarm_Bell.Text = "闹钟铃声：";
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // SetButton
             // 
