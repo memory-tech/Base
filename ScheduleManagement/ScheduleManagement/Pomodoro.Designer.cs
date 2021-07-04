@@ -165,7 +165,7 @@ namespace ScheduleManagement
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnEnd);
             this.Controls.Add(this.btnBegin);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Pomodoro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;

@@ -23,13 +23,13 @@ namespace ScheduleManagement.Service
                         rt.ClockTime1 = Time.AddDays(-TimeInterval);
                         break;
                     case 2:
-                        rt.ClockTime1 = Time.AddDays(-TimeInterval);
-                        DateTime ClockTime2 = Time.AddDays(-2 * TimeInterval);
+                        rt.ClockTime2 = Time.AddDays(-TimeInterval);
+                        rt.ClockTime1 = Time.AddDays(-2 * TimeInterval);
                         break;
                     case 3:
-                        rt.ClockTime1 = Time.AddDays(-TimeInterval);
+                        rt.ClockTime3 = Time.AddDays(-TimeInterval);
                         rt.ClockTime2 = Time.AddDays(-2 * TimeInterval);
-                        rt.ClockTime3 = Time.AddDays(-3 * TimeInterval);
+                        rt.ClockTime1 = Time.AddDays(-3 * TimeInterval);
                         break;
                     default:
                         break;
@@ -43,13 +43,13 @@ namespace ScheduleManagement.Service
                         rt.ClockTime1 = Time.AddHours(-TimeInterval);
                         break;
                     case 2:
-                        rt.ClockTime1 = Time.AddHours(-TimeInterval);
-                        rt.ClockTime2 = Time.AddHours(-2 * TimeInterval);
+                        rt.ClockTime2 = Time.AddHours(-TimeInterval);
+                        rt.ClockTime1 = Time.AddHours(-2 * TimeInterval);
                         break;
                     case 3:
-                        rt.ClockTime1 = Time.AddHours(-TimeInterval);
+                        rt.ClockTime3 = Time.AddHours(-TimeInterval);
                         rt.ClockTime2 = Time.AddHours(-2 * TimeInterval);
-                        rt.ClockTime3 = Time.AddHours(-3 * TimeInterval);
+                        rt.ClockTime1 = Time.AddHours(-3 * TimeInterval);
                         break;
                     default:
                         break;
@@ -63,13 +63,13 @@ namespace ScheduleManagement.Service
                         rt.ClockTime1 = Time.AddMinutes(-TimeInterval);
                         break;
                     case 2:
-                        rt.ClockTime1 = Time.AddMinutes(-TimeInterval);
-                        rt.ClockTime2 = Time.AddMinutes(-2 * TimeInterval);
+                        rt.ClockTime2 = Time.AddMinutes(-TimeInterval);
+                        rt.ClockTime1 = Time.AddMinutes(-2 * TimeInterval);
                         break;
                     case 3:
-                        rt.ClockTime1 = Time.AddMinutes(-TimeInterval);
+                        rt.ClockTime3 = Time.AddMinutes(-TimeInterval);
                         rt.ClockTime2 = Time.AddMinutes(-2 * TimeInterval);
-                        rt.ClockTime3 = Time.AddMinutes(-3 * TimeInterval);
+                        rt.ClockTime1 = Time.AddMinutes(-3 * TimeInterval);
                         break;
                     default:
                         break;

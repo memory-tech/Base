@@ -107,7 +107,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(638, 28);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // 关于ToolStripMenuItem
             // 
@@ -148,7 +147,6 @@
             this.退出ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(109, 76);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // 打开ToolStripMenuItem
             // 
@@ -227,11 +225,6 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(1, 532);
             this.label5.TabIndex = 8;
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // bdsTo_Do_AffairEntity
-            // 
-            this.bdsTo_Do_AffairEntity.CurrentChanged += new System.EventHandler(this.bdsTo_Do_AffairEntity_CurrentChanged);
             // 
             // panel1
             // 
@@ -243,7 +236,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(501, 592);
             this.panel1.TabIndex = 14;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // monthCalendar1
             // 
@@ -251,7 +243,6 @@
             this.monthCalendar1.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 5;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // label4
             // 
@@ -263,7 +254,6 @@
             this.label4.Size = new System.Drawing.Size(110, 88);
             this.label4.TabIndex = 3;
             this.label4.Text = "时间:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label2
             // 
@@ -275,7 +265,6 @@
             this.label2.Size = new System.Drawing.Size(251, 88);
             this.label2.TabIndex = 4;
             this.label2.Text = "             ";
-            this.label2.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // button6
             // 
@@ -324,6 +313,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(656, 667);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "个性化日程管理系统";

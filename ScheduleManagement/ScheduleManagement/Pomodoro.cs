@@ -30,9 +30,6 @@ namespace ScheduleManagement
         //统计该项任务所得番茄数
         public int Tomatoes { get; set; }
 
-        //Affair
-        //private Entity.Affair affair = new Entity.Affair(1, "w", "s", DateTime.Now, "1", "ss");
-
         public Pomodoro(Main main,Entity.Affair affair)
         {
             Main = main;
@@ -213,8 +210,6 @@ namespace ScheduleManagement
         {
             Entity.TomatoData tomatoData = new Entity.TomatoData(Affair.AffairId, DateTime.Now.Month, Affair.Title, Tomatoes, TaskTime);
             Add(tomatoData);
-            Affair.State = "完成";
-            affairService.Update(Affair);
             this.Close();
             Main.Show();
         }

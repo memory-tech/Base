@@ -53,7 +53,6 @@ namespace ScheduleManagement
             this.label1.Size = new System.Drawing.Size(60, 24);
             this.label1.TabIndex = 2;
             this.label1.Text = "类型";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
@@ -116,9 +115,7 @@ namespace ScheduleManagement
             this.Result.Size = new System.Drawing.Size(481, 479);
             this.Result.TabIndex = 8;
             this.Result.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.Result_CellPainting);
-            //this.Result.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Result_CellClick);
-            //this.Result.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Result_DoubleCellClick);
-            // 
+            //
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(37, 555);
@@ -162,9 +159,7 @@ namespace ScheduleManagement
             ((System.ComponentModel.ISupportInitialize)(this.Result)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
-
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;

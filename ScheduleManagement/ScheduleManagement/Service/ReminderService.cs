@@ -151,7 +151,6 @@ namespace ScheduleManagement.Service
             }
         }
         #endregion DasicMethod
-
     }
 
     public partial class ReminderService

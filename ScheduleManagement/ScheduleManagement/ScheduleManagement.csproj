@@ -125,11 +125,11 @@
     <Compile Include="Service\AffairsService.cs" />
     <Compile Include="Service\DbHelperSQLite.cs" />
     <Compile Include="Service\ReminderService.cs" />
-    <Compile Include="AddAffair.cs">
+    <Compile Include="Setting.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AddAffair.Designer.cs">
-      <DependentUpon>AddAffair.cs</DependentUpon>
+    <Compile Include="Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
     </Compile>
     <Compile Include="Affair.cs">
       <SubType>UserControl</SubType>
@@ -177,8 +177,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="AddAffair.resx">
-      <DependentUpon>AddAffair.cs</DependentUpon>
+    <EmbeddedResource Include="Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Affair.resx">
       <DependentUpon>Affair.cs</DependentUpon>

@@ -12,18 +12,17 @@ using ScheduleManagement.Service;
 
 namespace ScheduleManagement
 {
-    public partial class AddAffair : UserControl
+    public partial class Setting : UserControl
     {
         private SoundPlayer AlarmBell;
-        public AddAffair()
+        string Title1;
+        public Setting()
         {
             InitializeComponent(); 
-            
         }
-
         private void UserControl1_Load(object sender, EventArgs e)
         {
-            timer2.Interval = 900;
+            timer2.Interval = 990;
             timer2.Enabled = true;
             ToolTip testTip = new ToolTip();
             testTip.IsBalloon = true;
@@ -38,7 +37,6 @@ namespace ScheduleManagement
             }
             else { this.PathBox.Text = music_path; }
         }
-
         OthersServiceDetails osd = new OthersServiceDetails();
         private void SetButton_Click(object sender, EventArgs e)
         {
@@ -46,7 +44,6 @@ namespace ScheduleManagement
             others.Music_path = this.PathBox.Text;
             osd.UpdateMusic(others);
         }
-
         private void TestAlarmBell()
         {
             if (TestButton.Text == "测试")
@@ -87,23 +84,6 @@ namespace ScheduleManagement
                 }
             }
         }
-
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PathBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void SelectButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -121,38 +101,25 @@ namespace ScheduleManagement
         {
             AlarmBell = new SoundPlayer();
             AlarmBell.SoundLocation = PathBox.Text.Trim();
-            //try
-            
                 AlarmBell.PlayLooping();
-                DialogResult res = MessageBox.Show("时间到了",
+                DialogResult res = MessageBox.Show(Title1+"提醒时间到了",
                 "提示");
                 if (res == DialogResult.OK)
                 {
                     AlarmBell.Stop();
                     AlarmBell.Dispose();
                 }
-            
-            /*catch (Exception)
-            {
-                SystemSounds.Hand.Play();
-                MessageBox.Show("无效提醒铃声！", "警告");
-                AlarmBell.Dispose();
-            }*/
         }
-
-
         private void TestButton_Click(object sender, EventArgs e)
         {
             TestAlarmBell();
         }
-
-
         private void timer2_Tick(object sender, EventArgs e)
         {
             ReminderService rs = new ReminderService();
             DataSet ds2 = rs.GetOrderedList("State1 like '未完成' ");
             DateTime AlarmTime = DateTime.Parse(ds2.Tables[0].Rows[0]["ClockTime1"].ToString());
-            this.textBox_test.Text = ds2.Tables[0].Rows[0]["ClockTime1"].ToString();
+            Title1 = ds2.Tables[0].Rows[0]["Title1"].ToString();
             int Year1 = AlarmTime.Year;
             int Month1 = AlarmTime.Month;
             int Day1 = AlarmTime.Day;
