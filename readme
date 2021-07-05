@@ -1,0 +1,20 @@
+组长：
+马旭阳：serein-dream   
+工作内容：爬虫实现、近期推荐界面的功能和UI、日程界面的功能和UI
+具体代码有：Schedule.cs  、  Clawer.cs   、clawer文件夹内的（CSlecture.cs，Concert.cs，Dance.cs、EuropeanCup.cs、
+LPL.cs、Livehouse.cs、ModernDrama.cs、Movie.cs、news.cs、zhongchao.cs）以及Schedule.Designer.cs 、Clawer.Designer.cs
+
+组员：
+田丽凯：memory-tech
+工作内容：番茄钟的功能和UI，统计的功能和UI，部分数据库的操作
+具体代码有：Pomodoro.cs，Achievement.cs，Enity中的TomatoData.cs，Service中的TomatoService.cs以及AffairsService.cs中部分函数
+
+王豪：sakuraohayo
+工作内容：系统整体UI布局架构设计、提醒功能算法设计与实现、背景铃声图标
+具体代码：各个界面及控件创建，Setting.cs,ClockTimeCaculation.cs，main.cs，MainWindow.cs
+
+
+李西军：lixj111
+工作内容：待办事项界面的功能与UI、sql数据库的搭建
+具体代码：Affair.cs，Service文件夹内的内容（AffairsService.cs、 ClockTimeCalculation.cs、 DbHelperSQLite.cs、ReminderService.cs），Entity文件夹
+的内容（Affair.cs、ReminderTime.cs、Schedule.cs）
